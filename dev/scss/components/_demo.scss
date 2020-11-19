@@ -1,0 +1,44 @@
+.demo {
+  article {
+    margin-bottom: 3rem;
+  }
+
+  ul {
+    display: flex;
+
+    > li {
+      width: 4rem;
+      height: 4rem;
+      position: relative;
+
+      ~ li {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &__list {
+    padding: 3rem;
+    max-width: 40rem;
+    margin: 0 auto;
+
+    li {
+      padding: 1rem;
+      border: 0.0625rem solid rgb(229, 229, 229);
+      border-radius: 0.25rem;
+      background-color: rgb(249, 249, 249);
+
+      + li {
+        margin-top: 1rem;
+      }
+
+      &:last-child {
+        background-color: rgb(220, 249, 247);
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

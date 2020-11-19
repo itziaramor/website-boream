@@ -1,0 +1,81 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  font-family: $ff, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  font-weight: $regular;
+  font-size: 100%;
+  color: var(--black-color);
+  line-height: 1.4;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+img,
+iframe,
+video {
+  vertical-align: middle;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+menu,
+ul,
+ol,
+li,
+dd {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--primary-color);
+  transition: color $medium $linear;
+
+  &:hover,
+  &:focus {
+    color: var(--secondary-color);
+  }
+}
+
+::-moz-selection {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+::selection {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}

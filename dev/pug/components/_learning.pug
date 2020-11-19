@@ -1,0 +1,19 @@
+mixin learning(OBJ)
+  section.learning
+    img.learning__bg(src= OBJ.srcBg, alt= OBJ.alt)
+
+    div.learning__image
+      picture
+        each itemImg in OBJ.itemImgs
+          source(media= itemImg.media, srcset= itemImg.srcset)
+        img(src= OBJ.src, alt= OBJ.alt)
+      img.learning__code(src= OBJ.srcCode, alt= OBJ.alt)
+    div.wrapper
+      div.learning__cols
+        div
+          h2.learning__heading= OBJ.title
+          p.learning__subheading= OBJ.text
+        each item in OBJ.items
+          div
+            h3.learning__title= item.title
+            p.learning__text= item.text

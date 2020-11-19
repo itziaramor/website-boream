@@ -1,0 +1,147 @@
+.video {
+  @include mq($from: desktop) {
+    display: flex;
+  }
+
+  // CHILDS
+  &__figure {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    height: 13.75rem;
+    width: 100%;
+    object-fit: cover;
+
+    @include mq($from: tablet) {
+      height: 31.5rem;
+    }
+
+    @include mq($from: desktop) {
+      flex: 0 0 50%;
+      height: 27.9375rem;
+      object-position: 0 center;
+    }
+  }
+
+  &__wrapper {
+    padding: 1.5rem 1.25rem 0.75rem;
+    background-color: var(--testimonial-background-color);
+
+    @include mq($from: tablet) {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 1.25rem;
+    }
+
+    @include mq($from: desktop) {
+      padding: 6rem 5.75rem;
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: $semibold;
+    color: var(--black-color);
+
+    @include mq($from: tablet) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 0.75rem;
+    font-weight: $regular;
+    color: var(--shadow-color-darkest);
+    text-transform: uppercase;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: opacity $medium $linear;
+
+    &:hover,
+    &:focus {
+      .video__button__wrapper {
+        background-color: var(--secondary-color-light);
+      }
+      .video__button__label {
+        background-size: 100% 1px;
+      }
+    }
+
+    // MODIFERS
+    &--mb {
+      @include mq($from: desktop) {
+        display: none;
+      }
+    }
+
+    &--dk {
+      display: none;
+
+      @include mq($from: desktop) {
+        display: inline-flex;
+        top: calc(100% - 5rem);
+        left: 0;
+        transform: none;
+      }
+    }
+
+    // CHILDS
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      color: var(--white-color);
+      background-color: var(--secondary-color);
+      transition: background-color $medium $linear;
+
+      @include mq($from: tablet) {
+        width: 5rem;
+        height: 5rem;
+      }
+
+      @include mq($from: desktop) {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    &__icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: currentColor;
+    }
+
+    &__label {
+      @include fx-underline(rgb(70, 70, 70));
+      display: none;
+      margin-left: 1.25rem;
+      font-size: 0.75rem;
+      font-weight: $regular;
+      color: var(--shadow-color-darkest);
+      text-transform: uppercase;
+
+      @include mq($from: desktop) {
+        display: block;
+      }
+    }
+  }
+}

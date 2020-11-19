@@ -1,0 +1,34 @@
+.contact {
+  padding: 2rem 0 0;
+
+  &__address {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(73px);
+    font-size: rem(18px);
+    line-height: 1.8;
+    address {
+      font-style: normal;
+    }
+  }
+  &__picture {
+    margin-right: rem(33px);
+
+    @include mq($until: desktop) {
+      display: none;
+    }
+
+  }
+  &__item {
+    display: block;
+    text-transform: uppercase;
+  }
+  
+  + .description--full {
+    margin-top: rem(-80px);
+
+    @include mq($from: desktop) {
+      margin-top: rem(-160px);
+    }
+  }
+}

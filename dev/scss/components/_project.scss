@@ -1,0 +1,283 @@
+.project {
+  position: relative;
+  height: rem(872px);
+
+  @include mq($from: tablet) {
+    height: rem(1023px);
+  }
+
+  &--dark {
+    background-color: #efefef;
+  }
+
+  &.project--md {
+    height: rem(603px);
+    @include mq($from: tablet) {
+      height: rem(603px);
+    }
+
+    .project__figure:after {
+      display: none;
+    }
+  }
+
+  @include mq($from: tablet) {
+    height: rem(1023px);
+  }
+
+  // CHILDS *********************************************************
+  &__figure {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    overflow: hidden;
+
+    // VEIL
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: rem(190px);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: (z(default) + 1);
+      background: linear-gradient(42deg, rgba(248, 248, 248, 1) 0%, rgba(237, 237, 237, 1) 100%);
+      mix-blend-mode: multiply;
+
+      @supports not (mix-blend-mode: multiply) {
+        background: rgba(0, 0, 0, 0.08);
+      }
+
+      @include mq($from: tablet) {
+        height: rem(420px);
+      }
+    }
+  }
+
+  // FULL WIDTH "BACKGORUND" IMAGE
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include mq($from: desktop) {
+        width: 100%;
+        height: 100%;
+        transform: none;
+        object-fit: cover;
+        object-position: center;
+      }
+      @include mq($from: desktop_large) {
+        transform: none;
+      }
+    }
+  }
+
+  // ASIDE NAVIGATION TO GO TO NEXT/PREVIOUS PROJECT
+  &__nav {
+    display: none;
+    position: fixed;
+    right: 1rem;
+    bottom: 2rem;
+    z-index: (z(default) + 3);
+    opacity: 1;
+    transition: all $fast $linear;
+
+    @include mq($from: desktop) {
+      display: flex;
+      right: 2rem;
+      bottom: 2rem;
+    }
+
+    &.static {
+      position: absolute;
+      bottom: 2rem;
+    }
+    // STATES
+    &.is-invisible {
+      opacity: 0;
+      transform: none;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    &__link {
+      // CACHE THIS .project__nav__link
+      $thisNav: &;
+      width: 4.125rem;
+      height: 4.125rem;
+      padding: 1rem 1.125rem;
+      font-size: 1.125rem;
+      color: var(--white-color);
+      text-decoration: none;
+      background-color: hsla(0, 0%, 0%, 0.4);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      transition: all $medium $ease-out;
+
+      + #{$thisNav} {
+        margin-left: 0.625rem;
+      }
+
+      // STATES
+      &:hover,
+      &:focus {
+        color: var(--white-color);
+        background-color: hsla(0, 0%, 0%, 0.3);
+      }
+
+      // MODIFIERS
+      &.-prev {
+        &:hover {
+          .project__nav__link__icon {
+            transform: rotate(180deg) translateX(0.5rem);
+          }
+        }
+        .project__nav__link__icon {
+          transform: rotate(180deg);
+        }
+      }
+      &.-next {
+        text-align: right;
+
+        &:hover {
+          .project__nav__link__icon {
+            transform: translateX(0.5rem);
+          }
+        }
+      }
+
+      // CHILDS
+      &__icon {
+        width: 1.875rem;
+        height: 0.9375rem;
+        fill: currentColor;
+        transition: all $medium $ease-out;
+
+        > svg {
+          transition: all $medium $ease-out;
+        }
+      }
+    }
+  }
+
+  // MAIN WRAPPER. WHERE THE INFORMATION OF THE PROJECT IS PLACED
+  > .wrapper {
+    padding: 9.9375rem 1.25rem 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: (z(default) + 2);
+
+    @include mq($from: tablet) {
+      padding: 8rem 1.25rem 2rem;
+    }
+    @include mq($from: desktop) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @include mq($from: wrapper_max_width) {
+      padding-top: 10.5rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__info {
+    max-width: percentage(3.25 / 4);
+    height: 100%;
+
+    @include mq($from: mobile_landscape) {
+      max-width: rem(435px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: $ultralight;
+    line-height: 1.5;
+    color: var(--black-color);
+
+    @include mq($from: mobile_landscape) {
+      max-width: none;
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+
+    span {
+      @include fx-underline(var(--primary-color), 1px);
+      padding-bottom: 0.0625rem;
+    }
+
+    > .button__icon {
+      transform: translateX(0.75rem);
+    }
+
+    &:hover {
+      color: var(--primary-color);
+
+      span {
+        background-size: 100% 1px;
+      }
+
+      > .button__icon {
+        transform: translateX(1rem);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 1.5rem;
+
+    > li {
+      display: inline-block;
+      font-size: 0.75rem;
+      line-height: 1.5rem;
+      color: var(--shadow-color-darkest);
+      text-transform: uppercase;
+
+      &::after {
+        content: '|';
+        display: inline-block;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    font-weight: $regular;
+    line-height: 1.86;
+    color: var(--shadow-color-darkest);
+  }
+
+  .button {
+    @include mq($until: desktop) {
+      padding-left: 0;
+      display: inline-block;
+      border: none;
+      background: none;
+      color: var(---shadow-color-darkest);
+      font-weight: $light;
+    }
+  }
+}

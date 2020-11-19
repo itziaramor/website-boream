@@ -1,0 +1,42 @@
+mixin project(OBJ)
+  section.project#project(class= OBJ.modifier)
+
+    if OBJ.sourceDesktop
+      div.project__figure
+        picture.project__image
+          if OBJ.sourceDesktop
+            source(media="(min-width: 769px" srcset=OBJ.sourceDesktop)
+          if OBJ.sourceTablet
+            source(media="(min-width: 481px" srcset=OBJ.sourceTablet)
+          if OBJ.sourceMobile
+            source(media="(max-width: 480px" srcset=OBJ.sourceMobile)
+          img(src=OBJ.sourceDesktop alt="")
+
+    div.project__nav#project__nav
+      a.project__nav__link.-prev(href= OBJ.nav.prev.url, target="")
+        svg.project__nav__link__icon
+          use(xlink:href='assets/images/boream-sprite.svg#arrow-case')
+
+      a.project__nav__link.-next(href= OBJ.nav.next.url, target="")
+        svg.project__nav__link__icon
+          use(xlink:href='assets/images/boream-sprite.svg#arrow-case')
+
+    div.wrapper
+      div.project__info
+        if OBJ.title
+          h1.project__title!= OBJ.title
+
+        if OBJ.link
+          a.button.button--link.project__button(href= OBJ.link.url, target="_blank")
+            span= OBJ.link.name
+            svg.button__icon
+              use(xlink:href='assets/images/boream-sprite.svg#arrow')
+
+        if OBJ.categories
+          ul.project__list
+            each cat in OBJ.categories
+              li= cat
+
+        if OBJ.text
+          each p in OBJ.text
+            p.project__text= p

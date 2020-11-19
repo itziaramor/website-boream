@@ -1,0 +1,64 @@
+.cases {
+  padding: 0 1rem;
+
+  @include mq($from: tablet) {
+    padding: 0 2rem;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: var(--shadow-color-dark);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 13rem;
+    margin: 0 -1rem;
+
+    @include mq($from: tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 -2rem;
+    }
+    @include mq($from: desktop) {
+      grid-template-rows: 26.25rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity $medium $linear;
+      background-color: var(--secondary-color);
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        opacity: 0.35;
+      }
+
+      > img {
+        transform: scale(1.03);
+      }
+    }
+
+    > img {
+      height: 100%;
+      object-fit: cover;
+      transform: none;
+      transition: transform $medium $ease-in;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+mixin usersVoice(OBJ)
+  section.users-voice
+    picture
+      each itemImg in OBJ.itemImgs
+        source(media= itemImg.media, srcset= itemImg.srcset)
+      img(src= OBJ.src, alt= OBJ.alt)
+    div.wrapper
+      div.users-voice__cols
+        div
+          h2.users-voice__heading= OBJ.title
+          p.users-voice__subheading= OBJ.text
+        each item in OBJ.items
+          div
+            h3.users-voice__title= item.title
+            p.users-voice__text= item.text

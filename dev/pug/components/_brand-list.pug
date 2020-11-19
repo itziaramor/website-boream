@@ -1,0 +1,5 @@
+mixin brandList(OBJ)
+  ul.brand__list
+    each brand in OBJ
+      li.brand__list-item
+        img.brand__image(src= brand.src, alt= brand.alt)

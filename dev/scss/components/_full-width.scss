@@ -1,0 +1,167 @@
+.full-width {
+  position: relative;
+  z-index: z(default);
+  
+  @include mq($from: wrapper_max_width) {
+    padding-top: 3rem;
+  }
+  
+  // MODIFIERS *********************************************************
+  &--bordered {
+    border-bottom: 0.6875rem solid var(--primary-color);
+    
+    @include mq($from: tablet) {
+      border-bottom: 1.375rem solid var(--primary-color);
+    }
+  }
+  
+  &.full-width--md {
+    // MAIN WRAPPER. WHERE THE INFORMATION OF THE PROJECT IS PLACED
+    > .wrapper {
+      padding: 3.5rem 1.25rem 2rem;
+      
+      @include mq($from: tablet) {
+        padding: 3.75rem 1.25rem 2rem;
+      }
+      @include mq($from: wrapper_max_width) {
+        width: calc(100% - 4rem);
+        margin: 0 auto;
+        padding: 12.75rem 0 2rem;
+      }
+      @include mq($from: desktop_large) {
+        padding-top: 10rem;
+      }
+      @include mq($from: desktop_wide) {
+        padding-top: 11.75rem;
+      }
+    }
+
+    .full-width__info {
+      width: 100%;
+      max-width: 16.875rem;
+
+      @include mq($from: mobile_landscape) {
+        width: 75%;
+        max-width: 31rem;
+      }
+      @include mq($from: tablet) {
+        width: 100%;
+        max-width: 27.9375rem;
+      }
+    }
+    
+    // FULL WIDTH "BACKGORUND" IMAGE
+    .full-width__image {
+      margin-bottom: rem(65px);
+      height: auto;
+      object-fit: contain;
+
+      @include mq($from: tablet) {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @include mq($from: wrapper_max_width) {
+        margin: 0 auto 0;
+      }
+    }
+    
+    .full-width__figure {
+      height: auto;
+
+      @include mq($from: desktop) {
+        margin-bottom: 2rem;
+      }
+    }
+    
+  }
+  
+  // CHILDS *********************************************************
+  &__figure {
+    height: 20rem;
+    
+    @include mq($from: tablet) {
+      height: 30rem;
+    }
+    @include mq($from: desktop) {
+      height: auto;
+    }
+  }
+  
+  // FULL WIDTH "BACKGORUND" IMAGE
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+    @include mq($from: wrapper_max_width) {
+      max-width: 80%;
+      margin: 8rem auto 0;
+    }
+  }
+  
+  // MAIN WRAPPER. WHERE THE INFORMATION OF THE PROJECT IS PLACED
+  > .wrapper {
+    padding: 2.625rem 1.25rem 2rem;
+    
+    @include mq($from: tablet) {
+      padding: 3.75rem 1.25rem 2rem;
+    }
+    @include mq($from: desktop) {
+      padding: 3.75rem 2rem 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: (z(default) + 2);
+    }
+    @include mq($from: wrapper_max_width) {
+      width: calc(100% - 4rem);
+      margin: 0 auto;
+      padding: 12.75rem 0 2rem;
+    }
+    @include mq($from: desktop_large) {
+      padding-top: 6rem;
+    }
+    @include mq($from: desktop_wide) {
+      padding-top: 12.75rem;
+    }
+  }
+  
+  &__info {
+    width: 75%;
+    max-width: 31rem;
+    height: 100%;
+    color: var(--shadow-color-darkest);
+    
+    @include mq($from: tablet) {
+      width: 360px;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: $ultralight;
+    color: var(--black-color);
+    
+    @include mq($from: mobile_landscape) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  &__subtitle {
+    //margin-bottom: 2rem;
+    font-size: 0.875rem;
+    font-weight: $semibold;
+    line-height: 1.86;
+  }
+  
+  &__text {
+    margin-top: 0;
+    font-size: 0.875rem;
+    font-weight: $regular;
+    line-height: 1.86;
+  }
+}

@@ -1,0 +1,78 @@
+.image {
+  height: 15rem;
+  overflow: hidden;
+
+  @include mq($from: tablet) {
+    height: 20rem;
+  }
+  @include mq($from: desktop_large) {
+    display: flex;
+    justify-content: flex-end;
+    height: 29rem;
+  }
+
+  // CHILDS
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    transform: translate(10vw, 0);
+
+    @include mq($from: desktop_large) {
+      max-width: calc(
+        calc((100vw - var(--wrapper-max-width)) / 2) + var(--wrapper-max-width)
+      );
+      transform: none;
+    }
+  }
+
+  &__aside {
+    flex: 0 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mq($from: desktop) {
+      flex: 0 0 5rem;
+    }
+
+    &__caption {
+      display: inline-block;
+      transform: rotate(-180deg);
+      align-self: center;
+      writing-mode: vertical-lr;
+      font-size: 0.75rem;
+      font-weight: $regular;
+      color: var(--shadow-color-darkest);
+      text-transform: uppercase;
+
+      @include mq($from: desktop) {
+        align-self: flex-start;
+      }
+    }
+
+    &__numeral {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-end;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: $semibold;
+      color: var(--white-color);
+      background-color: var(--secondary-color);
+
+      @include mq($from: desktop) {
+        width: 5rem;
+        height: 5rem;
+        font-size: 2.25rem;
+      }
+    }
+  }
+
+  &__image {
+    flex: 1;
+    object-fit: cover;
+  }
+}

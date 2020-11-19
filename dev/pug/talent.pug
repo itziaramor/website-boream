@@ -1,0 +1,87 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var TALENT = {
+      headerPage: {
+        modifier: "header-page--alt-color",
+        boream: true,
+        name: " Talent",
+        intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+      },
+      headerImage: {
+        sourceDesktop: "assets/images/talent-header.jpg",
+        sourceTablet: "assets/images/talent-header-md.jpg",
+        sourceSmartphone: "assets/images/talent-header-sm.jpg"
+      },
+      job: {
+        heading: "Texto que define los beneficios generales de trabajar en Boream",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      career: {
+        heading: "Actualmente buscamos…"
+      },
+      careerCol: [
+        {
+          title: "User Experience",
+          src: "assets/images/icons/talent-ux.svg",
+          list: [
+            { text: "Senior product designer" },
+            { text: "Product designer" }
+          ]
+        },
+        {
+          title: "User Interface",
+          src: "assets/images/icons/talent-ui.svg",
+          list: [
+            { text: "Product designer" },
+            { text: "Product designer" },
+            { text: "Senior product designer" },
+            { text: "Product designer" }
+          ]
+        },
+        {
+          title: "Front End",
+          src: "assets/images/icons/talent-frontend.svg",
+          list: [
+            { text: "Senior product designer" }
+          ]
+        },
+        {
+          title: "Backend",
+          src: "assets/images/icons/talent-backend.svg",
+          list: [
+            { text: "Senior product designer" },
+            { text: "Product designer" },
+            { text: "Senior NodeJS lorem ipsum dolor consectuter" }
+          ]
+        }
+      ],
+      training: {
+        heading: "Formamos profesionales paras el sector tecnológico",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+        action: "Ver más"
+      }
+    }
+  +talent(TALENT)
+
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--full description--img-center",
+        bgimage: "assets/images/dummy/background-02.png",
+        columns: [
+          {
+            title: "Formamos profesionales<br/>para el sector tecnológico",
+            subtitle: false,
+            text: [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+            ]
+          }
+        ],
+        action: "Ver más"
+      }
+    ]
+  +description(DESCRIPTION)

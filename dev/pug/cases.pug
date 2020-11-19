@@ -1,0 +1,113 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var DIST = [
+      {
+        span: 4,
+        height: "37.5rem",
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/dist-01.png",
+          alt: ""
+        }
+      },
+      {
+        span: 4,
+        height: "49.5rem",
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/dist-02.png",
+          alt: ""
+        }
+      },
+      {
+        span: 2,
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/hero-09.png",
+          alt: ""
+        }
+      },
+      {
+        span: 2,
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/hero-06.png",
+          alt: ""
+        }
+      },
+      {
+        span: 4,
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/hero-04.png",
+          alt: ""
+        }
+      },
+      {
+        span: 4,
+        height: "45.5rem",
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/project-011.png",
+          alt: ""
+        }
+      },
+      {
+        span: 2,
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/hero-02.png",
+          alt: ""
+        }
+      },
+      {
+        span: 2,
+        url: "#",
+        name: "nombre del proyecto",
+        image: {
+          src: "assets/images/dummy/hero-03.png",
+          alt: ""
+        }
+      }
+    ]
+  +dist(DIST)
+
+  -
+    var POSTS = {
+      heading: "Boream insights",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+      link: {
+        text: "Ver todos los insights"
+      },
+      posts: [
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 1", category: "INFORME USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos salta a dos líneas",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/post/post-2.png",
+          alt: "post 2", category: "USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+        },
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 3", category: "ECOMMERCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        }
+      ]
+    };
+  +posts(POSTS)

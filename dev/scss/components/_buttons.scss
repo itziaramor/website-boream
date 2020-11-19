@@ -1,0 +1,213 @@
+// CONFIG BUTTONS STYLES
+// It takes the KEY to build the selector
+$BUTTONS: (
+  primary: (
+    frontColor: --white-color,
+    borderColor: --primary-color-dark,
+    backgroundColor: --primary-color,
+    backgroundHoverColor: --primary-color-light,
+  ),
+  secondary: (
+    frontColor: --white-color,
+    borderColor: --secondary-color-dark,
+    backgroundColor: --secondary-color,
+    backgroundHoverColor: --secondary-color-light,
+  ),
+  tertiary: (
+    frontColor: --white-color,
+    borderColor: --shadow-color-darkest,
+    backgroundColor: --shadow-color-dark,
+    backgroundHoverColor: --shadow-color-light,
+  ),
+  invert: (
+    frontColor: --primary-color,
+    borderColor: --white-color,
+    backgroundColor: --white-color,
+    backgroundHoverColor: transparent,
+  ),
+  transparent: (
+    frontColor: --primary-color,
+    borderColor: --primary-color-dark,
+    backgroundColor: transparent,
+    backgroundHoverColor: transparent,
+  ),
+);
+
+// APPLIES THE STYLES TO THE ELEMENT
+@mixin buttonStyles(
+  $frontColor: --white-color,
+  $borderColor: --shadow-color-lightest,
+  $backgroundColor: --primary-color,
+  $backgroundHoverColor: --primary-color-dark
+) {
+  $frontColor: var($frontColor);
+  $borderColor: var($borderColor);
+  $backgroundColor: var($backgroundColor);
+  $backgroundHoverColor: var($backgroundHoverColor);
+
+  color: $frontColor;
+  border: 1px solid $borderColor;
+  background-color: $backgroundColor;
+  transition: all $medium $ease-in;
+
+  &:focus,
+  &:hover {
+    color: $frontColor;
+    border-color: $backgroundColor;
+    background-color: $backgroundHoverColor;
+
+    // &::after {
+    //   opacity: 1;
+    // }
+
+    .button__icon {
+      transform: translate3d(1.125rem, 0.0625rem, 0);
+    }
+  }
+}
+
+// RESET STYLES
+%button-base {
+  font-size: 1rem;
+  color: transparent;
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.3125rem 0.5rem;
+  line-height: 1.38;
+  text-decoration: none;
+  // position: relative;
+  // overflow: hidden;
+}
+
+// DEFAULT CLASS
+.button {
+  // CACHE THIS
+  $this: &;
+
+  @extend %button-base;
+
+  // &::after {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: calc(100% + 0.125rem);
+  //   height: calc(100% + 0.125rem);
+  //   background-color: rgba(255, 255, 255, 0.2);
+  //   opacity: 0;
+  //   transform: translate(-0.0625rem, -0.0625rem);
+  //   transition: opacity $medium $ease-in;
+  // }
+
+  // SIBLINGS
+  & + & {
+    margin-left: 1rem;
+  }
+
+  // CHILDS
+  &__icon {
+    width: 2.3125rem;
+    height: 0.875rem;
+    transform: translate3d(0.75rem, 0.0625rem, 0);
+    transition: transform $medium $delay $ease-in;
+    fill: currentColor;
+  }
+
+  // MODIFERS
+  &--sm {
+    padding: rem(1.5px 8px);
+    font-size: rem(14px);
+  }
+
+  &--xs {
+    font-size: 0.75rem;
+
+    #{$this}__icon {
+      width: 2rem;
+      height: 0.5rem;
+    }
+  }
+
+  &--block {
+    width: 100%;
+    .button__icon {
+      margin-left: auto;
+    }
+  }
+
+  &--icon {
+    min-width: 13.875rem;
+    padding-right: 1.625rem;
+    justify-content: space-between;
+  }
+  &--invert {
+    display: inline-flex;
+    min-width: inherit;
+  }
+}
+
+// CREATES THE MODIFERS
+@each $class, $styles in $BUTTONS {
+  // @warn $styles;
+
+  .button--#{$class} {
+    @include buttonStyles(
+      map-get($styles, 'frontColor'),
+      map-get($styles, 'borderColor'),
+      map-get($styles, 'backgroundColor'),
+      map-get($styles, 'backgroundHoverColor')
+    );
+  }
+}
+
+.button--link {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 0.875rem;
+  color: var(--primary-color);
+}
+
+.button--link-icon {
+  min-width: rem(192px);
+  margin: 0;
+  padding-left: 0;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-size: rem(14px);
+  color: var(--black-color);
+
+  &:hover {
+    color: var(--primary-color-hover);
+
+    .button__icon {
+      transform: translateX(1rem);
+    }
+
+    span {
+      background-size: 100% 1px;
+    }
+  }
+
+  span {
+    @include fx-underline(var(--primary-color-hover), 1px);
+    padding-bottom: 0.0625rem;
+  }
+
+  > .button__icon {
+    width: rem(26px);
+    height: rem(10px);
+    transform: translateX(0.75rem);
+    vertical-align: middle;
+    transition: transform $medium $ease-out;
+    fill: inherit;
+  }
+
+}

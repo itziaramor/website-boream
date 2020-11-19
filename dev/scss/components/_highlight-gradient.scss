@@ -1,0 +1,90 @@
+.highlight-gradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+  @include mq($from: tablet) {
+    padding-bottom: 6rem;
+  }
+  
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 13.4375rem;
+    background-color: var(--shadow-color);
+    position: absolute;
+    bottom: 0;
+    z-index: z(bottomless-pit);
+    
+    @include mq($from: tablet) {
+      height: 20rem;
+    }
+    
+    @include mq($from: desktop) {
+      position: static;
+      transform: translateY(6rem);
+    }
+    
+    @include mq($from: desktop_large) {
+      height: 29rem;
+    }
+  }
+  
+  &::before {
+    left: 0;
+    background: var(--light-gradient);
+  }
+  
+  &::after {
+    right: 0;
+  }
+  
+  // CHILDS
+  &__image {
+    // width: 115%;
+    margin-bottom: 6rem;
+    transform: translate(-10%, -20px);
+    
+    @include mq($from: tablet) {
+      margin-bottom: 0;
+      transform: translateY(-5rem);
+    }
+    
+    @include mq($from: desktop) {
+      position: absolute;
+      bottom: 10%;
+    }
+    @include mq($from: desktop_large) {
+      width: auto;
+      height: auto;
+      bottom: 12rem;
+      transform: none;
+    }
+  }
+  
+  // CACHE THIS
+  // .highlight-flat
+  $this: &;
+
+  // Modifier
+  &--hide {
+    &::before,
+    &::after {
+      background: var(--white-color);
+    }
+  }
+  
+  &--center {
+    #{$this}__image {
+      transform: translate(0, -20px);
+      
+      @include mq($from: tablet) {
+        margin-bottom: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+}

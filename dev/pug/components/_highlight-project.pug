@@ -1,0 +1,35 @@
+//- CONFIG FEATURES
+-
+  var HIGHLIGHT_PROJECT = {
+    image: {
+      src: "assets/images/dummy/apple-watch-02.png",
+      alt: "",
+      srcset: ""
+    },
+    title: "Nexum_ Nueva plataforma móvil para información y gestión de clientes",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+    link: {
+      url: "https://www.misoficinas.es/",
+      name: "Ver proyecto"
+    }
+  }
+
+
+section.highlight-project
+  div.wrapper
+    div.highlight-project__figure
+      img.highlight-project__image(src= HIGHLIGHT_PROJECT.image.src, alt= HIGHLIGHT_PROJECT.image.alt, srcset= HIGHLIGHT_PROJECT.image.srcset)
+
+    div.highlight-project__info
+      if HIGHLIGHT_PROJECT.title
+        h2.highlight-project__title= HIGHLIGHT_PROJECT.title
+
+      if HIGHLIGHT_PROJECT.text
+        p.highlight-project__text= HIGHLIGHT_PROJECT.text
+
+      if HIGHLIGHT_PROJECT.link
+        div
+          a.wrapper-button(href= HIGHLIGHT_PROJECT.link.url, target="_blank")
+            span.button.button--icon.button--secondary= HIGHLIGHT_PROJECT.link.name
+              svg.button__icon
+                use(xlink:href='assets/images/boream-sprite.svg#arrow')

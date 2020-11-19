@@ -1,0 +1,66 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var LEGACY = {
+      header: {
+        image: {
+          modifier: "header-image--bgimage header-image--bgimage-alt",
+          bgImage: true,
+          headerImageTitle: "Uso de cookies"
+        },
+        title: "Una cookie es un archivo de texto que se almacena en el ordenador o dispositivo móvil mediante un servidor Web y permiten al Sitio Web recordar preferencias de navegación y navegar de manera eficiente. Las cookies hacen la interacción entre el usuario y el sitio Web más rápida y fácil.",
+      },
+      sections: [
+        {
+          title: "Tipos de cookies",
+          text: [
+            "En este sitio web utilizamos diferentes tipos de cookies:"
+          ],
+          list: [
+            "<strong>Cookies propias</strong><br />Son aquellas cookies que se envían al equipo terminal del usuario desde un equipo o dominio gestionado por el propio editor y desde el que se presta el servicio solicitado.",
+            "<strong>Cookies de terceros</strong><br />Son aquellas cookies que se envían al equipo terminal del usuario desde un equipo o dominio que no es gestionado por el editor, sino por otra entidad que trata los datos obtenidos través de las cookies.",
+            "<strong>Cookies de análisis</strong><br />Son las cookies que bien tratadas por nosotros o por terceros, nos permiten cuantificar el número de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio ofertado."
+          ]
+        },
+        {
+          title: "¿Qué cookies utilizamos?",
+          text: [
+            "A continuación, se indican las cookies que utilizamos en este sitio web. Como usuario, debes asegurarte de que estás conforme con ellas antes de seguir navegando."
+          ],
+          table: {
+            description: "Tabla que describe el tipo de cookies que utiliza esta página web",
+            theading: ["Cookie", "Proveedor", "Duración", "Finalidad"],
+            tbody: [
+              ["Nombre_de_cookie", "Propia", "Sesión", "Navegación"],
+              ["Nombre_de_cookie", "Google", "2 años", "Analítica"],
+              ["Nombre_de_cookie", "Propia", "3 meses", "Las descripciones un poco más largas crecen de foma vertical en la celda hasta el número de líneas que se necesiten."],
+              ["Nombre_de_cookie", "Propia", "Sesión", "El visitante acepta las cookies"],
+            ]
+          }
+        },
+        {
+          title: "¿Cómo puedes gestionar las cookies en tu navegador?",
+          text: [
+            "Como usuario tienes la posibilidad de configurar tu navegador para impedir la entrada de cookies, bloquearlas o, en su caso, eliminarlas. En el caso de que decidas bloquearlas, Boream no garantiza el correcto funcionamiento de los servicios prestados en este sitio web. Por favor consulta las instrucciones y manuales de tu navegador para ampliar esta información:",
+            "También puedes dirigirte al portal <a href='https://www.youronlinechoices.eu/' rel='nofollow'>Your Online Choices</a> dónde además de encontrar información útil, podrás configurar, proveedor por proveedor, tus preferencias sobre las cookies publicitarias de terceros.",
+            "Ten en cuenta que en todo caso las cookies tienen un carácter temporal con la finalidad de hacer más eficaz su transmisión ulterior. En ningún caso se utilizará cookies para recoger información de carácter estrictamente personal."
+          ],
+          list: [
+            "<strong>Chrome</strong><br />Configuración > Mostrar opciones avanzadas > Privacidad > Configuración del contenido.<br /><a href='#'>Borrar, habilitar y administrar cookies en Chrome</a>",
+            "<strong>Firefox</strong><br />Herramientas > Opciones > Privacidad > Historial > Configuración Personalizada<br /><a href='#'>Cookies y caché en Firefox</a>",
+            "<strong>Internet Explorer</strong><br />Herramientas > Opciones de Internet > Privacidad > Configuración<br /><a href='#'>Eliminar y administrar cookies en Internet Explorer</a>",
+            "<strong>Microsoft Edge</strong><br />Más > Configuración > Configuración avanzada > Privacidad y servicios > Cookies<br /><a href='#'>Datos de navegación y privacidad en Edge</a>",
+            "<strong>Safari</strong><br />Preferencias > Privacidad<br /><a href='#'>Gestionar cookies y datos de sitios web en Safari</a>",
+          ]
+        },
+        {
+          title: "Actualizaciones y cambios  en la política de cookies",
+          text: [
+            "Boream puede modificar el uso de cookies en función de exigencias legislativas o sus propios criterios, por ello se aconseja a los usuarios que visiten de manera periódica la presente página donde se mantendrá actualizado el uso de cokkies que se realice."
+          ],
+        }
+      ]
+    }
+  +legacy(LEGACY)

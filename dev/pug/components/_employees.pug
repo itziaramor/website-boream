@@ -1,0 +1,51 @@
+//- EMPLOYEES CONFIG
+-
+  var EMPLOYEES = [
+    {
+      image: {
+        src: "assets/images/dummy/employees-02.jpg",
+        alt: "",
+        srcset: ""
+      }
+    },
+    {
+      image: {
+        src: "assets/images/dummy/employees-01.jpg",
+        alt: "",
+        srcset: ""
+      }
+    },
+    {
+      image: {
+        src: "assets/images/dummy/employees-01.jpg",
+        alt: "",
+        srcset: ""
+      }
+    },
+    {
+      image: {
+        src: "assets/images/dummy/employees-01.jpg",
+        alt: "",
+        srcset: ""
+      }
+    }
+  ]
+
+mixin employeesGallery(obj)
+  ul.employees__pics
+    each item in obj
+      li
+        img.employees__pics__image(src= item.image.src, alt= item.image.alt, srcset= item.image.srcset)
+
+section.employees
+  h2.sr-only Expertos Boream
+
+  +employeesGallery(EMPLOYEES)
+
+  div.employees__info
+    div.employees__info__wrapper.is-active
+      //- svg.employees__info__image
+        use(xlink:href="assets/images/boream-sprite.svg#demo")
+      h3.employees__info__role User Experience
+      p.employees__info__name Guillermo Alonso del Real
+      p.employees__info__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

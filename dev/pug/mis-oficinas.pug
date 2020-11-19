@@ -1,0 +1,148 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var PROJECT = {
+      sourceDesktop: "assets/images/projects/AYRE_Cabecera_Desktop.jpg",
+      sourceTablet: "assets/images/projects/AYRE_Cabecera_Tablet.jpg",
+      sourceMobile: "assets/images/projects/AYRE_Cabecera_Mobile.jpg",
+      nav: {
+        prev: {
+          name: "Proyecto",
+          url: ""
+        },
+        next: {
+          name: "Proyecto",
+          url: ""
+        }
+      },
+      title: "Mis oficinas. Reposicionamiento de marca on-line y diseño de interfaz",
+      text: [
+        "Mis Oficinas confió en Boream para el rediseño del interfaz de su portal inmobiliario especializado en el alquiler y venta de oficinas. Un elemento clave del proyecto fué el rediseño de su logotipo y el pautado general de su identidad visual online. "
+      ],
+      categories: [
+        "UX",
+        "UI",
+        "FRONTEND",
+      ],
+      link: {
+        url: "https://www.misoficinas.es/",
+        name: "www.misoficinas.es"
+      }
+    }
+  +project(PROJECT)
+
+  section.brand
+    div.wrapper
+      //- BRAND CONTENT CONFIGURATION
+      -
+        var BRAND_CONTENT = {
+          heading: "Marcas con capacidades responsivas",
+          text: "El rediseño del logotipo de Mis Oficinas, claramentre orientado a dispositivos digitales, pasó por la realización de diversas versiones que compartían un enfoque arquitectónico del imagotipo así como versiones responsivas del logotipo."
+        }
+      +brandContent(BRAND_CONTENT)
+
+      div.brand__logos
+        //- BRAND LIST CONFIGURATION
+        -
+          var BRAND_LIST = [
+            {
+              src: "assets/images/brand/brand-01.png"
+            },
+            {
+              src: "assets/images/brand/brand-02.png"
+            },
+            {
+              src: "assets/images/brand/brand-03.png"
+            },
+            {
+              src: "assets/images/brand/brand-04.png"
+            }
+          ]
+        +brandList(BRAND_LIST)
+
+        //- BRAND LIST CONFIGURATION
+        -
+          var BRAND_LIST02 = [
+            {
+              src: "assets/images/brand/brand-05.png"
+            },
+            {
+              src: "assets/images/brand/brand-06.png"
+            },
+            {
+              src: "assets/images/brand/brand-07.png"
+            },
+            {
+              src: "assets/images/brand/brand-08.png"
+            }
+          ]
+        +brandList(BRAND_LIST02)
+
+  -
+    var HIGHLIGHTIMAGE = {
+      modifier: 'highlight-image--img highlight-image--reverse',
+      gradient: {
+        start: "#464646",
+        end: "#464646"
+      },
+      image: {
+        src: "highlight-image-045.jpg",
+        srcset: "",
+        alt: "",
+      },
+      logo: [{
+        src: "logos/boream.svg"
+      }],
+      text: "El sector inmobiliario en internet ofrece un entorno altamente competitivo con marcas firmemenete posicionadas. El reto en el diseño de Mis Oficinas consistión en establecer una identidad visual diferencial, claramenrte reconocible y que trasladara eficazmente la calidad en su propuesta comercial."
+    }
+  +highlightImage(HIGHLIGHTIMAGE)
+
+  -
+    var FULLIMAGE = {
+      image: {
+        src: "assets/images/dummy/full-image-02.jpg",
+        alt: "",
+        srcset: ""
+      }
+    }
+  +fullImage(FULLIMAGE)
+
+  -
+    var TESTIMONIAL = {
+      color: "#efd0d1",
+      image: {
+        src: "person-02.png",
+        srcset: "",
+        alt: "",
+      },
+      cite: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+      name: "Quique Sánchez Flores",
+      role: "CTO de Digital Marketing"
+    };
+  +testimonial(TESTIMONIAL)
+
+  -
+    var COLS = {
+      heading: "Elementos clave del proyecto",
+      cols: [
+        {
+          title: "Branding",
+          text: "Todo el proyecto gravita alrededor de una clara estatégia de creación y posicionamiento de marca, siendo ésta el eje visual sobre el que se articula el diseño de interfaz."
+        },
+        {
+          title: "Orientación a negocio",
+          text: "Se diseña un interfaz de usuario claramenbte orientado a la localización y filtrado de los producto inmobiliarios de Mis oficinas. La máxima premisa es la de la facilidad de uso y la aportación de valor en el proceso de navegación."
+        },
+        {
+          title: "Consistencia visual",
+          text: "Se establecen jerarquías visuales y se promueve un uso consistente de los elementos gráficos (imágenes, tipografía, elementos de interacción, … ). Esto refuerza los valores de marca y facilita la usabilidad del sistema. "
+        }
+      ]
+    }
+  +cols(COLS)
+
+
+  include components/_post-image
+

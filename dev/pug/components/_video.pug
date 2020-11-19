@@ -1,0 +1,41 @@
+mixin video(OBJ)
+
+  include _modal
+
+  -
+    var DEFAULT = {
+      image: {
+        src: "assets/images/projects/video/video-01.png",
+        alt: "",
+        srcset: ""
+      },
+      modal: {
+        id: "modal-video",
+        modifier: "modal--video",
+        type: 'video',
+        src: "http://v2v.cc/~j/theora_testsuite/320x240.ogg",
+        video: "play"
+      },
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      text: "Lorem ipsum dolet"
+    }
+
+  - var OBJ = OBJ || DEFAULT;
+
+  section.video
+    figure.video__figure
+      img.video__image(src= OBJ.image.src, alt= OBJ.image.alt, srcset= OBJ.image.srcset)
+      button.video__button.video__button--mb.js-modal(data-modal="#modal-video")
+        div.video__button__wrapper
+          svg.video__button__icon
+            use(xlink:href="assets/images/boream-sprite.svg#play")
+    div.video__wrapper
+      h2.video__title= OBJ.title
+      p.video__text= OBJ.text
+      button.video__button.video__button--dk.js-modal(data-modal="#modal-video")
+        div.video__button__wrapper
+          svg.video__button__icon
+            use(xlink:href="assets/images/boream-sprite.svg#play")
+        span.video__button__label Ver vídeo
+
+    +modal(OBJ.modal)

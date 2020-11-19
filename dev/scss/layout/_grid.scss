@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  max-width: var(--wrapper-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.25rem;
+  overflow: hidden;
+
+  @include mq($from: desktop) {
+    padding: 0;
+  }
+}

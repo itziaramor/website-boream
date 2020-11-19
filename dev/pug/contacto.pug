@@ -1,0 +1,44 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var CONTACT = {
+      headerPage: {
+        modifier: "header-page--alt-color",
+        boream: true,
+        name: " Contact",
+        intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+      },
+      headerImage: {
+        sourceDesktop: "assets/images/contact-header.jpg",
+        sourceTablet: "assets/images/contact-header-md.jpg",
+        sourceSmartphone: "assets/images/contact-header-sm.jpg"
+      },
+      join: {
+        wrapper: "join__wrapper",
+        heading: "Contacto",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        button: "Contáctanos"
+      }
+    }
+  +contact(CONTACT)
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--full description--img-center",
+        bgimage: "assets/images/dummy/background-02.png",
+        columns: [
+          {
+            title: "Formamos profesionales<br/> para el sector tecnológico",
+            subtitle: false,
+            text: [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+            ]
+          }
+        ],
+        action: "Ver más"
+      }
+    ]
+  +description(DESCRIPTION)

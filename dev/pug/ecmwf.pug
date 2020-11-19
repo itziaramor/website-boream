@@ -1,0 +1,175 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var PROJECT = {
+      modifier: "project--dark",
+      sourceDesktop: "assets/images/projects/AYRE_Cabecera_Desktop.jpg",
+      sourceTablet: "assets/images/projects/AYRE_Cabecera_Tablet.jpg",
+      sourceMobile: "assets/images/projects/AYRE_Cabecera_Mobile.jpg",
+      nav: {
+        prev: {
+          name: "Proyecto",
+          url: ""
+        },
+        next: {
+          name: "Proyecto",
+          url: ""
+        }
+      },
+      title: "ECMWF: Annual Reports",
+      text: [
+        "En el ámbito de los proyectos internacionales de Boream, colaboramos con ECMWF en el diseño y desarrollo de la versión web de su Annual Report."
+      ],
+      categories: [
+        "UX",
+        "diseño visual",
+        "desarrollo frontend",
+        "desarrollo drupal",
+      ],
+      link: {
+        url: "https://annualreport.ecmwf.int/",
+        name: "annualreport.ecmwf.int"
+      }
+    }
+  +project(PROJECT)
+
+  -
+    var DESCRIPTIONIMAGE = {
+      modifier: "description--image",
+      logo: [
+        {
+          src: "assets/images/projects/project-04-logo.png",
+          alt: ""
+        },
+        {
+          src: "assets/images/projects/project-04-logo.png",
+          alt: ""
+        }
+      ],
+      title: "ECMWF: Advancing Weather Science.",
+      titleModifier: "description__column__title--sm",
+      text: [
+        "El European Centre for Medium-range Weather Forecast, es una organización independiente intergubernamental soportada por 34 países, con 350 profesionales y con sede en U.K.",
+        "Está dedicada a la investigación científica, enseñanza y difusión de modelos numéricos sobre predicciones meteorológicas, ofreciendo capacidades de supercomputación a sus países miembros.",
+        "Junto a las organizaciones NATO, Consejo de Europa o la Agencia Espacial Europea, es uno de los 6 miembros de Co-ordinated Organisations."
+      ],
+      image: {
+        src: "assets/images/projects/highlight-images/highlight-image-040.png",
+        alt: "",
+        modifier: "description__column__image--custom"
+      }
+    }
+  +descriptionImage(DESCRIPTIONIMAGE)
+
+  -
+    var HIGHLIGHTIMAGE = {
+      modifier: "highlight-image--order",
+      gradient: {
+        start: "#155882",
+        end: "#155882"
+      },
+      image: {
+        src: "highlight-image-041.jpg",
+        srcset: "",
+        alt: "",
+      },
+      logo: [
+        {
+          src: "project-1-logo.svg",
+          srcset: "",
+          alt: "",
+          width: 49,
+          height: 39
+        },
+        {
+          src: "project-1-logo.svg",
+          srcset: "",
+          alt: "",
+          width: 49,
+          height: 39
+        }
+      ],
+      text: "El equipo de proyecto de Boream dispuso los entornos de Desarrollo y Testing basados en la máquina Docker facilitada por ECMWF, para de esta manera disponer del mismo contexto de configuración de servidor e instancia Drupal que se disponen en los entornos de Staging y Producción."
+    }
+  +highlightImage(HIGHLIGHTIMAGE)
+
+  -
+    var STEPS = {
+      heading: "Boream es un colaborador habitual de ECMWF en sus productos digitales basados en tecnologías Opensource Drupal, y esta ocasión nos requieren con los siguientes objetivos:",
+      steps: [
+        {
+          title: "UX",
+          text: "Definir estructuras de páginas que posibiliten integrar un tipo de contenido pensado para una edición papel. Al mismo tiempo, plantear un mecanismo de navegación que facilite su consulta y fomente su indexación.",
+          modifier: "steps__numeral--blue"
+        },
+        {
+          title: "Diseño visual",
+          text: "Partiendo de la edición papel y aplicando la Guía de Estilo de ECMWF, evolucionar y potenciar la Linea Gráfica para esta versión web, con una correcta adaptación a dispositivos móviles, tablets y desktop.",
+          modifier: "steps__numeral--blue"
+        },
+        {
+          title: "Desarrollo Frontend",
+          text: "Desarrollar una interfaz de usuario que sea accesible (según WAI), e implementada de forma que favorezca su posicionamiento en buscadores (SEO).",
+          modifier: "steps__numeral--blue",
+        },
+        {
+          title: "Desarrollo Drupal",
+          text: "Integrar la nueva solución propuesta, en el actual framework Drupal de ECMWF atendiendo a unas estrictas pautas de seguridad.",
+          modifier: "steps__numeral--blue"
+        }
+      ]
+    }
+  +steps(STEPS)
+
+  -
+    var FULLIMAGE = {
+      modifier: "full-image--strip-blue",
+      image: {
+        src: "assets/images/projects/highlight-images/highlight-image-042.jpg",
+        alt: "",
+        srcset: ""
+      }
+    }
+  +fullImage(FULLIMAGE)
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--onetext",
+        logo: {
+          src: "assets/images/projects/highlight-images/highlight-image-044.svg",
+          width: "44",
+          alt: ""
+        },
+        columns: [
+          {
+            modifier: "description__column--full ",
+            title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+            text: [
+              "Además de un renovado sistema de plantillaje para el Annual Report, se evolucionó el modelo de tipos de contenido y sistema de taxonomías existente, propagándose todos estos desarrollos basándonos en herramientas GIT y los procesos de migración de configuración de Drupal."
+            ]
+          },
+          {
+            modifier: "description__column--full pt-0",
+            text: [
+              "Como resultado se definió y desarrolló un nuevo sistema Drupal que facilita la publicación web de Annual Reports para los años sucesivos, cumpliendo con los objetivos iniciales planteados por ECMWF.",
+              "Más allá de este caso concreto, la colaboración de Boream con ECMWF continúa desarrollándose en forma de sucesivos proyectos, siendo esta una relación ampliamente integrada y satisfactoria para ambas partes."
+            ]
+          }
+        ]
+      }
+    ]
+  +description(DESCRIPTION)
+
+  -
+    var FULLIMAGE = {
+      modifier: "full-image--border-top",
+      image: {
+        src: "assets/images/projects/highlight-images/highlight-image-043.jpg",
+        alt: "",
+        srcset: ""
+      }
+    }
+  +fullImage(FULLIMAGE)

@@ -1,0 +1,190 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var PROJECT = {
+      image: {
+        src: "assets/images/dummy/project-01.png",
+        alt: "",
+        srcset: ""
+      },
+      nav: {
+        prev: {
+          name: "Proyecto 1",
+          url: ""
+        },
+        next: {
+          name: "Proyecto 3",
+          url: ""
+        }
+      },
+      title: "Rediseño de interfaz de usuario<br>para Mis Oficinas.es",
+      text: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+        "Lorem ipsum amet, consectetur adipiscing elit."
+      ],
+      categories: [
+        "arquitectura de información",
+        "diseño de marca",
+        "diseño de interfaz",
+        "desarrollo de interfaz",
+      ],
+      link: {
+        url: "https://www.misoficinas.es/",
+        name: "WWW.MISOFICINAS.ES"
+      }
+    }
+  +project(PROJECT)
+
+  include components/_highlight-project
+  include components/_image
+  include components/_tabs
+  include components/_aside
+
+  -
+    var COLS = {
+      bgimage: "lkafssjf",
+      heading: "Elementos clave del proyecto",
+      cols: [
+        {
+          title: "Design Thinking",
+          text: "Para alcanzar el objetivo el objetivo perseguido en la Deﬁnición de la nueva Interfaz de Usuario y Modelo de Interacción se emplean metodologías de Diseño Centrado en el Usuario y métodos de Design Thinkg."
+        },
+        {
+          title: "Angular & Drupal",
+          text: "Desarrollo del frontal en Ángular, integrado mediante el consumo de datos a través de la capa de WebServices RESTFULL. Backofﬁce Drupal 8.0, Performance y Securización."
+        },
+        {
+          title: "Metodología agil",
+          text: "Durante la fase de desarrollo se aplicará metodologías ágiles para optimizar al máximo los tiempos de desarrollo."
+        }
+      ]
+    }
+  +cols(COLS)
+
+  -
+    var STEPS = {
+      heading: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      subheading: " Lorem ipsum doloret, caloret",
+      steps: [
+        {
+          title: "Conocimiento",
+          text: "Se realiza un trabajo de campo con áreas internas de AEQ y sus clientes. Se mantienen entrevistas individuales y grupales, se realiza un profundo benchmarking del sector y se pone en común con la dirección de AEQ todo lo  observado hasta el momento. Se recogen los valores de marca necesarios para llevar a cabo el plan de impulso de la misma."
+        },
+        {
+          title: "Definición",
+          text: "Con la información recogida y puesta en común, así como con los inputs que nos ha dado el benchmarking,  pasamos a deﬁnir el concepto de lo que debe ser el nuevo web de AEQ Energía. Una vez creado un concepto incial, se  matienen diversas sesiones de co-creación para mejorarlo y adecuarlo a las necesidades de AEQ y de sus Clientes. Se crea el marco con las bases de marca del nuevo proyecto."
+        },
+        {
+          title: "Creación",
+          text: "Se desarrolla el Modelo de Interacción y se aplica a prototipos  o mockups. A medida que se van validando los contenidos y funcionalidad de los  mockups, se va aplicando la capa de diseño visual. En este punto se trabaja con las premisas de facilitar a los clientes la comprensión de unos productos con cierta complejidad y de crear un sistema multiplataforma y multidispositivo."
+        },
+        {
+          title: "Desarrollo",
+          text: "Se trabaja sobre Drupal como solución de backofﬁce ya que se havisto que se adapta a las necesidades actuales y futuras (previstas para siguientes fases ) que AEQ Energía requiere en sus portales. La versión escogida es Drupal 8, dotada con capacidades multi-idoma y facilidades de edición WYSIWYG para la gestión de contenidos."
+        }
+      ]
+    }
+  +steps(STEPS)
+
+  +quote
+
+  include components/_full-image-carousel
+
+  +video
+
+  -
+    var SHORTCUTS = {
+      items: [
+        {
+          icon: "demo",
+          title: "Análisis y definición",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+        }, {
+          icon: "demo",
+          title: "User Experience",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }, {
+          icon: "demo",
+          title: "Desarrollo tecnológico",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
+    }
+  +shortcuts(SHORTCUTS)
+
+  -
+    var TESTIMONIAL = {
+      color: "#efd0d1",
+      image: {
+        src: "person-02.png",
+        srcset: "",
+        alt: "",
+      },
+      cite: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+      name: "Quique Sánchez Flores",
+      role: "CTO de Digital Marketing"
+    };
+  +testimonial(TESTIMONIAL)
+
+  //- -
+  //-   var FULLWIDTH = {
+  //-     image: {
+  //-       src: "assets/images/dummy/project-011.png",
+  //-       alt: "",
+  //-       srcset: ""
+  //-     },
+  //-     title: "Rediseño de interfaz de usuario",
+  //-     text: [
+  //-       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+  //-     ]
+  //-   };
+  //- +fullWidth(FULLWIDTH)
+
+  article.post
+
+    -
+      var POSTHEADER = {
+        categories: [
+          ["Categoría número uno", "/"],
+          ["Febrero 2019", "demo.html"]
+        ],
+        heading: "Aric Dromi: \"No hay que centrarse solo en las herramientas sino en su función\"",
+        nav: ["/", "post.html"]
+      }
+    +postHeader(POSTHEADER)
+
+    include components/_post-content
+
+    -
+      var POSTS = {
+        heading: "Menos insights",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        link: {
+          url: "blog",
+          text: "Ver todos"
+        },
+        posts: [
+          {
+            url: "assets/images/post/post-1.png",
+            alt: "post 1", category: "INFORME USER EXPERIENCE",
+            title: "Enfoque estratégico de proyectos salta a dos líneas",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+          },
+          {
+            url: "assets/images/post/post-2.png",
+            alt: "post 2", category: "USER EXPERIENCE",
+            title: "Enfoque estratégico de proyectos",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+          },
+          {
+            url: "assets/images/post/post-1.png",
+            alt: "post 3", category: "ECOMMERCE",
+            title: "Enfoque estratégico de proyectos",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+          }
+        ]
+      };
+    +posts(POSTS)
+

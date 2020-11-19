@@ -1,0 +1,202 @@
+// Reference:
+// https://bitsofco.de/linting-html-using-css/
+
+// ---------
+// DEV ALERT
+// ---------
+// Alerta para mensajes de desarrollo
+
+.dev {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: var(--white-color);
+    text-align: center;
+    background: $dev;
+    border-bottom: 3px solid darken($dev,10%);
+    border-radius: 0.25rem;
+
+    &:hover {
+      background: lighten($dev,5%);
+    }
+
+    &--img {
+      height: 260px;
+    }
+}
+
+
+// Inline Styles
+// --------------
+*[style] {
+    border: 5px solid $error;
+}
+
+
+// Faulty or Missing Link Targets
+// --------------
+// Not href
+// Blank href
+// Whitespace href
+// # href
+// nofollow
+// javascript:void(0)
+a:not([href]),
+a[href=""],
+a[href^=" "],
+a[href="#"],
+a[rel*="nofollow"],
+a[href*="javascript:void(0)"] {
+  outline: 2px solid $dev !important;
+  outline-offset: 3px !important;
+}
+
+
+// Unaccessible Images
+// -------------------
+// Images no alt setted
+// Images blank alt
+// Images no alt
+img[alt=""],
+img[alt^=" "],
+img:not([alt]) {
+  @include dev;
+}
+
+
+// Missing Document Language
+// -------------------
+// Not lang attribute
+// Not lang attribute setted
+html:not([lang]),
+html[lang=""] {
+  @include dev($dev-2);
+}
+
+
+// Empty elements
+// -------------------
+div:empty,
+// span:empty,
+li:empty,
+p:empty,
+td:empty,
+th:empty {
+  outline: 2px solid $error !important;
+  outline-offset: 3px !important;
+}
+
+
+// Empty attributes
+// -------------------
+*[title=""],
+*[class=""],
+*[id=""] {
+  outline: 2px solid $error !important;
+  outline-offset: 3px !important;
+}
+
+
+// Make visible HEAD tags
+//------------------------
+head,
+title:empty,
+link,
+meta {
+  display: block;
+}
+
+// Empty title
+title:empty::before {
+  content: "La etiqueta TITLE está vacía"
+}
+
+// link::before {
+//   content: "La página no tiene etiqueta <title>!"
+// }
+
+// title ~ link {display: none;}
+
+
+// Unaccessible Viewport Attributes
+//------------------------
+// Zoom is forbidden
+// Zoom max is setted
+// Zoom min is setted
+meta[name="viewport"][content*="user-scalable=no"],
+meta[name="viewport"][content*="maximum-scale"],
+meta[name="viewport"][content*="minimum-scale"] {
+  content: "Uso de viewport incorrecto";
+}
+
+
+// Incorrect Character Set
+//------------------------
+// Not first child
+// Not UTF-8
+meta[charset="UTF-8"]:not(:first-child),
+meta[charset]:not([charset="UTF-8"]) {
+  content: "Falta charset";
+}
+
+
+// Description empty
+//------------------------
+// Empty or blank
+meta[name="description"][content=""]::before,
+meta[name="description"][content=" "]::before {
+  content: "Falta la metadescription del site";
+}
+
+
+// Unlabelled Form Elements
+// -----------------------
+// input w/o id
+// select w/o id
+// textarea w/o id
+input:not([id]),
+select:not([id]),
+textarea:not([id]) {
+  @include dev($dev-3);
+}
+
+
+// Label w/o For attribute
+// -----------------------
+label:not([for]) {
+  @include dev($dev-3);
+}
+
+
+// Form Elements w/o name
+// -----------------------
+// input w/o name
+// select w/o name
+// textarea w/o name
+input:not([name]),
+select:not([name]),
+textarea:not([name]) {
+  @include dev($dev-3);
+}
+
+
+// Form w/o name neither id
+// -----------------------
+form:not([name]):not([id]) {
+  @include dev($dev);
+}
+
+
+// Empty interactive elements
+// -------------------------
+button:empty,
+a:empty {
+  @include dev($dev-1);
+}
+
+// Unnecessary or Deprecated Attributes
+// -------------------------
+script[type="text/javascript"],
+link[rel="stylesheet"][type="text/css"] {
+  @include dev($dev-3);
+}

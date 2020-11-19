@@ -1,0 +1,14 @@
+mixin highlightImage(OBJ)
+  section.highlight-image(class= OBJ.modifier)
+    div.highlight-image__figure
+      img.highlight-image__image(src= `assets/images/projects/highlight-images/${OBJ.image.src}`, alt= OBJ.image.alt, srcset= OBJ.image.srcset)
+
+    div.highlight-image__description(style= `--gradient-color-start:${OBJ.gradient.start};--gradient-color-end:${OBJ.gradient.end}`)
+      div.highlight-image__description__content
+        if OBJ.logo
+          div.highlight-image__logo-wrapper
+            each logoImage in OBJ.logo
+              img.highlight-image__logo(src= `assets/images/projects/${logoImage.src}`, alt= logoImage.alt, width= logoImage.width, height= logoImage.height)
+        else if OBJ.title
+          h2.highlight-image__title= OBJ.title
+        p.highlight-image__text= OBJ.text

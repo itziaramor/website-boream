@@ -1,0 +1,36 @@
+//- CREATES THE HIGHLIGHT FLAT SECTION W/ ITS CONFIG
+mixin highlightFlat(OBJ)
+
+  each item in OBJ
+    section(class="highlight-flat " + item.modifier)
+      div.wrapper
+        div.highlight-flat__item
+
+          if item.logo
+            img.highlight-flat__item__logo(src= `assets/images/projects/logos/${item.logo.src}`, alt= item.logo.alt)
+
+          if item.title
+            h2.highlight-flat__item__title= item.title
+
+          if item.subtitle
+            h3.highlight-flat__item__subtitle= item.subtitle
+
+          if item.text
+          p.highlight-flat__item__text= item.text
+
+          if item.link
+            a.button.button--invert.highlight-flat__item__link(href= item.link.url, target="_blank")= item.link.name
+              svg.button__icon
+                use(xlink:href='assets/images/boream-sprite.svg#arrow')
+
+        if item.image
+          img.highlight-flat__image(src= `assets/images/projects/highlight-images/${item.image.src}`, alt= item.image.alt, srcset= item.image.srcset)
+
+        if item.grid
+          ul.highlight-flat__grid
+
+            each child in item.grid
+              li.highlight-flat__grid__item
+                span.thumb(style= `--color: ${child.color}`)
+                strong= child.name
+                span= child.color

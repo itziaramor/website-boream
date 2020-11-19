@@ -1,0 +1,50 @@
+mixin modal(OBJ)
+
+  -
+    var DEFAULT = {
+      id: "modal-video",
+      modifier: "modal--info",
+      type: "info",
+      content: ""
+    }
+
+  - var OBJ = OBJ || DEFAULT;
+
+  div.modal(id= OBJ.id, class= OBJ.modifier)
+    div.modal__wrapper
+      button.modal__close.js-close
+        span.sr-only Cerrar ventana
+        svg(width="40", height="40")
+          use(xlink:href='assets/images/boream-sprite.svg#close')
+
+      div.modal__content
+        if OBJ.type === 'video'
+          video.modal__video(src= OBJ.src, controls, autoplay, playsinline)
+            Tu navegador no implementa el elemento #[code video]
+
+        else if OBJ.type === 'subscribe'
+          div.modal__content-form.active
+            h2 Subscríbete a Insights
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            form.modal__form(action="#")
+              div.modal__form__row
+                label(for="inputSubscribe") INTRODUCE TU EMAIL
+                input(id="inputSubscribe", type="email", required)
+              div.modal__form__row
+                label(for="inputSubscribe") INTRODUCE TU EMAIL
+                input(id="inputSubscribe", type="email", required)
+              div.modal__form__row
+                input(id="checkboxSubscribe", type="checkbox")
+                label(for="checkboxSubscribe") Acepto la #[a(href="#") política de privacidad] y de #[a(href="#") protección de datos]
+              p.modal__form__feedback
+              footer.modal__form__footer
+                button.button.button--icon.button--secondary(type="submit") Inscribirme en Insights
+                  svg.button__icon
+                    use(xlink:href='assets/images/boream-sprite.svg#arrow')
+          
+          div.modal__content-message
+            h2 Bienvenido a Insights
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+
+        else
+          div No existe tipo definido para esto

@@ -1,0 +1,56 @@
+doctype html
+
+html(lang='es')
+
+  include includes/head
+
+  block vars
+  body(class= bodyClassName)
+
+    //- MIXINS
+    include ../components/_hero
+    include ../components/_dist
+    include ../components/_project
+    include ../components/_full-image
+    include ../components/_description
+    include ../components/_description-image
+    include ../components/_cols
+    include ../components/_brand-list
+    include ../components/_brand-content
+    include ../components/_steps
+    include ../components/_social
+    include ../components/_highlight-gradient
+    include ../components/_highlight-flat
+    include ../components/_highlight-image
+    include ../components/_testimonial
+    include ../components/_full-width
+    include ../components/_quote
+    include ../components/_video
+    include ../components/_shortcuts
+    include ../components/_cases-grid
+
+    include ../components/_insights
+    include ../components/_post-header
+    include ../components/_posts
+    include ../components/_header-page
+    include ../components/_header-image
+    include ../components/_talent
+    include ../components/_talent-data
+    include ../components/_join-form
+    include ../components/_legacy
+    include ../components/_contact
+    include ../components/_users-voice
+    include ../components/_learning
+    include ../components/_research
+
+    //- -------------------------------
+
+    include includes/header
+
+    main.site-container
+      block pagecontent
+
+      include ../components/_totop
+    include includes/footer
+
+    script(src="assets/js/scripts.js")

@@ -1,0 +1,110 @@
+.site-header {
+  flex: 0 0 auto;
+  width: 100%;
+  position: fixed;
+  z-index: z(header);
+  //background-color: var(--white-color);
+  transform: none;
+  transition: all 350ms $ease-out;
+  @include mq($from: desktop) {
+    padding: 2.85rem 0;
+  }
+
+  // States
+  &--bg {
+    background-color: var(--white-color);
+  }
+  &.is-hidden {
+    transform: translate3d(0, -100%, 0);
+  }
+  &.is-visible {
+    background-color: var(--white-color);
+  }
+  &.menu-is-open {
+    height: 100%;
+    transform: none;
+
+    @include mq($from: desktop) {
+      background-color: transparent;
+    }
+
+    > .wrapper {
+      height: 100vh;
+      background-color: var(--primary-color);
+      background-image: url('../images/menu/line-base.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: bottom;
+
+      @include mq($from: desktop) {
+        height: auto;
+        background: none;
+      }
+    }
+
+    .nav {
+      height: 46px;
+    }
+    .misc__social {
+      display: flex;
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+
+      @include mq($from: tablet) {
+        bottom: 2.4375rem;
+      }
+
+      a {
+        width: 34px;
+        height: 34px;
+        color: var(--primary-color);
+        background-color: var(--white-color);
+      }
+    }
+
+    .site-logo__figure--inactive {
+      display: none;
+    }
+
+    .site-logo__figure--active {
+      display: block;
+    }
+  }
+
+  // CHILDS
+  > .wrapper {
+    padding: 1.25rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq($from: desktop) {
+      padding: 0;
+      align-items: center;
+    }
+  }
+
+  .misc__social {
+    display: none;
+  }
+
+  // MODIFIERS
+  .is-case & {
+    background-color: transparent;
+
+    // States
+    &.is-hidden {
+      transform: translate3d(0, -100%, 0);
+    }
+    &.is-visible {
+      background-color: var(--white-color);
+    }
+    &.menu-is-open {
+      transform: none;
+
+      @include mq($from: desktop) {
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.totop {
+  width: 4.125rem;
+  height: 4.125rem;
+  padding: 1rem 1.125rem;
+  font-size: 1.125rem;
+  color: var(--white-color);
+  border: 0;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: (z(default) + 5);
+  opacity: 0;
+  //transform: scale(0.9) translate(0, 1.5rem);
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  transition: all $fast $linear;
+  display: none;
+  
+  @include mq($from: desktop) {
+    display: block;
+  }
+  
+  // STATES
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+  }
+  &.is-absolute {
+    position: absolute;
+  }
+  
+  &:hover,
+  &:focus {
+    color: var(--white-color);
+    background-color: hsla(0, 0%, 0%, 0.3);
+    
+    .totop__icon {
+      transform: rotate(-90deg) translateX(0.5rem);
+    }
+  }
+  
+  &__icon {
+    width: 1.875rem;
+    height: 0.9375rem;
+    fill: currentColor;
+    transform: rotate(-90deg);
+    transition: transform $medium $ease-out;
+  }
+}

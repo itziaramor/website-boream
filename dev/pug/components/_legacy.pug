@@ -1,0 +1,43 @@
+mixin legacy(OBJ)
+
+  article.legacy
+
+    if OBJ.header.image
+      +headerImage(OBJ.header.image)
+
+    div.generic-page
+      div.wrapper
+        h2.generic-page__intro= OBJ.header.title
+        div.generic-page__body
+
+          if OBJ.header.text
+            each item in OBJ.header.text
+              p= item
+
+          if OBJ.sections
+            each section in OBJ.sections
+              section.features
+                h3.features__heading= section.title
+
+                if section.text
+                  each text in section.text
+                    p!= text
+
+                if section.table
+                  p(hidden)#describeTable= section.table.description
+                  div.overflow-auto
+                    table(aria-describedby="describeTable")
+                      thead
+                        tr
+                          each theading in section.table.theading
+                            th= theading
+                      tbody
+                        each row in section.table.tbody
+                          tr
+                            each cell in row
+                              td!= cell
+
+                if section.list
+                  ul.features__list
+                    each item in section.list
+                      li.features__item!= item

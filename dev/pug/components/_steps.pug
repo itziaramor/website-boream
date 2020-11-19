@@ -1,0 +1,24 @@
+mixin steps(OBJ)
+  section.steps
+    div.wrapper
+      header.steps__header(class= OBJ.modifier)
+        if OBJ.logo
+          img.steps__image(src= OBJ.logo.src, alt=OBJ.logo.alt)
+
+        h2.steps__heading!= OBJ.heading
+
+        if OBJ.subheading
+          h3.steps__subheading= OBJ.subheading
+
+        if OBJ.text
+          p.steps__text= OBJ.text
+
+
+      ol.steps__list
+
+        each step in OBJ.steps
+          li
+            span.steps__numeral(class= step.modifier)
+            hr
+            h3.steps__title= step.title
+            p.steps__text= step.text

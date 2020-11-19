@@ -1,0 +1,31 @@
+.features {
+
+  &__heading {
+    border-bottom: 1px solid var(--shadow-color-dark);
+    margin-bottom: rem(18px);
+    padding-bottom: rem(7px);
+    font-size: rem(18px);
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin-bottom: rem(60px);
+    padding-left: rem(16px);
+    color: var(--shadow-color-darkest);
+    font-size: rem(14px);
+
+    @include mq($from: desktop_large) {
+      padding-left: rem(25px);
+    }
+  }
+
+  &__item {
+    line-height: 1.8;
+    list-style: initial;
+
+    + .features__item {
+      margin-top: rem(20px);
+    }
+  }
+
+}

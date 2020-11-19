@@ -1,0 +1,124 @@
+//- TABS NAV CONFIGURATION
+-
+  var TABS_NAV = [
+    {
+      id: 1,
+      name: "Tab tit 1"
+    },
+    {
+      id: 2,
+      name: "Tab title 2"
+    },
+    {
+      id: 3,
+      name: "Tab 3"
+    },
+    {
+      id: 4,
+      name: "Tab title 4"
+    }
+  ]
+
+//- TABS CONTENT CONFIGURATION
+-
+  var TABS_CONTENT = [
+    {
+      id: 1,
+      title: "Título de párrafo resumen",
+      text: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+      ],
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+    },
+    {
+      id: 2,
+      title: "Título de párrafo resumen",
+      text: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+      ]
+    },
+    {
+      id: 3,
+      title: "Título de párrafo resumen",
+      text: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+      ],
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+    },
+    {
+      id: 4,
+      title: "Título de párrafo resumen",
+      text: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+      ]
+    }
+  ]
+
+//- CREATES TABS NAV
+mixin tabsNav(obj)
+  ul
+    each item, idx in obj
+      li
+        button(data-tab= item.id, class= idx == 0 ? "tabs__nav__button is-active" : "tabs__nav__button")= item.name
+
+//- CREATES TABS CONTENT
+mixin tabsContent(obj)
+  each item, idx in obj
+    div(data-tab-content= item.id, class= idx == 0 ? "tabs__item is-active" : "tabs__item")
+      div.tabs__item__content
+        if item.title
+          h2.tabs__item__title= `${item.title} - ${item.id}`
+
+        each text in item.text
+          p.tabs__item__text= item.text
+
+      if item.quote
+        div.quote
+          p= item.quote
+
+
+section.tabs
+  div.wrapper
+    nav.tabs__nav
+      +tabsNav(TABS_NAV)
+
+    div.tabs__container
+      +tabsContent(TABS_CONTENT)
+
+script.
+  let TABS_NAV = document.querySelectorAll('.tabs__nav__button');
+  let TABS_ITEM = document.querySelectorAll('.tabs__item');
+
+  let currentTab = getCurrentTab();
+
+  function getCurrentTab() {
+      return document.querySelector('.tabs__nav__button.is-active').getAttribute('data-tab');
+  }
+
+  function updateCurrentTab() {
+      currentTab = getCurrentTab();
+  }
+
+  function toggleTabNavContent(id, obj) {
+      obj.forEach((item) => {
+          item.classList.remove('is-active');
+      });
+      obj[id].classList.add('is-active');
+  }
+
+  function toggleTab(id) {
+      if (id !== currentTab) {
+          id--;
+          toggleTabNavContent(id, TABS_NAV);
+          toggleTabNavContent(id, TABS_ITEM);
+          updateCurrentTab();
+      }
+  }
+
+  TABS_NAV.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        toggleTab(e.target.getAttribute('data-tab'));
+      });
+  })

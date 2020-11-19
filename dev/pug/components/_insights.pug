@@ -1,0 +1,48 @@
+mixin insightsHeader(OBJ)
+  section.insights
+    div.wrapper
+
+      include _header-page
+      +headerPage(OBJ.headerPage)
+
+      ul.category__list
+        each category in OBJ.categories
+          li
+            a(href="#")= category
+
+
+      button.button.button--icon.button--secondary.js-modal(data-modal="#modal-subscribe") Subscríbete a Insights
+        svg.button__icon(width="44", height="17")
+          use(xlink:href='assets/images/boream-sprite.svg#arrow')
+
+    a.insights-cover(href= OBJ.url)
+      picture.insights-figure
+        if OBJ.sourceDesktop
+          source(media="(min-width: 481px" srcset=OBJ.sourceDesktop)
+        if OBJ.sourceMobile
+          source(media="(max-width: 480px" srcset=OBJ.sourceMobile)
+        img(src= OBJ.sourceDesktop, alt="")
+      div.wrapper
+        article.insights-info
+          div.insights-info__block
+            svg(width="334.3", height="47.4")
+              use(xlink:href='assets/images/boream-sprite.svg#arrow-large')
+            ul.insights__categories
+              each category in OBJ.category
+                li= category
+              li= OBJ.date
+            h2.insights-info__title
+              span= OBJ.title
+          div.insights-info__block
+            p.insights-info__text= OBJ.text
+
+    -
+      var MODAL = {
+        id: "modal-subscribe",
+        modifier: "modal--subscribe",
+        type: "subscribe",
+      }
+
+    include _modal
+    +modal(MODAL)
+

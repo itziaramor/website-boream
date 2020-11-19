@@ -1,0 +1,47 @@
+extends templates/base
+
+block pagecontent
+  article.post
+
+    -
+      var POSTHEADER = {
+        categories: [
+          "Categoría número uno",
+          "Febrero 2019"
+        ],
+        heading: "Aric Dromi: \"No hay que centrarse solo en las herramientas sino en su función\"",
+        nav: ["/", "post.html"]
+      }
+    +postHeader(POSTHEADER)
+
+    include components/_post-content
+
+    -
+      var POSTS = {
+        modifier: "posts--list",
+        heading: "Más insights",
+        link: {
+          text: "Ver todos los insights"
+        },
+        posts: [
+          {
+            url: "assets/images/post/post-1.png",
+            alt: "post 1", category: "INFORME USER EXPERIENCE",
+            title: "Enfoque estratégico de proyectos salta a dos líneas",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+          },
+          {
+            url: "assets/images/post/post-2.png",
+            alt: "post 2", category: "USER EXPERIENCE",
+            title: "Enfoque estratégico de proyectos",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+          },
+          {
+            url: "assets/images/post/post-1.png",
+            alt: "post 3", category: "ECOMMERCE",
+            title: "Enfoque estratégico de proyectos",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+          }
+        ]
+      };
+    +posts(POSTS)

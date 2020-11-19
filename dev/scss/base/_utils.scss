@@ -1,0 +1,68 @@
+.dev {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: var(--white-color);
+  text-align: center;
+  background: $dev;
+  border-bottom: 3px solid darken($dev, 10%);
+  border-radius: 0.25rem;
+
+  &:hover {
+    background: lighten($dev, 5%);
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.noevents {
+  pointer-events: none;
+}
+
+.disabled {
+  transition: none;
+  color: var(--gray-color);
+  cursor: default;
+  pointer-events: none;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.overflow-default {
+  overflow: initial !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}

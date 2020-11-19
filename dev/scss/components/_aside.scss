@@ -1,0 +1,177 @@
+.aside {
+  padding: 0;
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0.0625rem;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 1;
+  }
+
+  @include mq($from: desktop_wide) {
+    &::before {
+      content: '';
+      display: block;
+      width: 4rem;
+      background-color: hsla(0, 0%, 0%, 0.37);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  // CHILDS
+  > .wrapper {
+    padding: 0;
+    position: relative;
+    z-index: z(default);
+  }
+
+  &__cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    color: var(--white-color);
+
+    > div {
+      padding: 3rem 0;
+
+      &:first-child {
+        background: url(../images/dummy/apple-watch.png) no-repeat 55vw 70px /
+          300px auto;
+      }
+
+      + div {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 100vw;
+          height: 0.0625rem;
+          background-color: rgba(255, 255, 255, 0.4);
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+        }
+      }
+
+      > * {
+        width: 80%;
+        padding: 0 1.25rem;
+      }
+    }
+
+    @include mq($from: tablet) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+
+      > div:nth-child(1) {
+        grid-column: span 4;
+        padding: 6rem 0 5rem;
+        background-size: 400px auto;
+        background-position: 60vw 70px;
+
+        .aside__subheading {
+          max-width: 30rem;
+        }
+      }
+      > div:nth-child(2),
+      > div:nth-child(3) {
+        grid-column: span 2;
+
+        &::before {
+          width: 50vw;
+        }
+      }
+
+      > div:nth-child(2) {
+        &::after {
+          content: '';
+          display: block;
+          width: 0.0625rem;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: -1.25rem;
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+    @include mq($from: desktop_large) {
+      > div:nth-child(1) {
+        grid-column: span 2;
+        background-position: 18vw 70px;
+      }
+      > div:nth-child(2),
+      > div:nth-child(3) {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        > * {
+          padding: 0;
+        }
+      }
+
+      > div:nth-child(2) {
+        &::before {
+          width: 0.0625rem;
+          height: 100%;
+        }
+        &::after {
+          right: 0;
+        }
+      }
+
+      > div:nth-child(3) {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .aside__heading {
+      font-weight: $ultralight;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    font-weight: $light;
+
+    @include mq($from: tablet) {
+      margin-bottom: 1rem;
+      font-size: 3rem;
+    }
+  }
+
+  &__subheading {
+    font-size: 1rem;
+    font-weight: $semibold;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: $semibold;
+  }
+
+  &__text {
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    font-weight: $regular;
+  }
+}

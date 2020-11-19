@@ -1,0 +1,22 @@
+// https://www.sitepoint.com/using-sass-maps/
+//
+//  Z-INDEX return key/value from MAP
+//
+//  --- USAGE:
+//
+//  .overlay {
+//    z-index: z(overlay);
+//  }
+//
+//  .element {
+//    z-index: (z(default) + 1);
+//  }
+
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}

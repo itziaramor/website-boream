@@ -1,0 +1,111 @@
+.career {
+  margin-bottom: rem(90px);
+  
+  &__heading {
+    border-bottom: 1px solid #979797;
+    margin-bottom: rem(42px);
+    padding-bottom: rem(12px);
+    font-size: rem(24px);
+    font-weight: $semibold;
+  }
+  
+  &__group {
+    display: grid;
+    grid-row-gap: 60px;
+    grid-column-gap: 30px;
+    border-bottom: 1px solid #979797;
+    padding-bottom: rem(42px);
+    + .career__group {
+      margin-top: rem(42px);
+    }
+    
+    @include mq($from: tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mq($from: desktop) {
+      grid-row-gap: initial;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: rem(53px);
+    height: rem(42px);
+    margin-bottom: rem(25px);
+    color: var(--primary-color);
+    font-size: rem(40px);
+    font-weight: $light;
+    
+    img {
+      max-width: 100%;
+      width: auto;
+    }
+  }
+  
+  &__title {
+    margin-bottom: rem(23px);
+    font-size: rem(18px);
+    text-transform: uppercase;
+  }
+  
+  &__item + &__item {
+    margin-top: 15px;
+  }
+  
+  &__link {
+    color: var(--black-color);
+    font-size: rem(14px);
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--primary-color-hover);
+      
+      .career__link-icon {
+        transform: translateX(1rem);
+      }
+
+      span {
+        background-size: 100% 1px;
+      } 
+    }
+    
+    span {
+      @include fx-underline(var(--primary-color-hover), 1px);
+      padding-bottom: 0.0625rem;
+    }
+    
+    > .career__link-icon {
+      transform: translateX(0.75rem);
+    }
+    
+  }
+  
+  &__link-icon {
+    width: 26px;
+    height: 10px;
+    margin-left: rem(15px);
+    vertical-align: middle;
+    transition: transform $medium $ease-out;
+  }
+  
+  // MODIFIER
+  &__group--wider {
+    @include mq($from: tablet) {
+      grid-template-columns: 1fr;
+      .career__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px 30px;
+      }
+      .career__item + .career__item {
+        margin-top: 0;
+      }
+    }
+    @include mq($from: desktop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

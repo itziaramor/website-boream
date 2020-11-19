@@ -1,0 +1,17 @@
+mixin fullWidth(OBJ)
+
+  section.full-width(class= OBJ.modifier)
+    div.wrapper
+      div.full-width__info
+        if OBJ.title
+          h2.full-width__title!= OBJ.title
+
+        if OBJ.subtitle
+          h3.full-width__subtitle= OBJ.subtitle
+
+        if OBJ.text
+          each p in OBJ.text
+            p.full-width__text= p
+
+    figure.full-width__figure
+      img.full-width__image(src= `assets/images/projects/highlight-images/${OBJ.image.src}`, alt= OBJ.image.alt, srcset= OBJ.image.srcset)

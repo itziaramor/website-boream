@@ -1,0 +1,40 @@
+.job {
+
+  &__header {
+    margin-bottom: rem(55px);
+
+    @include mq($from: tablet) {
+      margin-bottom: rem(100px);
+    }
+  }
+
+  &__heading {
+    margin-bottom: rem(25px);
+    font-size: rem(24px);
+    font-weight: $semibold;
+    line-height: 1.44;
+
+    @include mq($from: tablet) {
+      max-width: percentage(7 / 8);
+      font-size: rem(36px);
+    }
+    
+    @include mq($from: desktop) {
+      max-width: percentage(6 / 12);
+    }
+  }
+
+  &__intro {
+    font-size: rem(14px);
+    line-height: 1.86;
+
+    @include mq($from: tablet) {
+      max-width: percentage(7 / 8 );
+    }
+    
+    @include mq($from: desktop) {
+      max-width: percentage(8 / 12);
+    }
+  }
+
+}

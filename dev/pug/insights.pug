@@ -1,0 +1,114 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var INSIGHTSHEADER = {
+      headerPage: {
+        boream: true,
+        name: " Insights"
+      },
+      categories: [
+        "Todas las categorías",
+        "Categoría número uno",
+        "Categoría número dos",
+        "Categoría número tres",
+        "Categoría número cuatro",
+        "Categoría número cinco"
+      ],
+      sourceDesktop: "assets/images/dummy/insights-cover.png",
+      sourceMobile: "assets/images/dummy/insights-cover-mob.png",
+      category: ["categoría número uno", "categoría tre", "categoría dos"],
+      date: "febrero_2019",
+      title: "Aric Dromi: \"No hay que centrarse solo en las herramientas sino en su función\"",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet",
+      url: "#"
+    }
+  +insightsHeader(INSIGHTSHEADER)
+
+  -
+    var POSTS = {
+      posts: [
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 1", category: "INFORME USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos salta a dos líneas",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/post/post-2.png",
+          alt: "post 2", category: "USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+        },
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 3", category: "ECOMMERCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        }
+      ]
+    };
+  +posts(POSTS)
+
+  -
+    var CASES = [
+      {
+        url: "#",
+        image: {
+          src: "assets/images/dummy/cases-01.png",
+          alt: "",
+        }
+      },
+      {
+        url: "#",
+        image: {
+          src: "assets/images/dummy/cases-02.png",
+          alt: "",
+        }
+      }
+    ]
+  +casesGrid(CASES)
+
+  -
+    var POSTS = {
+      posts: [
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 1", category: "INFORME USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos salta a dos líneas",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/post/post-2.png",
+          alt: "post 2", category: "USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+        },
+        {
+          url: "assets/images/dummy/hero-09.png",
+          alt: "post 3", category: "ECOMMERCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/dummy/hero-08.png",
+          alt: "post 1", category: "INFORME USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos salta a dos líneas",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/dummy/hero-07.png",
+          alt: "post 2", category: "USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+        },
+        {
+          url: "assets/images/dummy/hero-05.png",
+          alt: "post 3", category: "ECOMMERCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        }
+      ]
+    };
+  +posts(POSTS)

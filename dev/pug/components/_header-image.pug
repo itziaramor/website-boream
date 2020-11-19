@@ -1,0 +1,16 @@
+mixin headerImage(OBJ)
+
+  if OBJ.bgImage
+  div.header-image(class= OBJ.modifier)
+    if OBJ.headerImageTitle
+      .wrapper
+        h1.header-image__title!= OBJ.headerImageTitle
+        h2.header-image__subtitle= OBJ.headerImageSubtitle
+
+    if OBJ.sourceDesktop
+      picture
+        if OBJ.sourceDesktop
+          source(media="(max-width: 768px" srcset=OBJ.sourceTablet)
+        if OBJ.sourceTablet
+          source(media="(max-width: 360px" srcset=OBJ.sourceSmartphone)
+        img(src=OBJ.sourceDesktop alt="")

@@ -1,0 +1,8 @@
+//- CREATES THE SOCIAL LINK LIST
+mixin social(className, obj)
+  ul(class= className)
+    each item in obj
+      li
+        a(href= item.url, target='_blank')
+          svg(class= item.name)
+            use(xlink:href= `assets/images/boream-sprite.svg#${item.name}`)

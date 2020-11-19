@@ -1,0 +1,151 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var PROJECT = {
+      sourceDesktop: "assets/images/projects/AYRE_Cabecera_Desktop.jpg",
+      sourceTablet: "assets/images/projects/AYRE_Cabecera_Tablet.jpg",
+      sourceMobile: "assets/images/projects/AYRE_Cabecera_Mobile.jpg",
+      nav: {
+        prev: {
+          name: "Proyecto",
+          url: ""
+        },
+        next: {
+          name: "Proyecto",
+          url: ""
+        }
+      },
+      title: "Conceptualización, diseño y construcción del portal público de AEQ",
+      text: [
+        "AEQ Energía, empresa distribuidora y comercializadora de energía perteneciente al grupo CIMD,  necesitaba actualizar su marca y estrategía online."
+      ],
+      categories: [
+        "DEFINICIÓN",
+        "diseño de marca",
+        "diseño de interfaz",
+        "DESARROLLo",
+      ],
+      link: {
+        url: "http://www.aeqenergia.com/",
+        name: "WWW.AEQENERGIA.COM"
+      }
+    }
+  +project(PROJECT)
+
+  -
+    var STEPS = {
+      logo: {
+        src: "assets/images/projects/project-03-logo.png",
+        alt: ""
+      },
+      heading: "Hoja de ruta para la mejora <span>de la comunicación online corporativa</span>",
+      subheading: "Ejemplo de subheading un cambio de escenario en el que la organización cuente con un sistema que sistematice la operativa, ordene y categorice la información generada, haga accesible la información a todos los roles de empleados",
+      text: "Se plantea un cambio de escenario en el que la organización cuente con un sistema que sistematice la operativa, ordene y categorice la información generada, haga accesible la información a todos los roles de empleados y permita tener una visión global de toda la operativa.",
+      modifier: "steps__header--narrow",
+      steps: [
+        {
+          title: "Conocimiento",
+          text: "Se realiza un trabajo de campo con áreas internas de AEQ y sus clientes. Se mantienen entrevistas individuales y grupales, se realiza un profundo benchmarking del sector y se pone en común con la dirección de AEQ todo lo  observado hasta el momento. Se recogen los valores de marca necesarios para llevar a cabo el plan de impulso de la misma."
+        },
+        {
+          title: "Definición",
+          text: "Con la información recogida y puesta en común, así como con los inputs que nos ha dado el benchmarking,  pasamos a deﬁnir el concepto de lo que debe ser el nuevo web de AEQ Energía. Una vez creado un concepto incial, se  matienen diversas sesiones de co-creación para mejorarlo y adecuarlo a las necesidades de AEQ y de sus Clientes. Se crea el marco con las bases de marca del nuevo proyecto."
+        },
+        {
+          title: "Creación",
+          text: "Se desarrolla el Modelo de Interacción y se aplica a prototipos  o mockups. A medida que se van validando los contenidos y funcionalidad de los  mockups, se va aplicando la capa de diseño visual. En este punto se trabaja con las premisas de facilitar a los clientes la comprensión de unos productos con cierta complejidad y de crear un sistema multiplataforma y multidispositivo."
+        },
+        {
+          title: "Desarrollo",
+          text: "Se trabaja sobre Drupal como solución de backofﬁce ya que se havisto que se adapta a las necesidades actuales y futuras (previstas para siguientes fases ) que AEQ Energía requiere en sus portales. La versión escogida es Drupal 8, dotada con capacidades multi-idoma y facilidades de edición WYSIWYG para la gestión de contenidos."
+        }
+      ]
+    }
+  +steps(STEPS)
+
+  -
+    var HIGHLIGHTIMAGE = {
+      modifier: 'highlight-image--img',
+      gradient: {
+        start: "#0065B3",
+        end: "#1E82C0"
+      },
+      image: {
+        src: "highlight-image-03.png",
+        srcset: "",
+        alt: "",
+      },
+      title: "Gamificación",
+      text: "El objetivo del disño visual era el de crear una experiencia memorable para el usuario,  a través del diseño de interfaz  y el concepto creativo, teniendo en cuenta, al mismo tiempo, todos los requisitos pedagógicos necesarios para la correcta asimilación de los contenidos."
+    }
+  +highlightImage(HIGHLIGHTIMAGE)
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--centered",
+        columns: [
+          {
+            title: "Orientación a resultados",
+            text: ["El resultado es un portal deﬁnido para satisfacer todas las necesidaes de comunicación de AEQ y de información del cliente, con una marca actualizada y que otorga la ﬂexibilidad y escalabilidad necesaria para las futuras integraciones que ﬁguran en el RoadMap."],
+            image: ["assets/images/projects/highlight-images/highlight-image-031.png"]
+          }
+        ]
+      }
+    ]
+  +description(DESCRIPTION)
+
+  -
+    var TESTIMONIAL = {
+      color: "#efd0d1",
+      image: {
+        src: "person-02.png",
+        srcset: "",
+        alt: "",
+      },
+      cite: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+      name: "Quique Sánchez Flores",
+      role: "CTO de Digital Marketing"
+    };
+  +testimonial(TESTIMONIAL)
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--onetext description--closing",
+        columns: [
+          {
+            title: "El cliente en el centro",
+            text: ["En este proyecto tenemos dos clientes: AEQ como cliiente directo y los clientes de AEQ como cliente indirecto. Ambos tienen sus necesidades y objetivos, y la clave está en hacerlos conﬂuir de manera natural y que ambos vean sus necesidaes satisfechas con el nuevo portal"]
+          },
+          {
+            text: ["Aunque muchos de nuestros proyectos tienen un elevado compenete tecnólogico, siempre vemos al tecnología como un elemento facilitador para conseguir un objetivo. Conocemos el RoadMap de AEQ para su plataforma online, lo que nos facilita la elección de una plataforma tecnológica que facilite las cosas y que no suponga frenos futuros."]
+          }
+        ]
+      }
+    ]
+  +description(DESCRIPTION)
+
+  -
+    var COLS = {
+      modifier: "cols--image",
+      bgimage: "highlight-image-032.png",
+      heading: "Elementos clave del proyecto",
+      cols: [
+        {
+          title: "Design Thinking",
+          text: "Para alcanzar el objetivo el objetivo perseguido en la Deﬁnición de la nueva Interfaz de Usuario y Modelo de Interacción se emplean metodologías de Diseño Centrado en el Usuario y métodos de Design Thinkg."
+        },
+        {
+          title: "Angular & Drupal",
+          text: "Desarrollo del frontal en Ángular, integrado mediante el consumo de datos a través de la capa de WebServices RESTFULL. Backofﬁce Drupal 8.0, Performance y Securización."
+        },
+        {
+          title: "Metodología agil",
+          text: "Durante la fase de desarrollo se aplicará metodologías ágiles para optimizar al máximo los tiempos de desarrollo."
+        }
+      ]
+    }
+  +cols(COLS)

@@ -1,0 +1,34 @@
+-
+  var SOCIAL = [
+    { name: "linkedin", url: "https://www.linkedin.com/company/boream/" },
+    { name: "facebook", url: "https://www.facebook.com/BoreamOficial/" },
+    { name: "twitter", url: "https://twitter.com/boreamoficial" },
+    { name: "instagram", url: "https://instagram.com/boreamoficial/" }
+  ];
+
+
+footer.site-footer
+  div.address
+    div.wrapper
+      svg.address__logo
+        use(xlink:href='assets/images/boream-sprite.svg#boream-white')
+
+      address.address__text C/ Teniente Coronel Noreña 11, #[span 2ª planta. 28045 Madrid]
+        a.address__link(href='mailto:info@boream.com') info@boream.com#[br]
+        a.address__link(href='tel:+34911841934') Tel: +34 911 841 934
+
+  if campusboream
+    include ../../components/_campusboream
+
+  div.misc
+    div.wrapper
+      ul.misc__legal
+        li &copy; Boream 2019
+        li
+          a(href='aviso-legal.html') Aviso legal
+        li
+          a(href='aviso-legal.html') Política de privacidad
+        li
+          a(href='aviso-legal.html') Uso de cookies
+
+      +social('misc__social', SOCIAL)

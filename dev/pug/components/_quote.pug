@@ -1,0 +1,12 @@
+mixin quote(OBJ)
+
+  -
+    var DEFAULT = {
+      modifier: false,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+    }
+
+  - var OBJ = OBJ || DEFAULT;
+
+  div.quote(class= OBJ.modifier)
+    blockquote= OBJ.text

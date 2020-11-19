@@ -1,0 +1,20 @@
+.site-logo {
+  display: inline-block;
+  // opacity: 0;
+  // transform: translate3d(0, 2rem, 0);
+  // animation: show 1200ms $ease-out 100ms forwards;
+
+  &__figure {
+    width: 6.6875rem;
+    //height: 2.125rem;
+
+    &--inactive {
+      display: block;
+    }
+
+    &--active {
+      display: none;
+    }
+  }
+
+}

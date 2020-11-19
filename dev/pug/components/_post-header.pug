@@ -1,0 +1,22 @@
+//- MIXIN
+mixin renderCategories(categories)
+  each category in categories
+    li= category
+
+mixin postHeader(OBJ)
+  header.post-header
+    div.wrapper
+      div.post-header__info
+        ul.post-header__categories
+          +renderCategories(OBJ.categories)
+
+        h1.post-header__heading= OBJ.heading
+
+      //- TODO: change to generic class 'NAV' NAVIGATION -> MENU
+      nav.post-header__nav
+        a.post-header__nav__link.-prev(href= OBJ.nav[0])
+          svg.post-header__nav__link__icon
+            use(xlink:href='assets/images/boream-sprite.svg#arrow')
+        a.post-header__nav__link.-next(href= OBJ.nav[1])
+          svg.post-header__nav__link__icon
+            use(xlink:href='assets/images/boream-sprite.svg#arrow')

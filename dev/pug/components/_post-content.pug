@@ -1,0 +1,129 @@
+div.post-content
+  -
+    var MODAL = {
+      id: "modal-subscribe",
+      modifier: "modal--subscribe",
+      type: "subscribe",
+    }
+
+  include _modal
+  +modal(MODAL)
+
+  aside.post__aside.post__aside--top
+    include _post-aside
+
+  div.wrapper.wrapper--margin
+    p.outstanding Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  div.wrapper
+    
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+    div.post__image-cropped
+      include _image
+
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+    ul
+      li
+        strong Navegación atomizada desde la página de inicio
+        span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+      li
+        strong Navegación atomizada desde la página de inicio 
+        span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+      li
+        strong Navegación atomizada desde la página de inicio
+        span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+      li
+        strong Navegación atomizada desde la página de inicio
+        span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+        ul
+          li Navegación basada en hábitos de usuarios (Ejemplo: gestiones más solicitadas.
+          li Navegación basada en hábitos de usuarios (Ejemplo: gestiones más solicitadas.
+          li Navegación basada en hábitos de usuarios (Ejemplo: gestiones más solicitadas.
+
+
+    div.post__columns
+      ol.cols__list
+        li
+          h3.cols__title UI / UX
+          p.cols__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor.
+        li
+          h3.cols__title DESARRollo
+          p.cols__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor.
+        li
+          h3.cols__title Integración
+          p.cols__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor.
+
+  div.post__video
+
+    include _video
+    -
+      var VIDEO = {
+        image: {
+          src: "assets/images/projects/video/video-01.png",
+          alt: "",
+          srcset: ""
+        },
+        modal: {
+          id: "modal-video",
+          modifier: "modal--video",
+          type: 'video',
+          src: "http://v2v.cc/~j/theora_testsuite/320x240.ogg"
+        },
+        title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        text: "Lorem ipsum dolet"
+      }
+    +video(VIDEO)
+
+  div.wrapper.wrapper--lg
+    div.post__aside.post__aside--quote
+
+      include _quote
+      +quote
+
+    h4 lorem ipsum sic amet
+    h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor
+    h4.post__subtitle Átomos
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+    h4.post__subtitle Átomos
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+    h4.post__subtitle Átomos
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+
+  -
+    var FULLIMAGE = {
+      image: {
+        src: "assets/images/insights/full-image-01.png",
+        alt: "",
+        srcset: ""
+      }
+    }
+  +fullImage(FULLIMAGE)
+
+  div.wrapper.wrapper--md
+    div.post__aside.post__aside--quote
+
+      include _quote
+      +quote
+
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+
+    div.post__image-cropped
+      include _image
+
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+
+  include _aside
+
+  div.wrapper.wrapper--sm
+    h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+    img.post__image(src="assets/images/dummy/article-01.jpg", alt="")
+
+  aside.post__aside.post__aside--bottom
+    include _post-aside
+

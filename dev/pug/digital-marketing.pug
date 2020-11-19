@@ -1,0 +1,199 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var PROJECT = {
+      sourceDesktop: "assets/images/projects/AYRE_Cabecera_Desktop.jpg",
+      sourceTablet: "assets/images/projects/AYRE_Cabecera_Tablet.jpg",
+      sourceMobile: "assets/images/projects/AYRE_Cabecera_Mobile.jpg",
+      nav: {
+        prev: {
+          name: "Proyecto",
+          url: ""
+        },
+        next: {
+          name: "Proyecto",
+          url: ""
+        }
+      },
+      title: "Impulso visual para materiales formativos del Instituto de Empresa",
+      text: [
+        "Convertir la formación en una experiencia vibrante y atractiva para los alumnos es el gran reto que Boream se plantea como objetivo en este proyecto de diseño de interfaz y desarrollo de frontend."
+      ],
+      categories: [
+        "UX",
+        "diseño visual",
+        "DESARROLLO FRONTEND",
+      ],
+      link: {
+        url: "https://www.ie.edu/",
+        name: "WWW.IE.EDU"
+      }
+    }
+  +project(PROJECT)
+
+  -
+    var HIGHLIGHTFLATTEXT = [
+      {
+        modifier: "highlight-flat--short",
+        logo: {
+          src: "ie.svg",
+          alt: "IE Business School",
+        },
+        title: "Viaje al centro del marketing digital",
+        text: "El viaje que María hace a la India es el eje principal sobre el que se desarrolla todo el caso formativo de Digital Marketing. Boream convierte ese viaje en una aventura, dotándole de un entorno visual evocador y retante.",
+      },
+    ]
+  +highlightFlat(HIGHLIGHTFLATTEXT)
+
+  -
+    var HIGHLIGHTGRADIENT = {
+      image: {
+        src: "highlight-image-021.png",
+        alt: "",
+        srcset: ""
+      }
+    }
+  +highlightGradient(HIGHLIGHTGRADIENT)
+
+  -
+    var HIGHLIGHTIMAGE = {
+      gradient: {
+        start: "#E26673",
+        end: "#E5527A"
+      },
+      image: {
+        src: "highlight-image-02.png",
+        srcset: "",
+        alt: "",
+      },
+      logo: [{
+        src: "project-1-logo.svg",
+        srcset: "",
+        alt: "",
+        width: 49,
+        height: 39
+      }],
+      text: "El objetivo del diseño visual era el de crear una experiencia memorable para el usuario, a través del diseño de interfaz y el concepto creativo, teniendo en cuenta, al mismo tiempo, todos los requisitos pedagógicos necesarios para la correcta asimilación de los contenidos."
+    }
+  +highlightImage(HIGHLIGHTIMAGE)
+
+  -
+    var HIGHLIGHTFLAT = [
+      {
+        modifier: "highlight-flat--vertical",
+        logo: false,
+        title: "Los colores de la aventura",
+        subtitle: false,
+        text: "El concepto creativo gira en torno al colorido festival hindú Holi. Una ﬁesta popular de la India que se celebra para dar la bienvenida a la primavera y en el que se lanzan polvos de colores brillantes y agua coloreada.",
+        link: false,
+        grid: [
+          {
+            color: '#C02362',
+            name: 'Mumbai red'
+          },
+          {
+            color: '#E17170',
+            name: 'Late runrise'
+          },
+          {
+            color: '#F38A21',
+            name: 'Sun orange'
+          },
+          {
+            color: '#FFB200',
+            name: 'Vivid yellow'
+          },
+          {
+            color: '#739CE6',
+            name: 'Light Blue'
+          },
+          {
+            color: '#31974C',
+            name: 'Open Green'
+          },
+          {
+            color: '#171717',
+            name: 'Dark nº one'
+          },
+          {
+            color: '#6B6363',
+            name: 'Grey nº one'
+          },
+          {
+            color: '#919191',
+            name: 'Grey nº two'
+          },
+          {
+            color: '#E0E0E0',
+            name: 'Grey nº three'
+          }
+        ]
+      }
+    ]
+  +highlightFlat(HIGHLIGHTFLAT)
+
+  -
+    var TESTIMONIAL = {
+      color: "#efd0d1",
+      image: {
+        src: "person-02.png",
+        srcset: "",
+        alt: "",
+      },
+      cite: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.",
+      name: "Quique Sánchez Flores",
+      role: "CTO de Digital Marketing"
+    };
+  +testimonial(TESTIMONIAL)
+
+  -
+    var FULLWIDTH = {
+      modifier: "full-width--bordered",
+      image: {
+        src: "full-width-02.png",
+        alt: "",
+        srcset: ""
+      },
+      title: "Conocimiento y evaluación",
+      subtitle: "El alumno puede realizar la comprobación de lo que ha aprendido mediante un quiz de preguntas que evalúa los conocimientos adquiridos.",
+      text: [
+        "El quiz se plantea de forma modular, de forma que se pueda realizar el test por cada capítulo de forma independiente o de forma global. Toda la lógica, implementada en Javascript, permite en todo momento saber los fallos y aciertos por cada capítulo y la nota global que se obtiene."
+      ]
+    };
+  +fullWidth(FULLWIDTH)
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--narrow",
+        columns: [
+          {
+            title: "Toda la lógica en el frontend",
+            text: [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+            ]
+          },
+          {
+            modifier: "description__column--quote justify-self-end",
+            quote: {
+              modifier: "quote--offset",
+              text: "El proyecto puede ejecutarse por completo en cliente, sin necesidad de backend"
+            }
+          }
+        ]
+      }
+    ]
+  +description(DESCRIPTION)
+
+  -
+    var FULLIMAGE = {
+      modifier: "full-image--strip",
+      image: {
+        src: "assets/images/projects/highlight-images/full-image-02.png",
+        alt: "",
+        srcset: ""
+      }
+    }
+  +fullImage(FULLIMAGE)

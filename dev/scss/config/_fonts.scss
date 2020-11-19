@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// FONT
+// -----------------------------------------------------------------------------
+
+$encodesans-font-path:  "../fonts" !default;
+
+// Extra Light
+// -----------------------------------------------------------------------------
+@font-face {
+  font-family: 'Encode Sans';
+  src: url('#{$encodesans-font-path}/EncodeSans-ExtraLight.woff2') format('woff2'),
+    url('#{$encodesans-font-path}/EncodeSans-ExtraLight.woff') format('woff'),
+    url('#{$encodesans-font-path}/EncodeSans-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+// Light
+// -----------------------------------------------------------------------------
+@font-face {
+  font-family: 'Encode Sans';
+  src: url('#{$encodesans-font-path}/EncodeSans-Light.woff2') format('woff2'),
+    url('#{$encodesans-font-path}/EncodeSans-Light.woff') format('woff'),
+    url('#{$encodesans-font-path}/EncodeSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+// Regular
+// -----------------------------------------------------------------------------
+@font-face {
+  font-family: 'Encode Sans';
+  src: url('#{$encodesans-font-path}/EncodeSans-Regular.woff2') format('woff2'),
+    url('#{$encodesans-font-path}/EncodeSans-Regular.woff') format('woff'),
+    url('#{$encodesans-font-path}/EncodeSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Semibold
+// -----------------------------------------------------------------------------
+@font-face {
+  font-family: 'Encode Sans';
+  src: url('#{$encodesans-font-path}/EncodeSans-SemiBold.woff2') format('woff2'),
+    url('#{$encodesans-font-path}/EncodeSans-SemiBold.woff') format('woff'),
+    url('#{$encodesans-font-path}/EncodeSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+// Black
+// -----------------------------------------------------------------------------
+@font-face {
+  font-family: 'Encode Sans';
+  src: url('#{$encodesans-font-path}/EncodeSans-Black.woff2') format('woff2'),
+    url('#{$encodesans-font-path}/EncodeSans-Black.woff') format('woff'),
+    url('#{$encodesans-font-path}/EncodeSans-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+// Fonts
+//-----------
+$ff: 'Encode Sans', 'Helvetica Neue', Arial, sans-serif !default;
+
+// Font weight
+//-----------
+$ultralight: 100;
+$extralight: 200;
+$light: 300;
+$regular: 400;
+$semibold: 600;
+$black: 900;
+
+// Icon font
+// -----------
+$ff-icons: "boream-font";

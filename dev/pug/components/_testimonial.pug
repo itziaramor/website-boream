@@ -1,0 +1,9 @@
+mixin testimonial(OBJ)
+  section.testimonial
+    div.testimonial__figure(style= `--testimonial-color: ${OBJ.color}`)
+      img.testimonial__image(src= `assets/images/projects/testimonials/${OBJ.image.src}`, alt= OBJ.image.alt, srcset= OBJ.image.srcset)
+    div.testimonial__quote
+      cite.testimonial__quote__cite= OBJ.cite
+      p.testimonial__quote__author
+        span.testimonial__quote__name= OBJ.name
+        span.testimonial__quote__role= OBJ.role

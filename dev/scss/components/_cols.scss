@@ -1,0 +1,198 @@
+.cols {
+  $this: &;
+
+  padding: 4.375rem 1.25rem 2rem;
+
+  @include mq($from: tablet) {
+    padding: 7.0625rem 1.25rem 5.875rem;
+  }
+  @include mq($from: desktop) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include mq($from: desktop_large) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  // MODIFIERS
+  @at-root #{$this}#{$this}--image {
+    padding-top: 18.5rem;
+    position: relative;
+    background: var(--bgImage) center no-repeat / cover;
+
+    @include mq($from: tablet) {
+      padding-top: 30.5rem;
+    }
+    @include mq($from: desktop) {
+      padding-top: 35rem;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100vw;
+      height: calc(100% - 15rem);
+      background: var(--white-color);
+      opacity: 0.85;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: z(default);
+
+      @include mq($from: tablet) {
+        height: calc(100% - 26rem);
+      }
+      @include mq($from: desktop) {
+        height: calc(100% - 30rem);
+      }
+    }
+
+    > .wrapper {
+      position: relative;
+      z-index: (z(default) + 1);
+      padding: 0;
+    }
+  }
+
+  // CHILDS
+  > .wrapper {
+    padding: 0;
+    overflow: visible;
+  }
+
+  &__header {
+    width: 75%;
+    max-width: 30rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: calc(100vw - 6rem);
+      height: 0.0625rem;
+      background-color: var(--black-color);
+      position: absolute;
+      bottom: -2rem;
+      left: -2.25rem;
+    }
+
+    @include mq($from: tablet) {
+      max-width: 33rem;
+      margin-bottom: 4rem;
+
+      &::before {
+        width: 100vw;
+        left: calc(((100vw - 100%) / 3) * -1);
+        bottom: -4rem;
+      }
+    }
+    @include mq($from: desktop) {
+      max-width: 36rem;
+    }
+
+    // MODIFIER
+    &--alt {
+      max-width: 100%;
+      width: 100%;
+      border-bottom: .0625rem solid var(--shadow-color-darkest);
+
+      @include mq($from: tablet) {
+          max-width: 100%;
+          width: 100%;
+      }
+
+      @include mq($from: desktop) {
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: rem(45px);
+      }
+
+      &::before {
+        display: none;
+      }
+
+      .cols__heading {
+        @include mq($from: tablet) {
+          width: 100%;
+          font-size: rem(24px);
+          font-weight: $light;
+          color: var(--shadow-color-darkest);
+        }
+        @include mq($from: desktop) {
+          margin-bottom: rem(37px);
+          max-width: 100%;
+        }
+      }
+    }
+
+    &--icon {
+      display: flex;
+      align-items: flex-start;
+      img {
+        max-width: 100%;
+        width: auto;
+          margin-top: rem(7px);
+          margin-right: rem(20px);
+      }
+    }
+  }
+
+  &__heading {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: $semibold;
+    line-height: 1.5;
+    color: var(--secondary-color);
+
+    @include mq($from: tablet) {
+      font-size: 2.25rem;
+      line-height: 1.44;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 1.5rem;
+    color: var(--shadow-color-darkest);
+
+    @include mq($from: tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 1.5rem 3.5rem;
+    }
+    @include mq($from: desktop) {
+      grid-gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      > li:nth-child(1) {
+        grid-column: 2;
+      }
+    }
+
+    > li {
+      padding-right: 5rem;
+
+      @include mq($from: desktop) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    font-weight: $regular;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    font-weight: $regular;
+    line-height: 1.86;
+  }
+}

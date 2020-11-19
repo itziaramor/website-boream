@@ -1,0 +1,60 @@
+// Dev
+//-----------
+$dev: #f06;
+$dev-1: rgb(20, 140, 220);
+$dev-2: rgb(125, 34, 178);
+$dev-3: yellowgreen;
+
+// Namespace
+// -----------
+$namespace: 'boream';
+
+// Brand Colours
+//-----------
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --eastern-blue-color: #1e93a1;
+
+  --primary-color: #165982;
+  --primary-color-dark: #0e557b;
+  --primary-color-light: #0f75a9;
+  --primary-color-hover: #105580;
+  --primary-color-hover-social: #046a91;
+
+  --secondary-color: #f4a423;
+  --secondary-color-light: #f6b64f;
+  --secondary-color-dark: #e8a421;
+
+  --shadow-color-lightest: #f7f7f7;
+  --shadow-color-light: #f2f2f2;
+  --shadow-color: #d6d5d5;
+  --shadow-color-dark: #969696;
+  --shadow-color-darkest: #464646;
+
+  --error-color: #e53a70;
+  --success-color: #1e93a1;
+  --focus-color: #155882;
+
+  --description-color: #151515;
+
+  --testimonial-color: #cdedd6;
+  --testimonial-background-color: hsl(0, 0%, 93%);
+
+  --techniques-color: #464646;
+  --techniques-grid-color: #cbcbcb;
+
+  --light-gradient: linear-gradient(
+    42deg,
+    rgba(248, 248, 248, 1) 0%,
+    rgba(237, 237, 237, 1) 100%
+  );
+
+  --modal-success: var(--eastern-blue-color);
+
+  --input-border-color: #e4e8ee;
+  --input-modal-border-color: #e2e5ed;
+  --grey-color: #121c4f;
+  --grey-color-lighter: #979797;
+  --grey-color-lightest: #eaeaea;
+}

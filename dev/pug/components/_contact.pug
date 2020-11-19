@@ -1,0 +1,22 @@
+mixin contact(OBJ)
+
+  article.contact
+
+    if OBJ.headerPage
+      div.wrapper
+        +headerPage(OBJ.headerPage)
+
+    if OBJ.headerImage
+      +headerImage(OBJ.headerImage)
+
+    div.wrapper
+      div.contact__address
+        span.contact__picture
+        address
+          span.contact__item C/ Teniente Coronel Noreña 11, 2ª planta. 28045 Madrid
+          span.contact__item info@boream.com
+          span.contact__item Tel: +34 911 841 934
+
+    +joinForm(CONTACT)
+
+    

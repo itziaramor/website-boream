@@ -1,0 +1,16 @@
+.quote {
+  max-width: 15.5rem;
+  border-top: 0.5rem solid var(--secondary-color);
+
+  > blockquote {
+    margin: 1.25rem 0 0;
+    font-size: 1.125rem;
+    font-weight: $semibold;
+    font-style: italic;
+    color: var(--shadow-color-darkest);
+  }
+
+  &--offset {
+    margin-top: 3.125rem;
+  }
+}

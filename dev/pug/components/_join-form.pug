@@ -1,0 +1,45 @@
+mixin joinForm(OBJ)
+
+  section#join.join
+    div.wrapper(class= OBJ.join.wrapper)
+      h2.join__heading
+        svg.join__icon
+          use(xlink:href='assets/images/boream-sprite.svg#subscribe')
+        = OBJ.join.heading
+      form(action="" class="join__form")
+        div.join__container
+          p.join__text= OBJ.join.text
+          div.join__grid
+            div.form-group
+              label(for="name" class="form-label") Nombre*
+              input(type="text" id="name" class="form-control" required)
+            div.form-group
+              label(for="surname" class="form-label") Apellidos*
+              input(type="text" id="surname" class="form-control" required)
+            div.form-group
+              label(for="tel" class="form-label") Teléfono*
+              input(type="tel" id="tel" class="form-control" pattern="[0-9]{9}" required)
+            div.form-group
+              label(for="email" class="form-label") Email*
+              input(type="email" id="email" class="form-control" required)
+            div.form-group.form-group--full
+              label(for="message" class="form-label") ¿Quieres contarnos algo?
+              textarea(rows="5" cols="40" id="message" class="form-control")
+            div.form-group
+              label(for="file" class="form-label") Adjuntar archivo
+              div.form-file
+                input(type="file" id="file" class="form-control form-control--file")
+                span.form-file__label Buscar archivo
+                  svg.form-file__icon
+                    use(xlink:href='assets/images/boream-sprite.svg#zoom')
+            div.form-group
+              p#conditions.form__legacy
+                a(href="#") Política de privacidad
+                |  y de
+                a(href="#") Protección de datos
+              input(type="checkbox" name="legacy" id="legacy" class="form-control" required)
+              label(for="legacy" class="form-label" aria-describedby="conditions") He leído y acepto las condiciones*
+        div.join__actions
+          button.button.button--icon.button--secondary(type="submit")= OBJ.join.button
+            svg.button__icon
+              use(xlink:href='assets/images/boream-sprite.svg#arrow')

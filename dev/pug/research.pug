@@ -1,0 +1,162 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var RESEARCH = {
+      headerPage: {
+        modifier: "header-page--alt",
+        research: true,
+        name: " estratégico",
+        subtitle: true,
+        introAlt: true,
+        subtitleText: "Técnicas que profundizan en el descubrimiento",
+        introText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius, ipsum id aliquet dictum, neque libero pulvinar tellus, non vulputate ipsum odio quis nulla. Ut suscipit nibh sit amet cursus consectetur. Nulla facilisi. Pellentesque mollis malesuada ultrices. Praesent efficitur magna arcu. Nam vel eros ultricies magna tempor porta ac a erat. Donec in accumsan odio. Etiam tellus velit, ultrices a ullamcorper id, dapibus nec ipsum. Nunc rhoncus vestibulum ipsum, tempor egestas augue mattis non. Aenean in ex mattis, tempor nibh non, lacinia nisi. Nunc molestie at nisl a faucibus. Proin quis ex hendrerit risus facilisis tempus. Maecenas consectetur rutrum semper. Praesent varius ligula eget neque euismod imperdiet."
+      },
+      items: [
+        {
+          class:"square--lg",
+          color: "#464646",
+          link: true,
+          image: true,
+          sourceDesktop: "assets/images/dummy/technology-grid.jpg",
+          sourceTablet: "assets/images/dummy/technology-grid.jpg",
+          sourceMobile: "assets/images/dummy/technology-grid.jpg",
+          description: true,
+          iconDescription: true,
+          textDescription: true,
+          srcIcon: "assets/images/logo-javascript.svg",
+          titleItem: "Node JS",
+          textItem: "Se trasladó el motor del simulador original hecho en ASP al lado cliente en JavaScript."
+        },
+        {
+          class:"square square--icon",
+          color: "#464646",
+          link: true,
+          description: true,
+          iconDescription: true,
+          srcIcon: "assets/images/logo-javascript.svg",
+          titleItem: "Vue.JS"
+        },
+        {
+          class:"square",
+          color: "#f7f7f7",
+          link: true,
+          image: true,
+          sourceDesktop: "assets/images/dummy/technology-grid-02.png",
+          sourceTablet: "assets/images/dummy/technology-grid-02.png",
+          sourceMobile: "assets/images/dummy/technology-grid-02.png",
+          description: true,
+          titleItem: "Arquitecturas basadas en Docker y Kubernetes"
+        },
+        {
+          class:"rectangle",
+          color: "#155882",
+          link: true,
+          description: true,
+          titleItem: "Arquitecturas basadas en Docker y Kubernetes"
+        },
+        {
+          class:"square",
+          color: "#F5A623",
+          link: true,
+          description: true,
+          titleItem: "Análisis competitivo"
+        },
+        {
+          class:"rectangle",
+          color: "#464646",
+          link: true,
+          description: true,
+          textDescription: true,
+          titleItem: "Motor del simulador en Vue.JS",
+          textItem: "Se trasladó el motor del simulador original hecho en ASP al lado cliente en JavaScript."
+        },
+        {
+          class:"rectangle--double",
+          color: "#F5A623",
+          contact: true,
+          srcIcon: "assets/images/logo-contact.svg",
+          titleContact: "Servicios profesionales en Research estratégico",
+          textContact: "Se trasladó el motor del simulador original hecho en ASP al lado cliente en JavaScript."
+        },
+        {
+          class:"rectangle rectangle--lg",
+          color: "#1C8996",
+          link: true,
+          description: true,
+          textDescription: true,
+          titleItem: "Motor del simulador en Vue.JS",
+          textItem: "Se trasladó el motor del simulador original hecho en ASP al lado cliente en JavaScript."
+        },
+        {
+          class:"square",
+          color: "#f7f7f7",
+          link: true,
+          image: true,
+          sourceDesktop: "assets/images/dummy/technology-grid-02.png",
+          sourceTablet: "assets/images/dummy/technology-grid-02.png",
+          sourceMobile: "assets/images/dummy/technology-grid-02.png",
+          description: true,
+          titleItem: "Arquitecturas basadas en Docker y Kubernetes"
+        },
+        {
+          class:"square square--icon square--icon-small",
+          color: "#F5A623",
+          link: true,
+          description: true,
+          iconDescription: true,
+          textDescription: true,
+          srcIcon: "assets/images/logo-javascript.svg",
+          titleItem: "Soluciones CMS opensource",
+          textItem: "Wordpress | drupal"
+        },
+        {
+          class:"square square--icon",
+          color: "#155882",
+          link: true,
+          description: true,
+          iconDescription: true,
+          srcIcon: "assets/images/logo-javascript.svg",
+          titleItem: "Vue.JS"
+        },
+        {
+          class:"square--lg",
+          color: "#464646",
+          link: true,
+          image: true,
+          sourceDesktop: "assets/images/dummy/technology-grid.jpg",
+          sourceTablet: "assets/images/dummy/technology-grid.jpg",
+          sourceMobile: "assets/images/dummy/technology-grid.jpg",
+          description: true,
+          iconDescription: true,
+          textDescription: true,
+          srcIcon: "assets/images/logo-javascript.svg",
+          titleItem: "Node JS",
+          textItem: "Se trasladó el motor del simulador original hecho en ASP al lado cliente en JavaScript."
+        }
+      ]
+    }
+  +research(RESEARCH)
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--full description--img-boream",
+        columns: [
+          {
+            modifier: "description__column--full",
+            title: "¿Necesitas un proyecto de Research estratégico?",
+            subtitle: false,
+            text: [
+              "Actualmente esta web no da soporte a tu navegador.<br> Te recomendamos que utilices un navegador actual. Te dejamos un enlace desde donde puedes actualizarlo."
+            ],
+            link: {
+              text: 'Contáctanos',
+              url: '#'
+            }
+          }
+        ]
+      }
+    ]
+  +description(DESCRIPTION)

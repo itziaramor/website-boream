@@ -1,0 +1,12 @@
+mixin shortcuts(OBJ)
+  section.shortcuts(class= OBJ.modifier)
+    div.wrapper
+
+      ul.shortcuts__grid
+        each item in OBJ.items
+          - xlink = 'assets/images/boream-sprite.svg#' + item.icon
+          li.shortcuts__item
+            svg.shortcuts__item__icon(width= item.width, height= item.height)
+              use(xlink:href= xlink)
+            h2.shortcuts__item__title= item.title
+            p.shortcuts__item__text= item.text

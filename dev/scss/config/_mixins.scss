@@ -1,0 +1,79 @@
+@import 'rem';
+
+// Dev
+// -------
+@mixin dev($color: $dev) {
+  border: 2px dashed $color;
+}
+
+@mixin animate-show(
+  $dir: 'v',
+  $offset: 1rem,
+  $duration: 750ms,
+  $function: $ease-out,
+  $delay: 100ms
+) {
+  @warn $dir;
+
+  // Check direction
+  @if $dir == 'v' {
+    transform: translate3d(0, $offset, 0);
+  } @else {
+    transform: translate3d($offset, 0, 0);
+  }
+
+  opacity: 0;
+  animation: {
+    name: show;
+    duration: $duration;
+    timing-function: $function;
+    delay: $delay;
+    fill-mode: forwards;
+  }
+}
+
+//  Aspect Ratio for VIDEOS
+//
+//  --- USAGE:
+//
+//  .video {
+//    @include aspect-ratio( 16, 9 );
+//  }
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: calc(1 / (#{$height} / #{$width}) * 100%);
+  }
+
+  > *:first-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+// Draws and animates an underline
+// @param{ $color } => rgba(0, 0, 0)
+@mixin fx-underline($color, $height: 2px) {
+  background-image: linear-gradient(to right, $color 0%, $color 100%);
+  background-position: 0px 95%;
+  background-size: 0 $height;
+  background-repeat: no-repeat;
+  transition: background-size $medium $ease-out;
+}
+
+
+
+// ---------------
+
+

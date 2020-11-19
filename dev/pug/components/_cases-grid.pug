@@ -1,0 +1,11 @@
+mixin casesGrid(OBJ)
+
+  section.cases
+    div.wrapper
+      p.cases__label CASE STUDIES
+    ul.cases__list
+
+      each item in OBJ
+        li
+          a.cases__link(href= item.url)
+            img(src= item.image.src, alt= item.image.alt)

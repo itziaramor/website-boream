@@ -1,0 +1,100 @@
+.shortcuts {
+  background: url(../images/particles-stripes.png) no-repeat 50% 0%;
+  background-size: 1280px auto;
+  padding: 4.625rem 1rem;
+  transform-origin: top center;
+  transition: background-size 2000ms $ease-in;
+
+  @include mq($from: tablet) {
+    padding: 10.9375rem 2rem;
+
+    > .wrapper {
+      padding: 0;
+    }
+  }
+  @include mq($from: desktop) {
+    padding-top: 10.625rem;
+    padding-bottom: 8.25rem;
+
+    > .wrapper {
+      padding: 0 1.25rem;
+    }
+  }
+  @include mq($from: desktop_large) {
+    padding-top: 10.8125rem;
+    padding-bottom: 10.8125rem;
+  }
+  @include mq($from: desktop_wide) {
+    > .wrapper {
+      max-width: 90rem;
+    }
+  }
+
+  // CHILDS
+  &__grid {
+
+    @include mq($from: mobile_landscape) {
+      display: grid;
+      grid-gap: 4em 1.5em;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mq($from: tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include mq($from: desktop) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @include mq($from: desktop_wide) {
+      grid-gap: 4em 2.25em;
+    }
+  }
+
+
+  &__item {
+    margin-bottom: 2.5rem;
+    text-align: center;
+
+    @include mq($from: mobile_landscape) {
+      margin-bottom: 0;
+    }
+
+    @include mq($from: tablet) {
+      flex: 0 1 calc(33% - 30px);
+      margin: 1.125rem 0.9375rem;
+    }
+    @include mq($from: desktop) {
+      margin: 0;
+    }
+
+    &__icon {
+      margin-bottom: 0.5rem;
+    }
+
+    &__title {
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: $ultralight;
+      line-height: 1.5;
+      color: var(--black-color);
+
+      a {
+        color: var(--black-color);
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+          color: var(--primary-color-hover);
+        }
+      }
+    }
+
+    &__text {
+      font-size: 0.875rem;
+      line-height: 1.86;
+      color: var(--shadow-color-darkest);
+    }
+  }
+}

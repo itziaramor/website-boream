@@ -1,0 +1,156 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var LEARNING = {
+      title: "Aprendizaje step-by-step",
+      text: "A través de técnicas de investigación con usuarios, obtuvimos resultados que nos ayudaron a tomar decisiones críticas basadas en resultados reales. ",
+      srcBg: "assets/images/learning/learning-01.jpg",
+      src: "assets/images/learning/learning-ticket.png",
+      itemImgs: [
+        {
+          media: "(max-width: 768px)",
+          srcset: "assets/images/learning/learning-ticket.png"
+        },
+        {
+          media: "(min-width: 769px)",
+          srcset: "assets/images/learning/learning-ticket-desktop.png"
+        }
+      ],
+      srcCode: "assets/images/learning/learning-code.png",
+      items: [
+        {
+          title: "Profesor-Alumno, a un paso.",
+          text: "A través de esta técnica de clasificación, los usuarios nos ayudaron a explorar nuevas agrupaciones de contenidos y a reorganizar la información para adecuarla a su modelo mental. "
+        },
+        {
+          title: "Smart results",
+          text: "Pieza clave para obtener feedback y  validación de los empleados de las aproximaciones a las  nuevas categorízaciones de contenidos que se fueron definiendo."
+        }
+      ]
+    }
+  +learning(LEARNING)
+
+  -
+    var USERSVOICE = {
+      title: "Dar voz a los usuarios",
+      text: "A través de técnicas de investigación con usuarios, obtuvimos resultados que nos ayudaron a tomar decisiones críticas basadas en resultados reales.",
+      src: "assets/images/users-voice.jpg",
+      itemImgs: [
+        {
+          media: "(max-width: 768px)",
+          srcset: "assets/images/users-voice.jpg"
+        },
+        {
+          media: "(min-width: 769px)",
+          srcset: "assets/images/users-voice-desktop.jpg"
+        }
+      ],
+      items: [
+        {
+          title: "Card Sorting",
+          text: "Mediante esta técnica de clasificación, los usuarios nos ayudaron a explorar nuevas agrupaciones de contenidos y a reorganizar la información para adecuarla a su modelo mental."
+        },
+        {
+          title: "Tree testing",
+          text: "Un tree test se le ofrece una narrativa al usuario objeto del test, donde debe encontrar algo en un árbol de contenidos, a partir de ahí podremos conocer por qué motivos fallan los usuarios y qué modelos mentales utilizan en sus decisiones."
+        }
+      ]
+    }
+  +usersVoice(USERSVOICE)
+
+  -
+    var FULLWIDTH = {
+      modifier: "full-width--md",
+      image: {
+        src: "full-width-03.png",
+        alt: "",
+        srcset: ""
+      },
+      title: "Simplificando y normalizando la arquitectura de información",
+      text: [
+        "El reto partió de tener que organizar más de 1.670 items de menú en 8 niveles de navegación, que componían la antigua estructura de información. El trabajo de análisis junto con el Ayuntamiento de Madrid y los propios usuarios fue clave para reducir la nueva estructura a tan solo 600 items de menú en 5 niveles de navegación."
+      ]
+    };
+  +fullWidth(FULLWIDTH)
+
+  section.brand
+    div.wrapper
+      //- BRAND CONTENT CONFIGURATION
+      -
+        var BRAND_CONTENT = {
+          heading: "Marcas con capacidades responsivas",
+          text: "El rediseño del logotipo de Mis Oficinas, claramentre orientado a dispositivos digitales, pasó por la realización de diversas versiones que compartían un enfoque arquitectónico del imagotipo así como versiones responsivas del logotipo."
+        }
+      +brandContent(BRAND_CONTENT)
+
+      div.brand__logos
+        //- BRAND LIST CONFIGURATION
+        -
+          var BRAND_LIST = [
+            {
+              src: "assets/images/brand/brand-01.png"
+            },
+            {
+              src: "assets/images/brand/brand-02.png"
+            },
+            {
+              src: "assets/images/brand/brand-03.png"
+            },
+            {
+              src: "assets/images/brand/brand-04.png"
+            }
+          ]
+        +brandList(BRAND_LIST)
+
+        //- BRAND LIST CONFIGURATION
+        -
+          var BRAND_LIST02 = [
+            {
+              src: "assets/images/brand/brand-05.png"
+            },
+            {
+              src: "assets/images/brand/brand-06.png"
+            },
+            {
+              src: "assets/images/brand/brand-07.png"
+            },
+            {
+              src: "assets/images/brand/brand-08.png"
+            }
+          ]
+        +brandList(BRAND_LIST02)
+
+  -
+    var HIGHLIGHTIMAGE = {
+      modifier: 'highlight-image--img highlight-image--reverse',
+      gradient: {
+        start: "#464646",
+        end: "#464646"
+      },
+      image: {
+        src: "highlight-image-045.jpg",
+        srcset: "",
+        alt: "",
+      },
+      logo: [{
+        src: "logos/boream.svg"
+      }],
+      text: "El sector inmobiliario en internet ofrece un entorno altamente competitivo con marcas firmemenete posicionadas. El reto en el diseño de Mis Oficinas consistión en establecer una identidad visual diferencial, claramenrte reconocible y que trasladara eficazmente la calidad en su propuesta comercial."
+    }
+  +highlightImage(HIGHLIGHTIMAGE)
+
+  -
+    var FULLIMAGE = {
+      image: {
+        src: "assets/images/dummy/full-image-02.jpg",
+        alt: "",
+        srcset: ""
+      }
+    }
+  +fullImage(FULLIMAGE)
+
+
+  include components/_post-image
+

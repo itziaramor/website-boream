@@ -1,0 +1,12 @@
+mixin cols(OBJ)
+
+  section.cols(class= OBJ.modifier || '' , style= OBJ.bgimage ? `--bgImage: url(../../assets/images/projects/highlight-images/${OBJ.bgimage})` : false)
+    div.wrapper
+      header.cols__header
+        h2.cols__heading!= OBJ.heading
+      ol.cols__list
+        each cols in OBJ.cols
+
+          li
+            h3.cols__title= cols.title
+            p.cols__text= cols.text

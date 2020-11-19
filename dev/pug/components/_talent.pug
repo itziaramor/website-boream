@@ -1,0 +1,59 @@
+mixin talent(OBJ)
+
+  article.talent
+
+    if OBJ.headerPage
+      div.wrapper
+        +headerPage(OBJ.headerPage)
+
+    if OBJ.headerImage
+      +headerImage(OBJ.headerImage)
+
+
+    if OBJ.job
+      div.job
+        .wrapper
+          header.job__header
+            h2.job__heading= OBJ.job.heading
+            p.job__intro!= OBJ.job.text
+
+          div.career
+            h3.career__heading= OBJ.career.heading
+
+            div.career__group
+
+              each careerCol in OBJ.careerCol
+                div.career__col
+                  span.career__icon= careerCol.icon
+                    img(src= careerCol.src, alt= careerCol.alt)
+                  h4.career__title= careerCol.title
+                  ul.career__list
+
+                    each item in careerCol.list
+                      li.career__item
+                        a.career__link(href="#")
+                          span= item.text
+                          svg.career__link-icon
+                            use(xlink:href='assets/images/boream-sprite.svg#arrow')
+
+            div.career__group.career__group--wider
+              div.career__col
+                  h4.career__title Otros perfiles
+                  ul.career__list
+                    li.career__item
+                      a.career__link(href="#")
+                        span Senior product designer
+                        <svg class="career__link-icon">
+                          <use xlink:href="assets/images/boream-sprite.svg#arrow"></use>
+                        </svg>
+                    li.career__item
+                      a.career__link(href="#")
+                        span Senior product designer
+                        <svg class="career__link-icon">
+                          <use xlink:href="assets/images/boream-sprite.svg#arrow"></use>
+                        </svg>
+                    li.career__item
+                      a.career__link(href="#")
+                        span Product designer
+                        svg.career__link-icon
+                          use(xlink:href='assets/images/boream-sprite.svg#arrow')

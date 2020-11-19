@@ -1,0 +1,27 @@
+mixin posts(OBJ)
+  section.posts(class= OBJ.modifier)
+    div.wrapper
+      header.posts__header
+        h2.posts__header__heading= OBJ.heading
+
+        if OBJ.text
+          p.posts__header__text= OBJ.text
+
+        if OBJ.link
+          a.button.button--link-icon(href= OBJ.link.url)
+            span= OBJ.link.text
+            svg.button__icon(width="26", height="10")
+              use(xlink:href="assets/images/boream-sprite.svg#arrow")
+
+      ul.posts__grid
+
+        each item in OBJ.posts
+          li
+            a.posts__item(href= item.url)
+              figure.posts__item__figure
+                img.posts__item__image(src= item.url, alt= item.alt, srcset="")
+              h4.posts__item__category
+                span= item.category
+              h3.posts__item__title
+                span= item.title
+              p.posts__item__text= item.text

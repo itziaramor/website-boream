@@ -1,0 +1,155 @@
+.employees {
+  display: flex;
+  flex-direction: column;
+  
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
+  
+  // CHILDS
+  &__pics {
+    display: flex;
+    
+    @include mq($from: tablet) {
+      flex: 0 0 50%;
+      height: 26rem;
+    }
+    
+    > li {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      
+      &:first-child {
+        display: block;
+        
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: hsla(0, 0%, 0%, 0.4);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: z(default);
+        }
+      }
+      
+      @include mq($from: tablet) {
+        width: auto;
+      }
+      @include mq($from: desktop) {
+        height: 26rem;
+      }
+    }
+    
+    &__image {
+      min-height: 318px;
+      object-fit: cover;
+      
+      @include mq($from: tablet) {
+        height: 27.5rem;
+        height: 100%;
+      }
+    }
+  }
+  
+  &__info {
+    padding: 4rem 1.25rem 2rem;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    min-height: 318px;
+    display: flex;
+    
+    $this: &;
+    
+    @include mq($from: tablet) {
+      min-height: auto;
+      flex: 0 0 50%;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 7rem 2rem 2rem;
+      border-left: 1px solid var(--white-color);
+    }
+    @include mq($from: desktop) {
+      padding: 8rem 2rem 2rem;
+    }
+    
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      @include mq($from: tablet) {
+        display: block;
+      }
+      
+      > * {
+        opacity: 0;
+        transform: translateX(-0.5rem);
+        transition: transform $slow $ease-out, opacity $slow $ease-out;
+      }
+      
+      // STATES
+      &.is-active {
+        > * {
+          opacity: 1;
+          transform: none;
+          transition: all $medium 300ms $ease-out;
+          
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              transition-delay: calc(#{$i} * 55ms) !important;
+            }
+          }
+        }
+      }
+      
+      @include mq($from: tablet) {
+        max-width: 26rem;
+      }
+    }
+    
+    &__image {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 0.5rem;
+      fill: currentColor;
+      // transition: all $medium $ease-in ($delay * 1);
+      
+      @include mq($from: tablet) {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+    }
+    
+    &__role {
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: $ultralight;
+      // opacity: 0;
+      // transform: translate(0, -1rem);
+      // transition: all $medium $ease-in ($delay * 2);
+    }
+    
+    &__name {
+      font-size: 1.5rem;
+      font-weight: $ultralight;
+      // opacity: 0;
+      // transform: translate(0, -1rem);
+      // transition: all $medium $ease-in ($delay * 3);
+    }
+    
+    &__text {
+      font-size: 0.875rem;
+      line-height: 1.8;
+      // opacity: 0;
+      // transform: translate(0, -1rem);
+      // transition: all $medium $ease-in ($delay * 4);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+mixin description(OBJ)
+  each item in OBJ
+
+    if item.bgimage
+
+      - var bg = "background-image: url(" + item.bgimage + ")"
+
+    section.description(class= item.modifier, style= item.bgimage ? bg : '')
+      div.wrapper
+
+        if item.logo
+          div.description__logo
+            img.description__logo-image(src= item.logo.src, alt="", width= item.logo.width)
+
+        each subitem in item.columns
+          div.description__column(class= subitem.modifier)
+
+            if subitem.image
+              div.description__column__image-wrapper
+                each subImage in subitem.image
+                  img.description__column__image(src= subImage, alt="", srcset="")
+
+            if subitem.subtitle
+              h6.description__column__subtitle= subitem.subtitle
+
+            if subitem.title
+              h2.description__column__title!= subitem.title
+
+            if subitem.text
+              each val, index in subitem.text
+                p.description__column__text= val
+
+            if subitem.quote
+              include _quote
+              +quote(subitem.quote)
+
+            if subitem.link
+              a.button.button--secondary.button--icon(href= subitem.link.url)
+                span= subitem.link.text
+                svg.button__icon(width="25", height="11")
+                  use(xlink:href="assets/images/boream-sprite.svg#arrow")
+
+            if item.action
+              a.button.button--icon.button--secondary= item.action
+                svg.button__icon
+                  use(xlink:href="assets/images/boream-sprite.svg#arrow")

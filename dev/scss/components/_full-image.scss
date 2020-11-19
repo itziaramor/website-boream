@@ -1,0 +1,77 @@
+.full-image,
+.full-image-row {
+  background-color: var(--shadow-color);
+
+  // MODIFIERS
+  &--border-top {
+    border-top: 22px solid var(--primary-color-dark);
+  }
+
+  &[class*='--strip'] {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 52%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: z(default);
+      background: rgb(237, 237, 237);
+      background: linear-gradient(
+        135deg,
+        rgba(137, 137, 137, 1) 0%,
+        rgba(148, 148, 148, 1) 100%
+      );
+      opacity: 0.17;
+    }
+  }
+
+  &[class*='--strip-blue']::before {
+    background: var(--primary-color);
+    opacity: 0.7;
+  }
+
+  &[class*='--strip-grey']::before {
+    background: var(--grey-color);
+    opacity: 0.4;
+  }
+
+  // CHILDS
+  &__image {
+    width: 100%;
+    height: rem(352px);
+    object-fit: cover;
+
+    @include mq($from: tablet) {
+      height: auto;
+    }
+  }
+}
+
+// FULL IMAGE VARIATION
+.full-image-row {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &::before {
+    height: 75%;
+    background: hsla(203, 71%, 30%, 0.26);
+  }
+
+  &::after {
+    height: 50%;
+    background: hsla(203, 71%, 30%, 0.67);
+  }
+}

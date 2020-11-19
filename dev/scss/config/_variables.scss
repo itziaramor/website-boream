@@ -1,0 +1,51 @@
+// Easing
+//-----------
+//
+// http://cubic-bezier.com/
+// ease-in fast->slow
+// ease-out slow->fast
+$ease-in: cubic-bezier(0, 0, 0.24, 0.9);
+$ease-out: cubic-bezier(0.59, 0, 0.68, 0.69);
+$ease-in-bounce: cubic-bezier(0.03, 0.27, 0.49, 1.22);
+$ease-out-bounce: cubic-bezier(0.59, 0, 0.59, 1.48);
+$ease-linear: cubic-bezier(0.03, 0.27, 0.44, 0.93);
+$ease-extreme: cubic-bezier(0.68, -0.55, 0.26, 1.55);
+$linear: linear;
+
+// Timing
+//-----------
+$fast: 150ms;
+$medium: 250ms;
+$slow: 350ms;
+$ultraslow: 500ms;
+
+$delay: 50ms;
+
+// Grid
+//-----------
+// $max-width: 120em;
+:root {
+  --max-width: 120em;
+  --wrapper-max-width: 70.5em;
+  --grid-gap: 1.5em;
+  --grid-gap-md: 2.25em;
+  --grid-gap-lg: 4em;
+  --grid-gap-xl: 3.875em;
+}
+
+// Z-index
+//-----------
+$z-layers: (
+  bottomless-pit: -9999,
+  behind: -1,
+  default: 1,
+  header: 100,
+  menu: 200,
+  overlay: 300,
+  modal: 400,
+  spinner: 500,
+);
+
+// Misc
+//-----------
+$radius: 0.5em;

@@ -1,0 +1,34 @@
+style.
+  .site-header, .site-footer { display: none; }
+
+div.wrapper
+
+  mixin createList(o)
+    ul.demo__list
+
+      each item in o
+        li
+          a.demo__list__link(href= item[1])
+            strong= item[0]
+
+  -
+    var O = [
+      ["Home page", "home.html"],
+      ["Distributiva Case Studies", "cases.html"],
+      ["Case Study -> Cases block", "cases-block.html"],
+      ["Case Study -> Digital Marketing", "digital-marketing.html"],
+      ["Case Study -> AEQ", "aeq.html"],
+      ["Case Study -> ECMWF", "ecmwf.html"],
+      ["Case Study -> Mis Oficinas", "mis-oficinas.html"],
+      ["Distributiva Insights", "insights.html"],
+      ["Insight", "insight.html"],
+      ["Talent -> Distributiva", "talent.html"],
+      ["Talent -> Ficha", "talent-ficha.html"],
+      ["Contacto", "contacto.html"],
+      ["Research", "research.html"],
+      ["Research -> ficha", "research-ficha.html"],
+      ["Legal", "legal.html"],
+      ["Email", "email.html"],
+      ["Components", "components.html"],
+    ]
+  +createList(O)

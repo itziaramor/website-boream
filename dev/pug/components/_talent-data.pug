@@ -1,0 +1,50 @@
+-
+  var SOCIAL = [
+    { name: "linkedin", url: "https://www.linkedin.com/company/boream/" },
+    { name: "twitter", url: "https://twitter.com/boreamoficial" },
+    { name: "facebook", url: "https://www.facebook.com/BoreamOficial/" },
+    { name: "email", url: "mailto:" }
+  ];
+
+mixin talentData(OBJ)
+
+  article.talent(class= OBJ.talentModifier)
+
+    if OBJ.headerPage
+      div.wrapper(class= OBJ.talentWrapper)
+        +headerPage(OBJ.headerPage)
+
+    if OBJ.headerImage
+      +headerImage(OBJ.headerImage)
+
+    div.talent__container
+      div.wrapper(class= OBJ.wrapperModifier)
+
+        if OBJ.talentIntro
+          p.talent__intro!= OBJ.talentIntro
+
+        each requirement in OBJ.requirement
+          .features
+            h2.features__heading= requirement.title
+            ul.features__list
+
+              each item in requirement.list
+                li.features__item= item.text
+
+        aside.talent__aside
+          a.button.button--block.button--icon.button--secondary(href="#join") Inscribirse en oferta
+            svg.button__icon
+              use(xlink:href='assets/images/boream-sprite.svg#arrow')
+
+          address.talent__address
+            p.talent__add-title Ubicación
+            p.talent__add-info
+              span.talent__add-city Madrid
+              span.talent__add-street C/ Teniente Coronel Noreña
+                span 11, 2ª planta. 28045
+
+          div.share
+            p.share__label Compartir
+            +social('misc__social', SOCIAL)
+
+      +joinForm(OBJ)

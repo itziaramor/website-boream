@@ -1,0 +1,113 @@
+extends templates/base
+
+block pagecontent
+  article.post
+    div.post-content.post-content--research.post-content--border
+
+      aside.post__aside-research.post__aside-research--top
+        include components/_post-aside-research
+
+      div.wrapper.wrapper--margin
+        p.outstanding Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      div.wrapper
+
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+        div.post__image-cropped.post__image-cropped--single
+          section.image
+            div.image__wrapper
+              div.image__aside
+                span.image__aside__caption Lorem psum dolor
+                span.image__aside__caption 1
+
+              picture.techniques-grid__item-bg
+                source(media="(min-width: 769px" srcset="assets/images/dummy/image-01.png")
+                source(media="(min-width: 481px" srcset="assets/images/dummy/image-01.png")
+                source(media="(max-width: 480px" srcset="assets/images/dummy/image-01.png")
+                img(src="assets/images/dummy/image-01.png" alt="")
+
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+        ul
+          li
+            strong Navegación atomizada desde la página de inicio
+            span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+          li
+            strong Navegación atomizada desde la página de inicio
+            span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+          li
+            strong Navegación atomizada desde la página de inicio
+            span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+          li
+            strong Navegación atomizada desde la página de inicio
+            span Aun manteniéndose los clásicos menús en cabecera se tiende a mostrar en la página de inicio listados de accesos a contenidos y servicios más detallados y asequibles para el usuario.
+            ul
+              li Navegación basada en hábitos de usuarios (Ejemplo: gestiones más solicitadas.
+              li Navegación basada en hábitos de usuarios (Ejemplo: gestiones más solicitadas.
+              li Navegación basada en hábitos de usuarios (Ejemplo: gestiones más solicitadas.
+
+
+        div.post__columns.post__columns--noborder
+          header.cols__header.cols__header--alt.cols__header--icon
+            img(src="assets/images/logo-javascript-black.svg", alt="")
+            h2.cols__heading ¿Cómo integramos NodeJS?
+          ol.cols__list
+            li
+              h3.cols__title UI / UX
+              p.cols__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor.
+            li
+              h3.cols__title DESARRollo
+              p.cols__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor.
+            li
+              h3.cols__title Integración
+              p.cols__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor.
+
+        section.description.description--post
+          div.description__column
+            h2.description__column__title ¿Necesitas un proyecto con NodeJS?
+            p.description__column__text Actualmente esta web no da soporte a tu navegador.&lt;br&gt; Te recomendamos que utilices un navegador actual. Te dejamos un enlace desde donde puedes actualizarlo.
+            a.button.button--secondary.button--icon
+              span Contáctanos
+              svg(class="button__icon" width="25" height="11" viewBox="0 0 26 9.8")
+                polygon(points="19.9,0 19.4,0.6 24.2,4.3 0,4.3 0,5.1 24.3,5.1 19.5,9.2 20,9.8 26,4.7 ")
+
+      aside.post__aside-research.post__aside-research--bottom
+        include components/_post-aside-research
+
+  -
+    var HERO = {
+      default: true,
+      titleResearch: true
+    }
+  +hero(HERO)
+
+  -
+    var POSTS = {
+      modifier: "posts--list",
+      heading: "Más insights",
+      link: {
+        text: "Ver todos los insights"
+      },
+      posts: [
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 1", category: "INFORME USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos salta a dos líneas",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/post/post-2.png",
+          alt: "post 2", category: "USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+        },
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 3", category: "ECOMMERCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        }
+      ]
+    };
+  +posts(POSTS)
+

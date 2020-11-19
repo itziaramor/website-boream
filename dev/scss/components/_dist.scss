@@ -1,0 +1,54 @@
+// GRID
+.dist {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include mq($from: desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  // GRID ITEMS
+  &__cell {
+    --height: 26.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--height);
+    background-color: var(--shadow-color-lightest);
+
+    &.span-2 {
+      // background-color: lightblue;
+
+      @include mq($from: desktop) {
+        grid-column: span 2;
+      }
+    }
+    &.span-4 {
+      @include mq($from: desktop) {
+        grid-column: span 4;
+      }
+    }
+
+    &__link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}

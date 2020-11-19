@@ -1,0 +1,67 @@
+//- CONFIG FEATURES
+-
+  var CLIENTS = [
+    {
+      name: "MOVISTAR",
+      image: "assets/images/clients/movistar.png",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "AENA",
+      image: "https://images.unsplash.com/photo-1542834281-0e5abcbdc5b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "COMUNIDAD DE MADRID",
+      image: "https://images.unsplash.com/photo-1551135511-435281ed6e55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "AYUNTAMIENTO DE MADRID",
+      image: "https://images.unsplash.com/photo-1551171129-7ebac0152f60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "MOVISTAR",
+      image: "https://images.unsplash.com/photo-1470114510979-0a6062f10aee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "AENA",
+      image: "https://images.unsplash.com/photo-1487446529283-07814a645e33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "COMUNIDAD DE MADRID",
+      image: "https://images.unsplash.com/photo-1494493648617-3edda2de6c0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "AYUNTAMIENTO DE MADRID",
+      image: "https://images.unsplash.com/photo-1517356146156-7a50ac011329?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "MOVISTAR",
+      image: "https://images.unsplash.com/photo-1518042779439-0f62496215ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    },
+    {
+      name: "AENA",
+      image: "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80",
+      logo: "assets/images/clients/logos/logo.png"
+    }
+  ]
+
+section.clients
+  div.clients__image-wrapper
+    each client, idx in CLIENTS
+      img.clients__logo(class= idx == 0 ? "is-active": "", src= client.logo, alt="")
+      img.clients__image(class= idx == 0 ? "is-active": "", src= client.image, alt="")
+
+  div.wrapper
+    h2.clients__title Nuestros clientes
+    ul.clients__info
+      each client, idx in CLIENTS
+        li(class= idx == 0 ? "is-active": "" data-image= client.image data-idx= idx)
+          button.clients__info__button= client.name

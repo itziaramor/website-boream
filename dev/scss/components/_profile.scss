@@ -1,0 +1,47 @@
+.profile {
+  &__figure {
+    // @include animate-show($duration: 500ms, $delay: 150ms);
+    max-width: 12rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__name {
+    // @include animate-show($duration: 500ms, $delay: 250ms);
+    font-size: 1.5rem;
+    color: var(--secondary-lighten-color);
+    font-weight: $semibold;
+    margin-bottom: 0.25rem;
+  }
+
+  &__description {
+    // @include animate-show($duration: 500ms, $delay: 350ms);
+    font-size: 1rem;
+    color: var(--secondary-lighten-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  &__social {
+    li {
+      // @include animate-show($duration: 500ms, $delay: 120ms);
+      display: inline-block;
+      margin-right: 0.5rem;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: 75ms * $i;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    color: var(--secondary-lighten-color);
+
+    &:hover,
+    &:focus {
+      color: var(--black-color);
+    }
+  }
+}

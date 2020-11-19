@@ -1,0 +1,138 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var HERO = {
+      videoHero: true
+    }
+  +hero(HERO)
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--full description--img-top",
+        bgimage: "assets/images/dummy/background-01.png",
+        columns: [
+          {
+            modifier: "description__column--full",
+            image: false,
+            title: "Full-service | one focus",
+            subtitle: false,
+            text: [
+              "Desarrollamos proyectos tecnológicos para todo tipo de empresas y organizaciones. Creamos experiencias digitales innovadoras y significativas. Combinamos estrategia, diseño y desarrollo para impulsar la evolución digital de nuestros clientes"
+            ]
+          }
+        ]
+      }
+    ]
+  +description(DESCRIPTION)
+
+  -
+    var HERO = {
+      default: true,
+      title: true
+    }
+  +hero(HERO)
+
+  -
+    var SHORTCUTS = {
+      items: [
+        {
+          icon: "pencil",
+          width: 39,
+          height: 39,
+          title: "UX / UI",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+        }, {
+          icon: "paper",
+          width: 39,
+          height: 39,
+          title: "Front end",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }, {
+          icon: "database",
+          width: 39,
+          height: 39,
+          title: "Backend",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }, {
+          icon: "shield",
+          width: 39,
+          height: 39,
+          title: "Security",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }, {
+          icon: "cloud",
+          width: 39,
+          height: 39,
+          title: "Cloud",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
+    }
+  +shortcuts(SHORTCUTS)
+
+  include components/_clients
+
+  -
+    var DESCRIPTION = [
+      {
+        modifier: "description--full description--img-boream",
+        bgimage: "assets/images/dummy/background-02.png",
+        columns: [
+          {
+            modifier: "description__column--full",
+            image: ["assets/images/dummy/campus-boream.png"],
+            title: "Formamos profesionales<br/>para el sector tecnológico",
+            subtitle: false,
+            text: [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+            ],
+            link: {
+              text: 'Ver cursos de Campus Boream',
+              url: '#'
+            }
+          }
+        ]
+      }
+    ]
+  +description(DESCRIPTION)
+
+  include components/_employees
+
+  -
+    var POSTS = {
+      heading: "Boream insights",
+      text: "Descubre tendencias y sigue el día a día de nuestros proyectos",
+      link: {
+        text: "Ver todos los insights"
+      },
+      posts: [
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 1", category: "INFORME USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos salta a dos líneas",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/post/post-2.png",
+          alt: "post 2", category: "USER EXPERIENCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia."
+        },
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 3", category: "ECOMMERCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        },
+        {
+          url: "assets/images/post/post-1.png",
+          alt: "post 3", category: "ECOMMERCE",
+          title: "Enfoque estratégico de proyectos",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet."
+        }
+      ]
+    };
+  +posts(POSTS)

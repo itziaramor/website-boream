@@ -1,0 +1,70 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var LEGACY = {
+      header: {
+        image: {
+          modifier: "header-image--bgimage header-image--bgimage-alt",
+          bgImage: true,
+          headerImageTitle: "Aviso legal"
+        },
+        title: "Bienvenido a la página web de Boream Digital S.L. (en adelante Boream). Esta página web tiene por objeto facilitar al público en general la información relativa a los productos y servicios de Boream, así como regular el acceso y la navegación a la misma de los usuarios de Internet.",
+        text: [
+          "Sed ut perspi nesciunt. Neque porro, tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil",
+          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        ]
+      },
+      sections: [
+        {
+          title: "¿Quiénes somos?",
+          text: [
+            "El titular de la presente página web es <strong>Boream Digital S.L.</strong> con CIF: ESB84588839 y domicilio social en la Calle Zurbano, 45 - 1º de Madrid, inscrita en el Registro Mercantil de Madrid, Tomo 22349, Libro 0, Folio 197, Sección 8, Hoja M-399064, Inscripción 1",
+            "Puedes <strong>contactar con nosotros</strong> en cualquier momento en la dirección de correo electrónico <strong>info@boream.com</strong>, o en horario de atención al público de lunes a jueves de 9h a 18:30h y viernes de 9h a 15 de forma presencial o telefónica en:"
+          ],
+          list: [
+            "Dirección: <strong>C/ Teniente Coronel Noreña, 11 - 2ª planta (28045 - Madrid)</strong>",
+            "Teléfono: <strong>+34 911 841 934</strong>"
+          ]
+        },
+        {
+          title: "Condiciones de uso",
+          text: [
+            "Las condiciones de acceso y uso de esta web se rigen por la legalidad vigente y por el principio de buena fe, por lo que al usarla te comprometes a hacer un buen uso de ella. Ten en cuenta que no permitimos conductas que vayan contra la ley, los derechos o intereses de terceros. Usar nuestra web implica que reconoces haber leído y aceptado las presentes condiciones y lo que las extienda la normativa legal aplicable en esta materia.",
+            "Si por cualquier motivo no estás de acuerdo no continúes usando esta web. Así mismo, te informamos que cualquier tipo de notificación y/o reclamación solamente será válida por notificación escrita y/o correo certificado.",
+            "Boream se reserva la facultad de efectuar, en cualquier momento y sin necesidad de previo aviso, modificaciones y actualizaciones de la información contenida en su web, de la configuración y presentación de éste y de las condiciones de acceso. Tampoco garantiza la inexistencia de interrupciones o errores en el acceso a la página web, en su contenido, ni que éste se encuentre actualizado, aunque desarrollará sus mejores esfuerzos para, en su caso, evitarlos, subsanarlos o actualizarlos.",
+            "Tanto el acceso a esta página web como el uso que pueda hacerse de la información contenida en la misma, es de la exclusiva responsabilidad de quien lo realiza. Boream no responderá de ninguna consecuencia, daño o perjuicio que pudieran derivarse de dicho acceso o uso de la información. Boream no se hace responsable de los posibles errores de seguridad que se puedan producir ni de los posibles daños que puedan causarse al sistema informático del usuario, los ficheros o documentos almacenados en el mismo, como consecuencia de la presencia de virus en el ordenador del usuario utilizado para la conexión a los servicios y contenidos de la página web, de un mal funcionamiento del navegador o del uso de versiones no actualizadas del mismo.",
+            "Boream no asume responsabilidad alguna derivada de la concesión o contenidos de los enlaces de terceros a los que se hace referencia en la página web, ni garantiza la ausencia de virus u otros elementos en los mismos que puedan producir alteraciones en el sistema informático, los documentos o los ficheros del usuario, excluyendo cualquier responsabilidad por los daños de cualquier clase causados al usuario por este motivo."
+          ]
+        },
+        {
+          title: "Responsabilidades",
+          text: [
+            "Boream no se hace responsable de la información y contenidos que puedan publicar nuestros colaboradores. Sin embargo, teniendo en cuenta los art. 11 y 16 de la LSSI-CE, nos comprometemos a la retirada o en su caso bloqueo de aquellos contenidos que pudieran afectar o contravenir la legislación, derechos de terceros o la moral y el orden público.",
+            "Tampoco nos responsabilizamos de los daños y perjuicios que se produzcan por fallos o configuraciones del software instalado en tu ordenador y que puedan comprometer tu equipo informático mientras usas nuestra web. Nos reservamos el derecho de actualizar, modificar o eliminar la información contenida en esta web así como la configuración o presentación de la misma sin asumir alguna responsabilidad por ello.",
+            "Te comunicamos que cualquier precio que podamos darte por cualquier medio será meramente orientativo y que sólo nos comprometemos con los importes que estén reflejados en las ofertas vinculantes que enviamos a nuestros clientes."
+          ]
+        },
+        {
+          title: "Propiedad intelectual",
+          text: [
+            "Salvo que indiquemos lo contrario nosotros somos los titulares de todos los derechos sobre la propiedad intelectual de los contenidos que se incluyan en nuestra web, a excepción de los derechos sobre productos y servicios de carácter público que no son propiedad nuestra o los referentes a productos comerciales de terceros.",
+            "No solemos tener problemas en que reproduzcas nuestro contenido siempre que cumplas dos condiciones:",
+            "Toda la información que recibamos a través de comentarios, sugerencias o ideas, la vamos a considerar cedida a Boream de manera gratuita. Por ello no debes enviarnos ninguna información que no quieras cedernos.",
+            "Respecto a las citas de productos y servicios de terceros, Boream reconoce a favor de sus titulares los correspondientes derechos de propiedad industrial e intelectual, no implicando su sola mención o aparición en nuestra web la existencia de derechos o responsabilidad alguna de Boream sobre los mismos, como tampoco respaldo, patrocinio o recomendación por parte de Boream. Los titulares de dichos producto y servicios pueden solicitar la modificación o eliminación de la información que les pertenezca."
+          ],
+          list: [
+            "Que obtengas nuestro consentimiento por escrito, lo que será muy fácil si nos mandas un mail a info@boream.com solicitándolo.",
+            "Que indiques que el contenido pertenece a Boream, y que incluyas un enlace a <a href='http://www.boream.com/' rel='nofollow'>www.boream.com</a>"
+          ]
+        },
+        {
+          title: "Ley aplicable y jurisdicción",
+          text: [
+            "Todo lo que acabas de leer se rige por la legislación española. Para cualquier litigio que pudiera surgir relacionado con este sitio web serán competentes Juzgados de Madrid (España), renunciando expresamente el usuario a cualquier otro fuero que pudiera corresponderle."
+          ]
+        }
+      ]
+    }
+  +legacy(LEGACY)

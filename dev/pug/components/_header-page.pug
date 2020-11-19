@@ -1,0 +1,18 @@
+mixin headerPage(OBJ)
+  h1.header-page(class= OBJ.modifier)
+    if OBJ.boream
+      | Boream
+    if OBJ.research
+      | Research
+    span= OBJ.name
+
+  if OBJ.subtitle
+    h2(class="header-page__subtitle")= OBJ.subtitleText
+
+  if OBJ.intro
+    div.header-page__intro
+      p!= OBJ.intro
+
+  if OBJ.introAlt
+    div.header-page__intro.header-page__intro--alt
+      p!= OBJ.introText

@@ -1,0 +1,74 @@
+{
+  "base": "./",
+  "extension": "html",
+  "server": "./dist",
+  "html": {
+    "src": "dev/*.html",
+    "dest": "dist"
+  },
+  "icons": {
+    "iconFontName": "boream-font",
+    "iconFontClass": "boream-icon",
+    "iconSpriteName": "'boream-sprite"
+  },
+  "paths": {
+    "data": "./dev/data/",
+    "dataAllFiles": "./dev/data/*.json",
+    "dev": {
+      "root": "dev/",
+      "files": "dev/*.html",
+      "pugFiles": "dev/pug/*.pug",
+      "pugIncludesHead": "dev/pug/templates/includes/head.pug",
+      "pugIncludes": "dev/pug/templates/includes",
+      "pugAllFiles": "dev/pug/**/*.pug",
+      "pugToHTMLFiles": "dev/",
+      "emails": "dev/email/*.html",
+      "extras": [
+        ".htaccess",
+        "crossdomain.xml",
+        "humans.txt",
+        "manifest.appcache",
+        "robots.txt",
+        "favicon.ico",
+        "README.md"
+      ],
+      "images": "dev/images/",
+      "icons": "./dev/images/icons/*",
+      "imagesAllFiles": "dev/images/**/*",
+      "imagesFiles": "dev/images/**/*.+(png|jpg|gif)",
+      "fonts": "dev/fonts/**/*",
+      "css": "dev/css/",
+      "cssAllFiles": "dev/css/*",
+      "cssMainFile": "dev/css/styles.css",
+      "scss": "dev/scss",
+      "scssIndex": "dev/scss/styles.scss",
+      "scssFiles": "dev/scss/**/*.scss",
+      "js": "dev/js",
+      "jsAppFiles": ["dev/js/*.js", "!./dev/js/scripts.js"],
+      "jsFiles": ["dev/js/**/*.js", "!./dev/js/vendors/**/*.js"],
+      "jsLibFiles": "dev/js/vendors/*.js",
+      "svgIcons": "dev/images/icons/icons-font/*.svg",
+      "svgScss": "../../scss/icon-font/_icon-font.scss",
+      "svgFonts": "../../fonts/icon-font/",
+      "svgSprite": "dev/images/boream-sprite.svg",
+      "svgFontsTemplate": "dev/scss/icon-font/templates/_icons.scss",
+      "svgFontsDev": "dev/fonts/icon-font/",
+      "video": "dev/videos/*.mp4"
+    },
+    "tmp": {
+      "root": "tmp/",
+      "js": "tmp/js"
+    },
+    "dist": {
+      "root": "dist/",
+      "files": "dist/*.html",
+      "images": "dist/assets/images/",
+      "icons": "dist/assets/images/icons",
+      "fonts": "dist/assets/fonts",
+      "css": "dist/assets/css",
+      "jsLibFolder": "dist/assets/js/vendors",
+      "js": "dist/assets/js",
+      "video": "dist/assets/videos"
+    }
+  }
+}

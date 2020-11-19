@@ -1,0 +1,108 @@
+.talent {
+  position: relative;
+  z-index: 5;
+  padding: 2rem 0 0;
+
+  // @include mq($from: tablet) {
+  //   padding: 2rem 0 0;
+  // }
+
+  + .description--full {
+    margin-top: rem(-100px);
+    @include mq($from: tablet) {
+      margin-top: rem(-80px);
+    }
+    @include mq($from: desktop_large) {
+      margin-top: rem(-160px);
+    }
+  }
+
+  &--bgimage {
+
+    background: url("../images/bg-abstract.jpg") -650px 743px no-repeat;
+
+    @include mq($from: tablet) {
+      background-position: -500px 343px;
+    }
+
+    @include mq($from: desktop_large) {
+      background-position: 0 343px;
+    }
+  }
+  &__container {
+    position: relative;
+  }
+
+  &__wrapper {
+
+    @include mq($from: desktop_large) {
+      padding-left: percentage(3 / 12);
+    }
+    @include mq($from: desktop_wide) {
+      padding-left: 14%;
+    }
+
+  }
+
+  &__intro {
+    margin: rem(0 0 60px);
+    font-weight: $semibold;
+    line-height: 1.8;
+  }
+
+  &__aside {
+
+    @include mq($until: desktop_large) {
+      margin-bottom: rem(105px);
+      .button {
+        display: none;
+      }
+    }
+
+    @include mq($from: tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include mq($from: desktop_large) {
+      display: initial;
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      width: rem(262px);
+    }
+
+    .misc__social {
+      position: relative;
+      right: 0;
+    }
+  }
+
+  &__address {
+    margin-bottom: rem(36px);
+    color: var(--shadow-color-darkest);
+    font-size: rem(12px);
+    font-style: normal;
+    line-height: 1.8;
+    text-transform: uppercase;
+    p {
+      margin: 0;
+    }
+
+    @include mq($from: tablet ) {
+      margin-bottom: 0;
+    }
+
+    @include mq($from: desktop_large) {
+      margin: rem(30px) 0;
+    }
+  }
+  &__add-city {
+    display: block;
+    font-size: rem(18px);
+    font-weight: $regular;
+  }
+  &__add-street span {
+    display: block;
+  }
+}

@@ -1,0 +1,12 @@
+mixin dist(OBJ)
+  section.dist
+
+    each item, idx in OBJ
+      if item.height
+        - var itemHeight = `--height: ${item.height}`
+      div.dist__cell(class= `span-${item.span}`, title= item.name, style= itemHeight)
+        a.dist__cell__link(href= item.url)
+          span.sr-only= item.name
+          img(src= item.image.src, alt= item.image.alt)
+
+      - itemHeight = null;

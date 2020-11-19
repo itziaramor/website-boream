@@ -1,0 +1,101 @@
+extends templates/base
+
+block pagecontent
+
+  -
+    var LEGACY = {
+      header: {
+        image: {
+          modifier: "header-image--bgimage header-image--bgimage-alt",
+          bgImage: true,
+          headerImageTitle: "Política privacidad"
+        },
+        title: "En la presente página definimos nuestras políticas de tratamiento de los datos de caracter personal que se recaban a través del presente stio web. Por favor, lee atentamente las siguientes estipulaciones que regulan cómo tratamos los datos que nos facilitas.",
+      },
+      sections: [
+        {
+          title: "¿Quién es el responsable del tratamiento de tus datos?",
+          text: [
+            "El responsable del tratamiento de tus datos es Boream Digital, S.L. (en adelante, Boream). Puedes consultar los datos del responsable en el <a href='#' rel='nofollow'>aviso legal</a>. Te comunicamos que, en cumplimiento de lo dispuesto en la Ley Orgánica 15/1999 de 13 de Diciembre de Protección de Datos de Carácter Personal (LOPD)el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (en adelante, “RGPD”), todos los datos que nos proporciones serán incorporados a un fichero creado y mantenido bajo la responsabilidad detratados por Boream y que se respetará la confidencialidad de tus datos personales."
+          ],
+        },
+        {
+          title: "¿Con qué finalidad tratamos tus datos?",
+          text: [
+            "Boream únicamente tratará datos personales de los interesados que sean adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados. En este sentido, los usuarios podrán facilitar datos personales a Boream, a través de los distintos procedimientos establecidos para ello, que los tratará para las siguientes finalidades siempre y cuando los usuarios hayan prestado su consentimiento de forma específica, informada e inequívoca:"
+          ],
+          list: [
+            "<strong>Contacto</strong><br />Boream tratará los datos personales de los usuarios con la finalidad de gestionar, tramitar y atender solicitudes de información y comunicaciones realizadas por éstos a través del correo electrónico, formulario de contacto o teléfono facilitados en el sitio web. Para esta finalidad Boream tratará datos identificativos y de contacto de los usuarios.",
+            "<strong>Recruiting</strong><br />Boream tratará los datos personales de los interesados con la finalidad de gestionar su candidatura en los procesos de selección correspondientes. Para esta finalidad Boream podrá tener acceso a datos identificativos, datos de características personales, datos académicos y profesionales, datos de detalle de empleo así como cualquier otra información contenida en currículos que pudieran remitir los interesados.",
+            "<strong>Solicitud de ofertas o prestación de servicios</strong><br />Boream tratará los datos personales de los interesados con la finalidad de elaborar ofertas de proyectos o servicios. Igualmente se tratarán los datos durante la ejecución de los proyectos o servicios que sean aceptados por los clientes. Para esta finalidad Boream tratará datos identificativos y datos de contactos de los clientes.",
+            "<strong>Formación</strong><br />Boream tratará los datos personales de los interesados con la finalidad de prestar cursos de formación. Para esta finalidad Boream tratará datos identificativos, datos de contacto, datos académicos y datos de detalle de empleo de los interesados.",
+            "<strong>Insights</strong><br />Boream tratará los datos personales de los interesados con la finalidad de remitirle información comercial propia y de interés sobre sus propios productos y servicios. Para esta finalidad Boream tratará datos de contacto de los interesados. El interesado podrá darse de baja en cualquier momento mediante las opciones que se indicarán en la propia comunicación que reciba.",
+          ]
+        },
+        {
+          title: "¿Por cuánto tiempo conservamos tus datos?",
+          text: [
+            "Boream únicamente conservará tus datos personales durante el tiempo que persista la relación contractual. En caso de que la base de legitimación fuera tu consentimiento, Boream conservará tus datos mientras no retires el mismo o solicites la baja del servicio en cuestión. Al margen de lo anterior, Boream no conservará los datos por más tiempo del indicado salvo que le sea exigible por una obligación legal."
+          ],
+        },
+        {
+          title: "¿Qué nos legitima para tratar tus datos?",
+          text: [
+            "La base legal para el tratamiento o acceso a tus datos personales es la prestación de los servicios objeto de la relación contractual existente. Para el resto de finalidades, la base legal será tu consentimiento, que podrás retirar en cualquier momento."
+          ],
+        },
+        {
+          title: "¿Podemos ceder tus datos?",
+          text: [
+            "Boream no comunicará tus datos personales a terceros salvo que tenga el consentimiento específico, informado e inequívoco de los usuarios o que exista una obligación legal que se lo imponga. Asimismo, te informamos de que terceros podrán tratar datos personales de los usuarios por cuenta de Boream para la prestación de los servicios solicitados por éste. Estos terceros serán considerados encargados del tratamiento y ofrecen garantías suficientes para aplicar medidas técnicas y organizativas apropiadas para el cumplimiento del RGPD.",
+            "No obstante lo anterior, Boream sí podrá ceder datos de alumnos que asistan a cualquiera de sus cursos interesados en encontrar empleo, a otras empresas que tengan abiertos procesos de selección."
+          ],
+        },
+        {
+          title: "¿Cuáles son tus derechos como titular de tus datos?",
+          text: [
+            "Puedes ejercer tus derechos en materia de protección de datos de oposición, rectificación o cancelación. Para ello deberás ponerte en contacto con nosotros por cualquier medio que permita acreditar dicho contacto, mediante correo postal a C/ Teniente Coronel Noreña, 11 - 2ª planta (28045 – Madrid) o mandarnos un mail a la dirección info@boream.com. En particular, dispones de los siguientes derechos:",
+            "Asimismo, dispones del derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD), cuyos datos de contacto se ofrecen a través de la página web www.aepd.es"
+          ],
+          list: [
+            "<strong>Derecho de acceso</strong><br />Los usuarios tienen derecho a obtener confirmación acerca de si Boream trata datos personales que le conciernan y, en tal caso, a acceder a los mismos. Asimismo, tendrá derecho a obtener una copia de los datos.",
+            "<strong>Derecho de rectificación</strong><br />Los usuarios tienen derecho a solicitar la rectificación de los datos personales inexactos que le conciernan.",
+            "<strong>Derecho de supresión</strong><br />Los usuarios tienen derecho a solicitar la supresión de sus datos, entre otros motivos, cuando los datos ya no sean adecuados, necesarios o pertinentes para los fines para los que fueron recogidos.",
+            "<strong>Derecho de oposición</strong><br />Los usuarios tienen derecho a oponerse al tratamiento de sus datos personales, por motivos relativos a su situación particular. En dicho caso, Boream cesará en el tratamiento de dichos datos, salvo que existan motivos legítimos imperiosos, o para la formulación, el ejercicio o la defensa de reclamaciones.",
+            "<strong>Derecho a la limitación del tratamiento</strong><br />Los usuarios, bajo la premisa de que concurran determinadas condiciones, podrán solicitar la limitación del tratamiento de sus datos, en cuyo caso Boream únicamente podrá tratarlos, con la excepción de su conservación, para el ejercicio o defensa de reclamaciones, para la protección de derechos de terceros o por razones de interés público.",
+            "<strong>Derecho a la portabilidad de los datos</strong><br />Los usuarios tienen derecho a recibir o, en su caso, a que Boream facilite a terceros sus datos personales en un formato estructurado, de uso común y lectura mecánica, siempre y cuando dicho tratamiento se base en el consentimiento de los usuarios y se efectúe por medios automatizados.",
+          ]
+        },
+        {
+          title: "Redes sociales",
+          text: [
+            "Disponemos de perfiles en diferentes redes sociales. Siendo responsables del tratamiento de los datos que recopilamos a través de nuestros perfiles, te informamos que el tratamiento que hacemos de los mismos es el que autorizan las diferentes redes sociales, siempre supeditado a lo autorizado por la LOPD."
+          ]
+        },
+        {
+          title: "Cookies",
+          text: [
+            "Hacemos uso de cookies para mejorar la experiencia de uso y navegación de nuestra web. Para más información puedes consultar nuestra <a href='#' rel='nofollow'>política de cookies</a>."
+          ]
+        },
+        {
+          title: "Seguridad",
+          text: [
+            "Boream ha adoptado las medidas técnicas y organizativas, de conformidad con la normativa sobre protección de datos, para evitar la pérdida de datos de carácter personal o el mal uso de los mismos."
+          ]
+        },
+        {
+          title: "Terceros prestadores de servicios",
+          text: [
+            "Con la finalidad de garantizar las adecuadas medidas de seguridad técnica, contratamos a proveedores para albergar nuestro sitio web. Nos aseguramos siempre de que dichos proveedores cumplan estándares de seguridad y que estén dentro del territorio europeo o adheridos al acuerdo de privacy shield. En el momento de la redacción de la presente política dicho proveedor es OVH y el CPD donde se encuentra el servidor ubicado es en Francia."
+          ]
+        },
+        {
+          title: "Vigencia de nuestra política de privacidad",
+          text: [
+            "La presente política de privacidad está vigente desde el mes de marzo de 2018. Boream se reserva el derecho de modificarla en el supuesto de que exista un cambio de la legislación vigente, doctrina jurisprudencial o por criterios propios empresariales. Cualquier cambio o modificación que se introduzca en esta política será publicado en esta misma página."
+          ]
+        }
+      ]
+    }
+  +legacy(LEGACY)

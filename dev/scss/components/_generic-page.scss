@@ -1,0 +1,59 @@
+.generic-page {
+  margin-bottom: rem(65px);
+  color: var(--shadow-color-darkest);
+  line-height: 1.9;
+
+  &__intro,
+  &__body {
+    @include mq($from: tablet) {
+      padding-right: percentage(1 / 12);
+    }
+
+    @include mq($from: desktop) {
+      padding-right: percentage(3 / 12);
+    }
+  }
+
+  &__intro {
+    margin-bottom: rem(27px);
+    font-size: 1rem;
+    font-weight: $semibold;
+    line-height: rem(31px);
+  }
+
+  &__body {
+    font-size: rem(14px);
+
+    .features {
+      margin-top: rem(60px);
+    }
+
+    p {
+      margin-bottom: rem(27px);
+    }
+
+    a {
+      color: #0091ff;
+    }
+
+    table {
+      th,
+      td {
+        padding: 0.625rem 0;
+        border-bottom: 1px solid var(--shadow-color);
+      }
+
+      th {
+        min-width: 10.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+        color: #0f0f0f;
+      }
+
+      td {
+        color: var(--shadow-color-darkest);
+      }
+    }
+  }
+}

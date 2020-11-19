@@ -1,0 +1,87 @@
+mixin hero(OBJ)
+
+  if OBJ.main
+    section.hero.hero--main
+      div.hero__content
+        div.hero__cell.hero__cell--video
+          div.hero__cell__info
+            h3.hero__cell__subtitle Estrategia, user experience y desarrollo tecnológico
+            h2.hero__cell__title Creamos experiencias digitales#[br]innovadoras y significativas
+          video.hero__cell__image(width="100%", autoplay, muted, loop)
+            source(src="assets/videos/BOREAM_100919_V3_COMPRIMIDO.mp4" type="video/mp4")
+
+        div.hero__cell.hero__cell--image
+          div.hero__cell__info
+            h2.hero__cell__title Nexum_ Nueva plataforma móvil para información y gestión de clientes
+            a.button.button--secondary.button--icon(href="#") Ver proyecto
+              svg.button__icon
+                use(xlink:href='assets/images/boream-sprite.svg#arrow')
+          img.hero__cell__image(src="assets/images/dummy/hero-02.png", alt="", srcset="")
+
+        div.hero__cell.hero__cell--empty
+          div.hero__cell__info
+            h2.hero__cell__title Creemos en la tecnología libre y en la comunidad de desarrolladores
+            a.button.button--secondary.button--icon(href="#") Ver proyecto
+              svg.button__icon
+                use(xlink:href='assets/images/boream-sprite.svg#arrow')
+          img.hero__cell__image(src="assets/images/dummy/hero-07.png", alt="", srcset="")
+
+  if OBJ.videoHero
+    section.hero.hero--video
+      div.hero__content
+        div.hero__cell.hero__cell--video
+          div.hero__cell__info
+            h1.hero__cell__title Product, Design, Technology.
+            h2.hero__cell__subtitle We are Boream. We are Digital
+          video.hero__cell__image(width="100%", autoplay, muted, loop)
+            source(src="assets/videos/BOREAM_100919_V3_COMPRIMIDO.mp4" type="video/mp4")
+
+  if OBJ.default
+    section.hero.hero--default
+      if OBJ.title
+        h2.sr-only Proyectos destacados
+      if OBJ.titleResearch
+        div.hero__header
+          div.wrapper
+            h2.hero__heading Proyectos realizados con Node JS
+          div.hero__heading-type
+            img.hero__cell__image(src="assets/images/logo-javascript-black.svg", alt="", srcset="")
+            p Node JS
+
+      div.hero__content
+        div.hero__cell.hero__cell--image-full
+            div.hero__cell__content
+              div.hero__cell__description
+                div.hero__cell__info
+                  h3.hero__cell__title Creamos experiencias digitales innovadoras y significativas
+
+              div.hero__cell__button
+                a.button-wrapper(href="#")
+                  span.button.button--secondary.button--icon Ver proyecto
+                    svg.button__icon
+                      use(xlink:href='assets/images/boream-sprite.svg#arrow')
+            img.hero__cell__image(src="assets/images/dummy/hero-04.png", alt="", srcset="")
+
+        div.hero__cell.hero__cell--image
+            div.hero__cell__content
+              div.hero__cell__description
+                div.hero__cell__info
+                  h3.hero__cell__title AYRE: El reto de reorientar la Intranet del Ayuntamiento de Madrid
+              div.hero__cell__button
+                a.button-wrapper(href="#")
+                  span.button.button--secondary.button--icon Ver proyecto
+                    svg.button__icon
+                      use(xlink:href='assets/images/boream-sprite.svg#arrow')
+            img.hero__cell__image(src="assets/images/dummy/hero-08.png", alt="", srcset="")
+
+        div.hero__cell.hero__cell--empty
+          div.hero__cell__content
+            div.hero__cell__description
+              div.hero__cell__info
+                h3.hero__cell__title Impulso visual para materiales formativos del Instituto de Empresa
+            div.hero__cell__button
+              a.button-wrapper(href="#")
+                span.button.button--secondary.button--icon Ver proyecto
+                  svg.button__icon
+                    use(xlink:href='assets/images/boream-sprite.svg#arrow')
+          img.hero__cell__image(src="assets/images/dummy/hero-06.png", alt="", srcset="")

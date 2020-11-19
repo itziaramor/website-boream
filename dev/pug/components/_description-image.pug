@@ -1,0 +1,27 @@
+mixin descriptionImage(OBJ)
+
+  section.description(class= OBJ.modifier)
+    div.wrapper
+
+      div.description__column
+
+        if OBJ.logo
+          div.description__column__image-wrapper
+            each logoImage in OBJ.logo
+              img.description__column__image(src= logoImage.src, alt=logoImage.alt)
+
+        if OBJ.subtitle
+          div.description__column__subtitle= OBJ.subtitle
+
+        if OBJ.title
+          h2.description__column__title(class= OBJ.titleModifier)!= OBJ.title
+
+        if OBJ.text
+          each paragraph in OBJ.text
+            p.description__column__text= paragraph
+
+      div.description__column.relative
+
+        if OBJ.image
+          img.description__column__image(class= OBJ.image.modifier, src= OBJ.image.src, alt=OBJ.image.alt)
+

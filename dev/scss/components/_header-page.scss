@@ -1,0 +1,78 @@
+.header-page {
+  margin-bottom: 1.25rem;
+  color: var(--black-color);
+  font-size: rem(52px);
+  font-weight: $ultralight;
+  line-height: 1.1;
+
+  > span {
+    font-weight: $regular;
+    color: var(--primary-color);
+  }
+
+  @include mq($from: tablet) {
+    font-size: rem(72px);
+  }
+
+  &__subtitle {
+    margin-bottom: rem(20px);
+    font-size: rem(32px);
+    font-weight: $light;
+    text-align: center;
+  }
+
+  &__intro {
+    max-width: percentage(3 / 4);
+    margin-bottom: rem(66px);
+    font-size: 0.875rem;
+    font-weight: $semibold;
+    line-height: 2.21;
+
+    @include mq($from: tablet) {
+      max-width: percentage(7 / 8);
+      margin-bottom: rem(96px);
+      font-size: 1rem;
+      line-height: 1.94;
+    }
+
+    @include mq($from: desktop) {
+      max-width: percentage(7 / 12);
+      margin-bottom: rem(132px);
+    }
+
+    // VARIANTS
+    &--alt {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto rem(80px);
+      font-weight: $regular;
+      font-size: rem(14px);
+      text-align: center;
+
+      @include mq($from: desktop) {
+        font-size: rem(14px);
+      }
+
+      @include mq($from: desktop) {
+        max-width: percentage(10 / 12);
+        margin: 0 auto rem(80px);
+      }
+
+      > span {
+        color: var(--focus-color);
+      }
+    }
+  }
+
+  // VARIANTS
+  &--alt-color {
+    > span {
+      color: var(--eastern-blue-color);
+    }
+  }
+  &--alt {
+    margin-bottom: rem(44px);
+    text-align: center;
+  }
+
+}

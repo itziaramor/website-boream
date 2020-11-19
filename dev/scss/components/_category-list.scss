@@ -1,0 +1,90 @@
+.category {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+
+    // MODIFIES SOME PROPERTIES WHEN THE LIST IS WITHIN INSIGHT MAIN PAGE
+    .insights & {
+      @include mq($from: desktop) {
+        width: percentage(7/12);
+        margin-bottom: 7.5rem;
+      }
+
+      > li {
+        display: inline-block;
+
+        a {
+          padding: 0.35rem 0;
+          display: inline-block;
+          color: var(--shadow-color-darkest);
+          text-transform: uppercase;
+          text-decoration: none;
+
+          &:hover,
+          &:focus,
+          &.active {
+            color: var(--primary-color-hover);
+          }
+        }
+      }
+    }
+    // MODIFIES SOME PROPERTIES WHEN THE LIST IS WITHIN AN ASIDE
+    .post__aside & {
+      margin-bottom: 2rem;
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+
+      > li {
+        margin-bottom: 0 !important;
+      }
+
+      > li:first-child {
+        a {
+          color: var(--shadow-color-darkest);
+        }
+      }
+
+      > li.active {
+        font-weight: $light;
+        a {
+          color: var(--primary-color-hover);
+        }
+      }
+    }
+
+    > li {
+
+      a {
+        display: inline-block;
+        color: var(--shadow-color-darkest);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &.active {
+          color: var(--primary-color-hover);
+        }
+      }
+
+      // MODIFIES SOME PROPERTIES WHEN THE LIST IS WITHIN AN ASIDE
+      .post__aside & {
+        display: inline-block;
+        margin: 0.75rem 0;
+      }
+
+      &::after {
+        content: '|';
+        display: inline-block;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+}

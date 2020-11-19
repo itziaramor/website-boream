@@ -1,0 +1,48 @@
+.share {
+  &__label {
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: $semibold;
+    color: var(--shadow-color-darkest);
+    text-transform: uppercase;
+  }
+  
+  &__list {
+    display: flex;
+    
+    > li {
+      overflow: hidden;
+      
+      + li {
+        margin-left: 0.625rem;
+      }
+    }
+    
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--white-color);
+      background-color: var(--primary-color);
+      transition: background-color $fast $linear;
+      
+      &:hover,
+      &:focus {
+        background-color: var(--primary-color-hover-social);
+      }
+    }
+    
+    svg {
+      width: 100%;
+      height: auto;
+      padding: .3125rem;
+      fill: currentColor;
+
+      &.facebook {
+        transform: translate3d(8px,1px,0);
+      }
+    }
+  }
+}

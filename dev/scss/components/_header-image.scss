@@ -1,0 +1,72 @@
+.header-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 430px;
+  margin-bottom: rem(90px);
+  overflow: hidden;
+  img {
+    width: auto;
+  }
+  
+  // MODIFIER
+  &--bgimage {
+    height: 253px;
+    background: url('../images/talent-data-header-md.png') left top no-repeat;
+    background-size: cover;
+    
+    @include mq($from: tablet) {
+      background-position: center center;
+    }
+    
+    @include mq($from: desktop) {
+      background-image: url('../images/talent-data-header.png');
+    }
+
+    > .wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    
+    .header-image__title {
+      color: var(--white-color);
+      font-size: rem(36px);
+      font-weight: $semibold;
+      small {
+        display: block;
+        font-size: rem(12px);
+        font-weight: $regular;
+        text-transform: uppercase;
+      }
+      
+      @include mq($from: desktop_large) {
+        margin-left: percentage(2 / 12);
+      }
+    }
+    .header-image__subtitle {
+      display: block;
+      font-size: rem(12px);
+      font-weight: $regular;
+      color: var(--white-color);
+      text-transform: uppercase;
+      
+      @include mq($from: desktop_large) {
+        margin-left: percentage(2 / 12);
+      }
+    }
+  }
+  
+  &--bgimage-alt {
+    background-image: url('../images/generic-header-md.png');
+    
+    @include mq($from: desktop) {
+      background-image: url('../images/generic-header.png');
+    }
+    
+    @include mq($from: desktop_large) {
+      .header-image__title {
+        margin-left: 0;
+      }
+    }
+  }
+}

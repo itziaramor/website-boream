@@ -1,0 +1,910 @@
+.ie11 {
+
+  // modal
+  .modal--video {
+    .modal__content {
+      height: 308px;
+    }
+  }
+
+
+  // testimonial
+  .testimonial {
+    overflow: hidden;
+
+    // CHILDS
+    &__figure {
+
+      @include mq($from: tablet) {
+        flex: 0 1 50%;
+      }
+    }
+
+    &__quote {
+
+      @include mq($from: tablet) {
+        flex: 0 1 50%;
+      }
+    }
+  }
+
+  // site container
+  .site-container {
+    flex: 1 1 auto;
+  }
+
+  // employees
+  .employees {
+    overflow: hidden;
+    //display: none;
+
+    .tns-controls {
+      transform: translate(0, -50%);
+      right: 0;
+
+      > button {
+        width: 2.5rem;
+      }
+    }
+
+    &__pics__image {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      max-width: inherit;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+    }
+
+    #tns1 > .tns-item {
+      overflow: hidden;
+    }
+  }
+
+  // shortcuts
+  .shortcuts {
+    &__item {
+      @include mq($from: desktop) {
+        &:nth-child(1) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 1;
+        }
+
+        &:nth-child(2) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 3;
+        }
+
+        &:nth-child(3) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 5;
+        }
+        &:nth-child(4) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 7;
+        }
+        &:nth-child(5) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 9;
+        }
+      }
+    }
+  }
+
+  // post
+  .posts {
+    &__grid {
+
+      li {
+
+        @include mq($from: desktop) {
+          &:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+          }
+
+          &:nth-child(2) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+          }
+
+          &:nth-child(3) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 5;
+          }
+        }
+
+      }
+    }
+  }
+
+  // hero
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 26.25rem;
+    grid-template-rows: 1fr 1fr;
+
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 26.25rem;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    &--video {
+      grid-template-rows: 29.25rem;
+      grid-column: 1 / span 4;
+
+      @include mq($from: desktop) {
+        grid-template-columns: 1fr;
+        height: 374px;
+      }
+
+      video {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        max-width: inherit;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    &--default {
+      .hero__content {
+        -ms-grid-column: 1 !important;
+        grid-column: 1;
+        grid-column-end: span 2 !important;
+      }
+    }
+
+    // GRID ITEMS
+    &__cell {
+      height: 420px;
+
+      &.hero__cell--video {
+        height: 550px;
+
+        @include mq($from: desktop) {
+          height: 374px;
+          position: relative;
+        }
+
+        &.hero__cell--single {
+          @include mq($from: desktop) {
+            margin-bottom: 14px;
+          }
+        }
+      }
+
+      &__content {
+        top: 0;
+      }
+
+      // MODIFERS
+      $this: &;
+
+      &--image{
+
+        @include mq($from: desktop) {
+          justify-content: flex-start;
+          grid-row: 2;
+          -ms-grid-row: 2 !important;
+          grid-column: 1;
+          -ms-grid-column: 1 !important;
+          grid-column-end: span 1 !important;
+        }
+      }
+
+      &--empty {
+
+        @include mq($from: desktop) {
+          justify-content: flex-start;
+          grid-row: 2;
+          -ms-grid-row: 2 !important;
+          grid-column: 2;
+          -ms-grid-column: 2 !important;
+          grid-column-end: span 2 !important;
+
+          .hero__cell__button {
+            height: 50%;
+          }
+        }
+      }
+
+      &--image-full {
+        grid-row: 1;
+        -ms-grid-column: 1 !important;
+        grid-column-end: span 2 !important;
+
+
+        @include mq($from: desktop) {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          -ms-grid-column: 1 !important;
+        }
+
+      }
+
+    }
+  }
+
+  // career
+  .career {
+
+    &__col {
+      @include mq($from: desktop) {
+        &:nth-child(1) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 1;
+        }
+
+        &:nth-child(2) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 2;
+        }
+
+        &:nth-child(3) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 3;
+        }
+        &:nth-child(4) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 4;
+        }
+      }
+    }
+
+    &__group {
+
+      @include mq($from: tablet) {
+        //grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include mq($from: desktop) {
+        grid-row-gap: initial;
+        //grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+
+    // MODIFIER
+    &__group--wider {
+      @include mq($from: tablet) {
+        grid-template-columns: 1fr;
+        .career__list {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .career__item {
+          flex: 0 0 50%;
+          margin-bottom: 15px;
+        }
+        .career__item + .career__item {
+          margin-top: 0;
+        }
+      }
+      @include mq($from: desktop) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  // join
+  .join {
+
+    &__text {
+      margin-bottom: rem(60px);
+      color: var(--shadow-color-darkest);
+      font-size: rem(14px);
+      line-height: 1.8;
+    }
+
+    &__grid {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      grid-gap: 25px 30px;
+
+      .form-group {
+        @include mq($from: desktop) {
+          margin-bottom: 25px;
+          flex: 0 0 47%;
+
+          &:nth-child(even) {
+            margin-left: 20px;
+          }
+          &:nth-child(odd) {
+            margin-right: 20px;
+          }
+
+          &.form-group--full {
+            flex: 0 0 99%;
+          }
+          &:nth-child(6) {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-left: 0;
+            flex: 0 0 99%;
+          }
+        }
+      }
+
+      @include mq($from: desktop_large) {
+        grid-template-columns: 40% 1fr;
+      }
+
+      #ajax-wrapper {
+        flex: 0 0 50% !important;
+      }
+
+    }
+
+  }
+
+  // talent
+  .talent {
+
+    &__aside {
+
+      @include mq($from: tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  // project
+  .project {
+    // CHILDS *********************************************************
+    &__figure {
+
+      // VEIL
+      &::after {
+        background: rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+
+  // description
+  .description {
+    &--image {
+      > .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: visible;
+      }
+
+      &__logo-image {
+        width: initial;
+      }
+
+      .description__column {
+
+        @include mq($from: desktop) {
+          //max-width: 83.33333%;
+          width: 50%;
+
+          &:first-child {
+
+            width: 40%;
+          }
+        }
+      }
+
+      .description__column__image--custom {
+        left: 0;
+        right: 0;
+      }
+    }
+    &--onetext {
+
+      > .wrapper {
+        @include mq($from: tablet) {
+          display: flex;
+          flex-wrap: wrap;
+
+          .description__logo {
+            flex: 0 0 100%;
+            margin-bottom: 25px;
+          }
+        }
+      }
+
+      .description__column {
+        @include mq($from: tablet) {
+          flex: 0 0 47%;
+          margin-right: 25px;
+        }
+      }
+    }
+    &--closing {
+      .description__column {
+        @include mq($from: tablet) {
+          max-width: 83.33333%;
+        }
+      }
+    }
+    &--centered {
+      > .wrapper {
+        display: flex;
+        justify-content: center;
+
+        .description__column {
+          max-width: 548px;
+          width: 100%;
+          margin: 0;
+        }
+
+        .description__column__image {
+          max-width: 100%;
+        }
+      }
+    }
+    &--narrow {
+      > .wrapper {
+        @include mq($from: tablet) {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+
+      .description__column {
+        @include mq($from: tablet) {
+          flex: 0 0 47%;
+          margin-right: 25px;
+
+          &:last-child {
+            margin-right: 0;
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+  }
+
+  // steps
+  .steps {
+
+    &__list {
+      grid-template-rows: auto auto auto auto;
+
+      @include mq($from: tablet) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include mq($from: desktop) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      li {
+        @include mq($from: desktop) {
+          &:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+          }
+
+          &:nth-child(2) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+          }
+
+          &:nth-child(3) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 5;
+          }
+          &:nth-child(4) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 7;
+          }
+        }
+      }
+    }
+  }
+
+  // cols
+  .cols {
+    $this: &;
+
+    &__list {
+      display: flex;
+
+      @include mq($from: desktop) {
+        padding-left: 22%;
+      }
+
+      > li {
+        @include mq($from: desktop) {
+          flex: 0 0 33%;
+          padding: 0 2rem;
+        }
+      }
+    }
+  }
+
+  // users-voice
+  .users-voice {
+
+    &__cols {
+      display: grid;
+
+      @include mq($from: tablet) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+      @include mq($from: desktop_large) {
+        > div:nth-child(1) {
+          grid-column: 1;
+        }
+        > div:nth-child(2) {
+          grid-column: 3;
+          padding-right: 10px;
+        }
+        > div:nth-child(3) {
+          grid-column: 4;
+        }
+
+      }
+    }
+
+  }
+
+  // learning
+  .learning {
+
+    &__cols {
+      grid-template-rows: auto auto auto;
+
+      @include mq($from: tablet) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      }
+      @include mq($from: desktop) {
+        > div:nth-child(1) {
+          grid-column: 1;
+        }
+        > div:nth-child(2) {
+          grid-column: 3;
+        }
+
+        > div:nth-child(3) {
+          grid-column: 4;
+        }
+
+      }
+    }
+
+
+  }
+
+  // cases
+  .cases {
+
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 13rem;
+      margin: 0 -1rem;
+
+      @include mq($from: tablet) {
+        grid-template-columns: 1fr 1fr;
+        > li:nth-child(1) {
+          grid-column: 1;
+        }
+        > li:nth-child(2) {
+          grid-column: 2;
+        }
+      }
+
+    }
+  }
+
+  // post content
+  .post {
+    &-content {
+
+      > .wrapper {
+
+        @include mq($from: desktop) {
+          margin-left: 24%;
+          max-width: 760px;
+          display: flex;
+          flex-direction: column;
+          margin-left: auto;
+        }
+      }
+    }
+    &__columns {
+
+      .cols__list {
+        @include mq($from: desktop) {
+          display: flex;
+          padding-left: 0;
+
+          > li {
+            flex: 33%;
+          }
+        }
+      }
+    }
+
+  }
+
+  // aside
+  .aside {
+
+    &__cols {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto;
+
+      @include mq($from: desktop) {
+        > div:nth-child(1) {
+          grid-column: 1;
+        }
+        > div:nth-child(2) {
+          grid-column: 3;
+        }
+        > div:nth-child(3) {
+          grid-column: 4;
+        }
+      }
+    }
+  }
+
+  // highlight gradient
+  .highlight-gradient {
+    position: relative;
+    // CHILDS
+    &__image {
+      @include mq($from: desktop) {
+        margin-right: auto;
+        margin-left: auto;
+        bottom: 30%;
+        left: 0;
+        right: 0;
+      }
+    }
+
+  }
+
+  // highlight flat
+  .highlight-flat {
+
+    &__grid {
+
+      @include mq($from: desktop) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        margin-bottom: 70px;
+        flex: 0 0 20%;
+      }
+    }
+  }
+
+  // image
+  .image {
+    .image__wrapper {
+      width: 100%;
+    }
+  }
+
+  // pages
+  // home
+  .home-container {
+    // hero
+    .hero {
+      &__cell {
+
+        &--image{
+          .hero__cell__image {
+            @include mq($from: desktop) {
+              position: relative;
+              right: 20%;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  // insights
+  .insights-container {
+    // hero
+    .hero {
+      grid-template-rows: 1fr;
+
+      &__cell {
+
+        &--image{
+          .hero__cell__image {
+            @include mq($from: desktop) {
+              position: relative;
+              right: 20%;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+
+  // clients
+  .clients {
+    &__image-wrapper {
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &__image {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      max-width: inherit;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+
+    }
+  }
+
+
+  .techniques-grid {
+
+    &__content {
+      @include mq($from: desktop) {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr 1fr !important;
+        // grid-template-rows: 1fr 1fr;
+        // grid-auto-rows: 265px;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 265px;
+        grid-template-rows: 265px 265px 265px;
+        -ms-grid-rows: 265px 265px 265px;
+        grid-gap: 30px;
+      }
+    }
+
+    &__description-content {
+      width: 100%;
+    }
+
+    &__item {
+      border: 10px solid #f7f7f7;
+
+       &.rectangle--double {
+      height: auto;
+      grid-column: 2;
+      -ms-column: 1;
+      grid-column-end: span 3;
+      position: static;
+
+      @include mq($from: tablet) {
+        min-height: rem(265px);
+      }
+
+      a {
+        position: relative;
+        z-index: 2;
+      }
+
+      @include mq($from: desktop) {
+        &::after {
+          content: '';
+          min-width: 100%;
+          height: rem(245px);
+          background-color: var(--techniques-grid-color);
+          display: flex;
+          position: absolute;
+          left: 0;
+          right: 0;
+        }
+      }
+
+
+    }
+
+
+      &:nth-child(1) {
+        @include mq($from: desktop) {
+          -ms-grid-row:1;
+          -ms-grid-column:1;
+          -ms-grid-column-span:2;
+        }
+      }
+      &:nth-child(2) {
+        @include mq($from: desktop) {
+          -ms-grid-row:1;
+          -ms-grid-column:3;
+          -ms-grid-column-span:1;
+        }
+      }
+      &:nth-child(3) {
+        @include mq($from: desktop) {
+          -ms-grid-row:1;
+          -ms-grid-column:4;
+          -ms-grid-column-span:1;
+        }
+      }
+      &:nth-child(4) {
+        @include mq($from: desktop) {
+          -ms-grid-row:2;
+          -ms-grid-column:3;
+          -ms-grid-column-span:2;
+        }
+      }
+      &:nth-child(5) {
+        @include mq($from: desktop) {
+          -ms-grid-row:3;
+          -ms-grid-column:1;
+          -ms-grid-column-span:1;
+        }
+      }
+      &:nth-child(6) {
+        @include mq($from: desktop) {
+          -ms-grid-row:3;
+          -ms-grid-column:2;
+          -ms-grid-column-span:2;
+        }
+      }
+      &:nth-child(7) {
+        @include mq($from: desktop) {
+          -ms-grid-row:4;
+          -ms-grid-column:2;
+          -ms-grid-column-span:3;
+        }
+      }
+      &:nth-child(8) {
+        @include mq($from: desktop) {
+          -ms-grid-row:5;
+          -ms-grid-column:1;
+          -ms-grid-column-span:2;
+        }
+      }
+      &:nth-child(9) {
+        @include mq($from: desktop) {
+          -ms-grid-row:5;
+          -ms-grid-column:3;
+          -ms-grid-column-span:1;
+        }
+      }
+      &:nth-child(10) {
+        @include mq($from: desktop) {
+          -ms-grid-row:5;
+          -ms-grid-column:4;
+          -ms-grid-column-span:1;
+        }
+      }
+      &:nth-child(11) {
+        @include mq($from: desktop) {
+          -ms-grid-row:6;
+          -ms-grid-column:2;
+          -ms-grid-column-span:1;
+        }
+      }
+      &:nth-child(12) {
+        @include mq($from: desktop) {
+          -ms-grid-row:6;
+          -ms-grid-column:3;
+          -ms-grid-column-span:2;
+        }
+      }
+    }
+  }
+
+}

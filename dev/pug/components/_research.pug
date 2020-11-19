@@ -1,0 +1,46 @@
+mixin research(OBJ)
+
+  article.research
+
+    if OBJ.headerPage
+        div.wrapper
+          +headerPage(OBJ.headerPage)
+
+    div.techniques-grid
+      div.wrapper
+        div.techniques-grid__content
+          each item in OBJ.items
+            div.techniques-grid__item(style= `--techniques-color: ${item.color}` class=item.class)
+              if item.link
+                a(href="#")
+                  if item.image
+                    picture.techniques-grid__item-bg
+                      if item.sourceDesktop
+                        source(media="(min-width: 769px" srcset=item.sourceDesktop)
+                      if item.sourceTablet
+                        source(media="(min-width: 481px" srcset=item.sourceTablet)
+                      if item.sourceMobile
+                        source(media="(max-width: 480px" srcset=item.sourceMobile)
+                      img(src=item.sourceDesktop alt="")
+                  if item.description
+                    div.techniques-grid__description
+                      if item.iconDescription
+                        img.techniques-grid__icon(src=item.srcIcon, alt="")
+                      div.techniques-grid__description-content
+                        h2(class="techniques-grid__title")= item.titleItem
+                        if item.textDescription
+                          p(class="techniques-grid__text")= item.textItem
+              if item.contact
+                div.techniques-grid__contact
+                  div.techniques-grid__contact-col
+                    img.techniques-grid__icon(src=item.srcIcon, alt="")
+                  div.techniques-grid__contact-col
+                    h2(class="techniques-grid__title")= item.titleContact
+                    p(class="techniques-grid__text")= item.textContact
+                    a.button.button--secondary.button--icon(href="#") Ver proyecto
+                      svg.button__icon
+                        use(xlink:href='assets/images/boream-sprite.svg#arrow')
+
+
+
+

@@ -1,0 +1,257 @@
+.site-footer {
+  flex: 0 0 auto;
+}
+
+.address {
+  padding: rem(30px 0 22px);
+  background: var(--primary-color) url(../images/particles.png) 0% 0% no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  line-height: 1.86;
+  
+  @include mq($from: tablet) {
+    padding: 2rem 1.25rem;
+  }
+  @include mq($from: desktop) {
+    padding: 2.3125rem 2rem 1.1875rem;
+    background-position: inherit;
+  }
+  
+  > .wrapper {
+    @include mq($from: tablet) {
+      padding: 0;
+    }
+  }
+  
+  &__logo {
+    width: 7.3125rem;
+    height: 2.3125rem;
+    margin-bottom: 0.9rem;
+    @include mq($from: tablet) {
+      margin-bottom: 1.4rem;
+    }
+  }
+  
+  &__text {
+    color: var(--white-color);
+    font-size: 0.875rem;
+    font-style: normal;
+    
+    > span {
+      display: block;
+      margin-top: 0;
+      
+      @include mq($from: mobile_landscape) {
+        display: inline-block;
+        margin-top: 0;
+      }
+    }
+  }
+  
+  &__link {
+    display: block;
+    width: 10rem;
+    color: var(--white-color);
+    text-decoration: none;
+    
+    &:hover,
+    &:focus {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.campusboream {
+  padding: rem(40px 0);
+  border-bottom: 0.0625rem solid var(--border-color);
+
+  .wrapper {
+    padding: 0 1.25rem;
+  }
+  
+  @include mq($until: tablet) {
+    
+    svg,
+    span {
+      display: none;
+    }
+  }
+  @include mq($from: tablet) {
+    padding: 2rem 1.25rem;
+    
+    .wrapper {
+      padding: 0;
+    }
+  }
+  @include mq($from: desktop) {
+    padding: 2rem;
+
+    .wrapper {
+      padding: 0;
+    }
+  }
+  
+  &:hover {
+    span {
+      background-size: 100% 1px;
+    }
+    
+    .button__icon {
+      transform: translateX(1rem);
+    }
+  }
+  
+  a {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: var(--shadow-color-darkest);
+    
+    @include mq($from: mobile_landscape) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  img {
+    display: inline-block;
+    width: rem(133px);
+    
+    @include mq($from: tablet) {
+      width: 10rem;
+    }
+  }
+  
+  span {
+    @include fx-underline(rgb(70, 70, 70), 1px);
+    margin-top: 1rem;
+    
+    @include mq($from: mobile_landscape) {
+      margin-top: 0;
+      margin-left: 2rem;
+      position: relative;
+      
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 0.125rem;
+        height: 2.5rem;
+        position: absolute;
+        top: rem(-11px);
+        left: -1rem;
+        background-color: var(--shadow-color-darkest);
+      }
+    }
+  }
+  
+  svg {
+    width: 25px;
+    height: 11px;
+    transform: translateX(0.75rem);
+  }
+}
+
+.misc {
+  padding: 3rem 0 2rem;
+  
+  @include mq($from: tablet) {
+    padding: rem(45px 16px 70px);
+  }
+  
+  // CHILDS
+  > .wrapper {
+    @include mq($from: tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  &__legal {
+    margin-bottom: 2rem;
+    
+    @include mq($from: mobile_landscape) {
+      display: flex;
+    }
+    
+    @include mq($from: tablet) {
+      margin-bottom: 0;
+    }
+    
+    > li {
+      display: flex;
+      font-size: 0.875rem;
+      line-height: 1.86;
+      
+      + li {
+        margin-top: 0.5rem;
+        
+        @include mq($from: mobile_landscape) {
+          margin-top: 0;
+          
+          &::before {
+            content: '|';
+            display: inline-block;
+            margin: 0 1rem;
+          }
+        }
+      }
+    }
+    
+    a {
+      color: var(--shadow-color-darkest);
+      text-decoration: none;
+      
+      // STATES
+      &:hover,
+      &:focus {
+        color: var(--primary-color-hover);
+      }
+    }
+  }
+  
+  &__social {
+    display: flex;
+
+    @include mq($from: desktop) {
+      position: absolute;
+      right: 1rem;
+    }
+    
+    
+    > li {
+      overflow: hidden;
+      
+      + li {
+        margin-left: rem(12px);
+      }
+    }
+    
+    a {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: rem(34px);
+      height: rem(34px);
+      padding: rem(5px);
+      color: var(--white-color);
+      background-color: var(--primary-color);
+      transition: background-color $fast $linear;
+      
+      &:hover,
+      &:focus {
+        background-color: var(--primary-color-hover-social);
+      }
+    }
+    
+    svg {
+      width: 100%;
+      height: auto;
+      fill: currentColor;
+      &.facebook {
+        transform: translate3d(8px, 1px, 0);
+      }
+    }
+  }
+}
